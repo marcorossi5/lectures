@@ -1096,6 +1096,16 @@ html, body {
 .reveal table tr:nth-child(even) td { background: var(--table-row-alt); }
 .reveal table tr:last-child td { border-bottom: none; }
 
+/* Compact variant — smaller font and tighter padding for dense content */
+.reveal table.table-compact {
+  font-size: 0.6em;
+}
+
+.reveal table.table-compact th,
+.reveal table.table-compact td {
+  padding: 5px 8px;
+}
+
 /* Keyed table: first column acts as a row label */
 .reveal table.table-keyed td:first-child {
   font-weight: 600;
@@ -1731,21 +1741,8 @@ html, body {
       <h2>AI, ML, Deep Learning, AI Generativa</h2>
     </div>
     <div class="slide-body layout-diagram">
-      <div class="diagram">
-┌─────────────────────────────────────────────────────┐
-│                Intelligenza Artificiale             │
-│  ┌──────────────────────────────────────────────┐   │
-│  │          Machine Learning                    │   │
-│  │  ┌───────────────────────────────────────┐   │   │
-│  │  │        Deep Learning                  │   │   │
-│  │  │  ┌────────────────────────────────┐   │   │   │
-│  │  │  │   AI Generativa (LLM, immagini)│   │   │   │
-│  │  │  └────────────────────────────────┘   │   │   │
-│  │  └───────────────────────────────────────┘   │   │
-│  └──────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────┘
-      </div>
-      <ul style="font-size:0.8em; margin-top:0.5em">
+      <img src="public/images/panoramica_ai.png" alt="AI, ML, Deep Learning, AI Generativa" style="width:50%; height:auto; border-radius:var(--border-radius);">
+      <ul style="font-size:0.8em; margin-top:2em;">
         <li><strong>AI</strong> — sistemi che eseguono compiti tipicamente umani</li>
         <li><strong>ML</strong> — apprende da dati, senza regole scritte a mano</li>
         <li><strong>Deep Learning</strong> — ML con reti neurali profonde</li>
@@ -1804,7 +1801,7 @@ html, body {
       <h2>Cosa l'AI non è</h2>
     </div>
     <div class="slide-body layout-table">
-      <table class="table-keyed" style="font-size:0.8em">
+      <table class="table-keyed table-compact">
         <tr>
           <th>Mito</th>
           <th>Realtà</th>
@@ -1955,7 +1952,7 @@ Output: "il" → "Grand" → "Hotel" → "Palatino" → ...
         <li>Il costo API si misura in token (input + output)</li>
         <li>Parole rare o tecniche → più token → più costose</li>
       </ul>
-      <p class="text-small text-muted">Strumento interattivo: platform.openai.com/tokenizer</p>
+      <p class="text-small text-muted">Strumento interattivo: <a href="https://platform.openai.com/tokenizer" target="_blank" rel="noopener">platform.openai.com/tokenizer</a></p>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Digitiamo">
@@ -1985,7 +1982,7 @@ Input tokens
      ↓
 Token con prob. più alta → testo generato
       </div>
-      <div class="callout">
+      <div class="callout" style="margin-top:2em">
         Il meccanismo di <strong>self-attention</strong> permette al modello di capire il contesto: "banco" in "conto in banca" vs "banco di scuola".
       </div>
     </div>
@@ -2067,7 +2064,7 @@ Modello allineato (utile, sicuro, onesto)
       <h2>Parametri di generazione</h2>
     </div>
     <div class="slide-body layout-table">
-      <table class="table-keyed">
+      <table class="table-keyed table-compact">
         <tr>
           <th>Parametro</th>
           <th>Effetto</th>
@@ -2142,11 +2139,11 @@ Modello allineato (utile, sicuro, onesto)
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Sez. 2 · LLM</span>
-      <h2>Modelli proprietari vs open-source</h2>
+      <h2>Closed vs open source models</h2>
     </div>
     <div class="slide-body layout-two-col">
       <div>
-        <h3>Proprietari (API)</h3>
+        <h3>Proprietari (third party APIs)</h3>
         <ul>
           <li>Nessuna infrastruttura da gestire</li>
           <li>Aggiornamenti automatici</li>
@@ -2183,8 +2180,7 @@ Modello allineato (utile, sicuro, onesto)
     </div>
     <div class="slide-body layout-two-col">
       <div>
-        <h3>Consumer grade interfaces</h3>
-        <p class="text-small">(ChatGPT, Claude.ai, Gemini)</p>
+        <h3>Consumer grade interfaces <span class="text-small">(ChatGPT, Claude.ai, Gemini)</span></h3>
         <ul>
           <li>Uso manuale, sessione per sessione</li>
           <li>Nessuna integrazione con sistemi aziendali</li>
@@ -2193,8 +2189,7 @@ Modello allineato (utile, sicuro, onesto)
         </ul>
       </div>
       <div>
-        <h3>API</h3>
-        <p class="text-small">(OpenAI API, Claude API, etc.)</p>
+        <h3>API <span class="text-small">(OpenAI API, Claude API, etc.)</span></h3>
         <ul>
           <li>Integrabile in app, CRM, PMS, sito web</li>
           <li>Automatizzabile e scalabile</li>
@@ -2219,7 +2214,7 @@ Modello allineato (utile, sicuro, onesto)
       <ul>
         <li><strong>Qualità del task</strong> — modelli top solo se il task è critico (es. risposta a ospiti VIP)</li>
         <li><strong>Costo per chiamata</strong> — verifica il pricing: input e output token hanno prezzi diversi</li>
-        <li><strong>Latenza</strong> — chatbot real-time richiede modelli veloci (es. GPT-4o mini, Claude Haiku)</li>
+        <li><strong>Latenza</strong> — chatbot real-time richiede modelli veloci (es. GPT-5 mini, Claude Haiku)</li>
         <li><strong>Lingua italiana</strong> — testa esplicitamente: non tutti i modelli performano uguale in italiano</li>
         <li><strong>Conformità dati</strong> — verifica DPA, data residency (EU), termini di utilizzo</li>
       </ul>
@@ -2323,7 +2318,7 @@ Modello allineato (utile, sicuro, onesto)
       <span class="slide-section-label">Sez. 3 · Context Window</span>
       <h2>Gestire il contesto in applicazioni reali</h2>
     </div>
-    <div class="slide-body layout-two-col">
+    <div class="slide-body" style="display:grid; grid-template-columns:1.4fr 1fr; gap:var(--gap-lg); align-content:center;">
       <div>
         <h3>Strategie software</h3>
         <ul>
@@ -2332,15 +2327,86 @@ Modello allineato (utile, sicuro, onesto)
           <li><strong>RAG</strong> — recupera solo i pezzi rilevanti (→ sezione 5)</li>
           <li><strong>Estrazione entità</strong> — salva in DB i fatti importanti</li>
         </ul>
-      </div>
-      <div>
-        <h3>Implicazioni di costo</h3>
+        <h3 style="margin-top:0.8em">Implicazioni di costo</h3>
         <ul>
           <li>Token di input si pagano ad ogni chiamata</li>
           <li>Conversazione lunga = costo crescente</li>
           <li>Tenere il system prompt corto conta</li>
           <li>Modelli con caching (Claude) riducono i costi</li>
         </ul>
+      </div>
+
+      <!-- Chat mock -->
+      <div style="display:flex; flex-direction:column; font-size:0.56em; background:#f8f9fb; border-radius:12px; overflow:hidden; border:1px solid var(--border-color); box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+        <!-- Header -->
+        <div style="display:flex; align-items:center; gap:0.5em; background:var(--accent-color); color:#fff; padding:0.55em 0.9em; flex-shrink:0;">
+          <div style="width:1.8em; height:1.8em; background:rgba(255,255,255,0.25); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1em; flex-shrink:0;">🏨</div>
+          <div>
+            <div style="font-weight:700; line-height:1.2;">Assistente Hotel Bellavista</div>
+            <div style="font-size:0.75em; color:#4ade80;">● online</div>
+          </div>
+        </div>
+
+        <!-- Messages -->
+        <div style="display:flex; flex-direction:column; gap:0.14em; padding:0.6em 0.65em; flex:1; overflow:hidden;">
+
+          <!-- Out-of-context messages — faded -->
+          <div style="opacity:0.35; display:flex; flex-direction:column; gap:0.14em;">
+            <div style="align-self:flex-end; background:var(--accent-color); color:#fff; padding:0.28em 0.6em; border-radius:10px 10px 2px 10px; max-width:82%; line-height:1.35;">
+              Ho prenotato camera doppia, 14–17 marzo.
+            </div>
+            <div style="align-self:flex-start; background:#fff; border:1px solid #e2e8f0; padding:0.28em 0.6em; border-radius:10px 10px 10px 2px; max-width:88%; box-shadow:0 1px 3px rgba(0,0,0,0.06); line-height:1.35;">
+              Trovata! Camera doppia vista giardino. Come posso aiutarla?
+            </div>
+            <div style="align-self:flex-end; background:var(--accent-color); color:#fff; padding:0.28em 0.6em; border-radius:10px 10px 2px 10px; max-width:82%; line-height:1.35;">
+              Posso avere un cuscino extra?
+            </div>
+            <div style="align-self:flex-start; background:#fff; border:1px solid #e2e8f0; padding:0.28em 0.6em; border-radius:10px 10px 10px 2px; max-width:88%; box-shadow:0 1px 3px rgba(0,0,0,0.06); line-height:1.35;">
+              Certo, ho annotato la richiesta.
+            </div>
+            <div style="align-self:flex-end; background:var(--accent-color); color:#fff; padding:0.28em 0.6em; border-radius:10px 10px 2px 10px; max-width:82%; line-height:1.35;">
+              A che ora è la colazione?
+            </div>
+            <div style="align-self:flex-start; background:#fff; border:1px solid #e2e8f0; padding:0.28em 0.6em; border-radius:10px 10px 10px 2px; max-width:88%; box-shadow:0 1px 3px rgba(0,0,0,0.06); line-height:1.35;">
+              Buffet 7:00–10:30, incluso nella sua tariffa.
+            </div>
+          </div>
+
+          <!-- Context window box -->
+          <div style="position:relative; border:2px solid #f59e0b; border-radius:8px; padding:0.45em 0.5em 0.45em 0.5em; margin-top:0.3em; background:rgba(245,158,11,0.07); display:flex; flex-direction:column; gap:0.14em;">
+            <!-- Label -->
+            <div style="position:absolute; top:-0.75em; left:50%; transform:translateX(-50%); background:#f59e0b; color:#fff; font-size:0.75em; font-weight:700; padding:0.1em 0.5em; border-radius:6px; white-space:nowrap; letter-spacing:0.03em;">
+              ↕ context window
+            </div>
+
+            <div style="align-self:flex-end; background:var(--accent-color); color:#fff; padding:0.28em 0.6em; border-radius:10px 10px 2px 10px; max-width:82%; line-height:1.35;">
+              E il parcheggio? Ho l'auto.
+            </div>
+            <div style="align-self:flex-start; background:#fff; border:1px solid #e2e8f0; padding:0.28em 0.6em; border-radius:10px 10px 10px 2px; max-width:88%; box-shadow:0 1px 3px rgba(0,0,0,0.06); line-height:1.35;">
+              Scoperto gratuito. Garage coperto €15/notte — lo prenoto?
+            </div>
+            <div style="align-self:flex-end; background:var(--accent-color); color:#fff; padding:0.28em 0.6em; border-radius:10px 10px 2px 10px; max-width:82%; line-height:1.35;">
+              Sì grazie. Posso fare late check-out il 17?
+            </div>
+            <div style="align-self:flex-start; background:#fff; border:1px solid #e2e8f0; padding:0.28em 0.6em; border-radius:10px 10px 10px 2px; max-width:88%; box-shadow:0 1px 3px rgba(0,0,0,0.06); line-height:1.35;">
+              Garage aggiunto. Verifico disponibilità late check-out e la ricontatto stasera.
+            </div>
+            <div style="align-self:flex-end; background:var(--accent-color); color:#fff; padding:0.28em 0.6em; border-radius:10px 10px 2px 10px; max-width:82%; line-height:1.35;">
+              Perfetto. Avete una spa?
+            </div>
+            <div style="align-self:flex-start; background:#fff; border:1px solid #e2e8f0; padding:0.28em 0.6em; border-radius:10px 10px 10px 2px; max-width:88%; box-shadow:0 1px 3px rgba(0,0,0,0.06); line-height:1.35;">
+              Sì, spa al 2° piano aperta 9:00–21:00. Trattamenti su prenotazione, gratuiti per gli ospiti.
+            </div>
+          </div>
+        </div>
+
+        <!-- Input bar -->
+        <div style="display:flex; align-items:center; gap:0.4em; padding:0.45em 0.65em; background:#fff; border-top:1px solid #e2e8f0; flex-shrink:0;">
+          <div style="flex:1; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:20px; padding:0.32em 0.8em; color:#94a3b8; font-size:0.95em;">
+            Scrivi un messaggio…
+          </div>
+          <div style="width:1.7em; height:1.7em; background:var(--accent-color); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.85em; flex-shrink:0; box-shadow:0 2px 6px rgba(99,102,241,0.4);">➤</div>
+        </div>
       </div>
     </div>
     <div class="slide-footer">
@@ -2356,7 +2422,7 @@ Modello allineato (utile, sicuro, onesto)
       <h2>Context window nel turismo</h2>
     </div>
     <div class="slide-body layout-table">
-      <table class="table-keyed">
+      <table class="table-keyed table-compact">
         <tr>
           <th>Scenario</th>
           <th>Token stimati</th>
@@ -2467,7 +2533,7 @@ Zero-shot          Few-shot          Fine-tuning
 Nessun dato     Pochi esempi       Dataset necessario
 Immediato       nel prompt         Tempo + costo
       </div>
-      <div class="callout">
+      <div class="callout" style="margin-top:2em;">
         Per la maggior parte dei casi d'uso turistici, prompting e few-shot sono sufficienti. Fine-tuning solo quando hai un problema concreto che non si risolve altrimenti.
       </div>
     </div>
@@ -2484,7 +2550,7 @@ Immediato       nel prompt         Tempo + costo
       <h2>Tipi di addestramento a confronto</h2>
     </div>
     <div class="slide-body layout-table">
-      <table class="table-keyed">
+      <table class="table-keyed table-compact">
         <tr>
           <th>Fase</th>
           <th>Dati</th>
@@ -2544,7 +2610,7 @@ Immediato       nel prompt         Tempo + costo
         <ul>
           <li>Aggiunge piccoli adattatori al modello base</li>
           <li>Addestra solo una frazione dei parametri (&lt;1%)</li>
-          <li>GPU consumer sufficienti</li>
+          <li>GPU consumer grade sufficienti</li>
           <li>Il modello base rimane intatto</li>
           <li>Tecnica dominante oggi per fine-tuning locale</li>
         </ul>
@@ -2657,7 +2723,7 @@ check-out tardivo?"</code></pre>
       <h2>Fine-tuning vs prompting: la scelta</h2>
     </div>
     <div class="slide-body layout-table">
-      <table class="table-keyed">
+      <table class="table-keyed table-compact">
         <tr>
           <th>Criterio</th>
           <th>Usa prompting</th>
@@ -2764,24 +2830,39 @@ check-out tardivo?"</code></pre>
     </div>
   </section>
 
-  <!-- 5.2 — Architettura RAG -->
+  <!-- 5.2a — Architettura RAG -->
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Sez. 5 · RAG</span>
-      <h2>Architettura RAG</h2>
+      <h2>Architettura RAG - Concetto di base</h2>
+    </div>
+    <div class="slide-body layout-list" style="align-items:center;">
+      <img src="public/images/rag_architecture.png" alt="Architettura RAG" style="width:100%; height:auto; border-radius:var(--border-radius);">
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 5.2b — Architettura RAG -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 5 · RAG</span>
+      <h2>Architettura RAG - Diagramma di un'applicazione</h2>
     </div>
     <div class="slide-body layout-diagram">
       <div class="diagram">
 [Documenti aziendali] ──→ [Chunking] ──→ [Embedding] ──→ [Vector DB]
-                                                               │
-                                                               │ (indicizzazione, una volta)
-                                                               │
-Domanda utente ──→ [Embedding domanda] ──→ [Ricerca similarità]
-                                               │
-                              Top-K chunk rilevanti
-                                               │
-                                               ▼
-                    [Prompt = domanda + chunk rilevanti] ──→ [LLM] ──→ Risposta
+                                                           │
+                                                           │ (indicizzazione, una volta)
+                                                           │
+Domanda utente  ──→  [Embedding domanda]  ──→  [Ricerca similarità]
+                                                     │
+                                    Top-K chunk rilevanti
+                                                     │
+                                                     ▼
+                          [Prompt = domanda + chunk rilevanti] ──→ [LLM] ──→ Risposta
       </div>
     </div>
     <div class="slide-footer">
@@ -2815,6 +2896,36 @@ Domanda utente ──→ [Embedding domanda] ──→ [Ricerca similarità]
     </div>
   </section>
 
+  <!-- 5.3b — Embedding: spazio vettoriale -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 5 · RAG</span>
+      <h2>Embedding: lo spazio vettoriale</h2>
+    </div>
+    <div class="slide-body layout-list" style="align-items:center;">
+      <img src="public/images/embeddings_representation_1.png" alt="Rappresentazione spazio vettoriale degli embedding" style="height:100%; width:auto; max-width:100%; border-radius:var(--border-radius);">
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 5.3c — Embedding: word vectors -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 5 · RAG</span>
+      <h2>Embedding: vettori di parole</h2>
+    </div>
+    <div class="slide-body layout-list" style="align-items:center;">
+      <img src="public/images/embeddings_representation_2.png" alt="Rappresentazione vettori di parole e riduzione dimensionale" style="height:100%; width:auto; max-width:100%; border-radius:var(--border-radius);">
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
   <!-- 5.4 — Vector database -->
   <section class="slide">
     <div class="slide-header">
@@ -2831,13 +2942,18 @@ WHERE testo LIKE '%check-out%'</code></pre>
       </div>
       <div>
         <h3>Vector database</h3>
-        <p class="text-small">Cerca per significato</p>
-        <pre><code>query = embed("a che ora devo
-              lasciare la stanza?")
+        <p class="text-small">Cerca per significato semantico</p>
+        <pre><code>query = embed("a che ora devo lasciare la stanza?")
 results = db.search(query, top_k=3)</code></pre>
         <p class="text-small text-muted">Trova check-out, partenza, late check-out…</p>
       </div>
-      <p class="text-muted text-small">Soluzioni comuni: Pinecone, Weaviate, Chroma, pgvector (PostgreSQL), Qdrant</p>
+      <p class="text-muted text-small">Soluzioni comuni per database vettoriali:
+        <a href="https://www.pinecone.io/" target="_blank" rel="noopener">Pinecone</a>,
+        <a href="https://weaviate.io/" target="_blank" rel="noopener">Weaviate</a>,
+        <a href="https://www.trychroma.com/" target="_blank" rel="noopener">Chroma</a>,
+        <a href="https://github.com/pgvector/pgvector" target="_blank" rel="noopener">pgvector (PostgreSQL)</a>,
+        <a href="https://qdrant.tech/" target="_blank" rel="noopener">Qdrant</a>
+      </p>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Digitiamo">
@@ -2915,7 +3031,7 @@ results = db.search(query, top_k=3)</code></pre>
       <h2>RAG vs fine-tuning: tabella comparativa</h2>
     </div>
     <div class="slide-body layout-table">
-      <table class="table-keyed">
+      <table class="table-keyed table-compact">
         <tr>
           <th>Aspetto</th>
           <th>RAG</th>
@@ -3020,22 +3136,59 @@ results = db.search(query, top_k=3)</code></pre>
       <span class="slide-section-label">Sez. 6 · Agenti AI</span>
       <h2>La differenza: LLM, Assistente, Agente</h2>
     </div>
-    <div class="slide-body layout-diagram">
-      <div class="diagram">
-LLM puro           Assistente          Agente
-    │                   │                  │
-    ▼                   ▼                  ▼
- Predice il         Risponde a         Pianifica task,
- prossimo token     domande in         usa strumenti,
-                    linguaggio         esegue azioni,
-                    naturale           osserva risultati,
-                                       itera fino al
-                                       completamento
-    │                   │                  │
- Input → Output     Input → Output     Goal → Piano
-                                       → Azioni → Goal
+    <div class="slide-body layout-three-col">
+
+      <!-- LLM puro -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0.6em;">
+        <div style="width:3em; height:3em; border-radius:50%; background:#e2e8f0; display:flex; align-items:center; justify-content:center; font-size:1.5em;">🧠</div>
+        <div style="font-weight:700; font-size:0.9em; color:#64748b; text-transform:uppercase; letter-spacing:0.06em;">LLM puro</div>
+        <div style="background:#f1f5f9; border:1px solid #e2e8f0; border-radius:var(--border-radius); padding:0.7em 0.9em; width:100%; box-sizing:border-box; font-size:0.78em; line-height:1.6; color:var(--text-color);">
+          <ul style="list-style:none; padding:0; margin:0;">
+            <li>Predice il prossimo token</li>
+            <li>Nessuna memoria</li>
+            <li>Nessun tool</li>
+          </ul>
+        </div>
+        <div style="font-size:0.72em; background:#e2e8f0; border-radius:6px; padding:0.3em 0.7em; color:#475569; font-family:monospace;">
+          Input → Output
+        </div>
       </div>
-      <p class="text-muted text-small">Un agente usa un LLM come "motore di ragionamento" ma ha autonomia operativa.</p>
+
+      <!-- Assistente -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0.6em;">
+        <div style="width:3em; height:3em; border-radius:50%; background:#dbeafe; display:flex; align-items:center; justify-content:center; font-size:1.5em;">💬</div>
+        <div style="font-weight:700; font-size:0.9em; color:#3b82f6; text-transform:uppercase; letter-spacing:0.06em;">Assistente</div>
+        <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:var(--border-radius); padding:0.7em 0.9em; width:100%; box-sizing:border-box; font-size:0.78em; line-height:1.6; color:var(--text-color);">
+          <ul style="list-style:none; padding:0; margin:0;">
+            <li>Risponde in linguaggio naturale</li>
+            <li>Mantiene il contesto</li>
+            <li>Segue istruzioni di sistema</li>
+          </ul>
+        </div>
+        <div style="font-size:0.72em; background:#dbeafe; border-radius:6px; padding:0.3em 0.7em; color:#1d4ed8; font-family:monospace;">
+          Input → Output
+        </div>
+      </div>
+
+      <!-- Agente -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0.6em;">
+        <div style="width:3em; height:3em; border-radius:50%; background:#ede9fe; display:flex; align-items:center; justify-content:center; font-size:1.5em;">🤖</div>
+        <div style="font-weight:700; font-size:0.9em; color:var(--accent-color); text-transform:uppercase; letter-spacing:0.06em;">Agente</div>
+        <div style="background:#f5f3ff; border:1px solid #c4b5fd; border-radius:var(--border-radius); padding:0.7em 0.9em; width:100%; box-sizing:border-box; font-size:0.78em; line-height:1.6; color:var(--text-color);">
+          <ul style="list-style:none; padding:0; margin:0;">
+            <li>Pianifica task complessi</li>
+            <li>Usa strumenti ed esegue azioni</li>
+            <li>Osserva risultati e itera</li>
+          </ul>
+        </div>
+        <div style="font-size:0.72em; background:#ede9fe; border-radius:6px; padding:0.3em 0.7em; color:#6d28d9; font-family:monospace;">
+          Goal → Piano → Azioni → Goal
+        </div>
+      </div>
+
+      <div class="callout" style="grid-column:1/-1;">
+        Un agente usa un LLM come motore di ragionamento, ma ha autonomia operativa.
+      </div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Digitiamo">
@@ -3110,23 +3263,68 @@ Goal: "Trova il volo più economico Roma-Tokyo per luglio
       <span class="slide-section-label">Sez. 6 · Agenti AI</span>
       <h2>Multi-agent systems</h2>
     </div>
-    <div class="slide-body layout-diagram">
-      <div class="diagram">
-                    [Orchestratore]
-                         │
-            ┌────────────┼────────────┐
-            │            │            │
-     [Agente Ricerca] [Agente     [Agente
-      voli/hotel       Itinerari]  Preventivi]
-            │            │            │
-       [API voli]  [LLM + RAG]  [PMS + CRM]
+    <div class="slide-body layout-two-col" style="align-items:center;">
+
+      <!-- Diagram -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0.5em; font-size:0.72em;">
+
+        <!-- User goal -->
+        <div style="background:#f1f5f9; border:1px solid #e2e8f0; border-radius:8px; padding:0.4em 1.2em; font-style:italic; color:#475569;">
+          👤 "Organizza un weekend a Firenze per 2 persone, budget €400"
+        </div>
+
+        <!-- Arrow down -->
+        <div style="color:#94a3b8; font-size:1.1em; line-height:1;">↓</div>
+
+        <!-- Orchestrator -->
+        <div style="background:var(--accent-color); color:#fff; border-radius:10px; padding:0.45em 1.4em; font-weight:700; letter-spacing:0.04em; box-shadow:0 3px 10px rgba(99,102,241,0.35);">
+          🎯 Orchestratore
+        </div>
+
+        <!-- Branching arrows -->
+        <div style="display:flex; align-items:flex-start; gap:0.5em; width:100%;">
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:0.3em;">
+            <div style="color:#94a3b8;">↓</div>
+            <div style="background:#dbeafe; border:1.5px solid #93c5fd; border-radius:8px; padding:0.4em 0.5em; width:100%; box-sizing:border-box; text-align:center; font-weight:600; color:#1d4ed8;">✈️ Agente Voli</div>
+            <div style="background:#f8faff; border:1px solid #e2e8f0; border-radius:6px; padding:0.3em 0.5em; width:100%; box-sizing:border-box; text-align:center; color:#64748b; font-size:0.9em;">API Skyscanner</div>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:0.3em;">
+            <div style="color:#94a3b8;">↓</div>
+            <div style="background:#dcfce7; border:1.5px solid #86efac; border-radius:8px; padding:0.4em 0.5em; width:100%; box-sizing:border-box; text-align:center; font-weight:600; color:#15803d;">🏨 Agente Hotel</div>
+            <div style="background:#f8faff; border:1px solid #e2e8f0; border-radius:6px; padding:0.3em 0.5em; width:100%; box-sizing:border-box; text-align:center; color:#64748b; font-size:0.9em;">PMS + Booking API</div>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:0.3em;">
+            <div style="color:#94a3b8;">↓</div>
+            <div style="background:#fef9c3; border:1.5px solid #fde047; border-radius:8px; padding:0.4em 0.5em; width:100%; box-sizing:border-box; text-align:center; font-weight:600; color:#854d0e;">🗺️ Agente Itinerari</div>
+            <div style="background:#f8faff; border:1px solid #e2e8f0; border-radius:6px; padding:0.3em 0.5em; width:100%; box-sizing:border-box; text-align:center; color:#64748b; font-size:0.9em;">LLM + RAG locale</div>
+          </div>
+        </div>
+
+        <!-- Arrows up + result -->
+        <div style="color:#94a3b8; font-size:2.2em; line-height:1;">↓</div>
+        <div style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:8px; padding:0.4em 1.2em; color:#15803d; font-weight:600; text-align:center;">
+          ✅ Piano completo: volo + hotel + itinerario in budget
+        </div>
       </div>
-      <ul>
-        <li>Ogni agente specializzato su un sottocompito</li>
-        <li>L'orchestratore coordina e consolida i risultati</li>
-        <li>Parallelizzazione: più agenti lavorano in simultanea</li>
-        <li>Framework: LangGraph, CrewAI, AutoGen, Claude MCP</li>
-      </ul>
+
+      <!-- Concepts -->
+      <div>
+        <h3>Concetti chiave</h3>
+        <ul>
+          <li><strong>Specializzazione</strong> — ogni agente ha un dominio preciso e tool dedicati</li>
+          <li><strong>Orchestrazione</strong> — l'orchestratore assegna task, raccoglie risultati e risolve conflitti</li>
+          <li><strong>Parallelismo</strong> — più agenti lavorano in simultanea, riducendo la latenza</li>
+          <li><strong>Composabilità</strong> — i sotto-agenti sono riutilizzabili in altri workflow</li>
+        </ul>
+        <h3 style="margin-top:0.8em">Framework</h3>
+        <ul>
+          <li><strong>LangGraph</strong> — grafi di agenti con stato esplicito</li>
+          <li><strong>CrewAI</strong> — agenti con ruoli e obiettivi in linguaggio naturale</li>
+          <li><strong>AutoGen</strong> — conversazioni multi-agente (Microsoft)</li>
+          <li><strong>Claude MCP</strong> — protocollo standard per tool e agenti</li>
+        </ul>
+      </div>
+
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Digitiamo">
@@ -3142,19 +3340,31 @@ Goal: "Trova il volo più economico Roma-Tokyo per luglio
     </div>
     <div class="slide-body layout-three-col">
       <div class="card">
-        <h4>Prenotazione automatica</h4>
-        <p class="text-small">Riceve richiesta, verifica disponibilità PMS, applica politiche tariffarie, genera conferma, invia email</p>
+        <h4>🏨 Prenotazione automatica</h4>
+        <p class="text-small">Riceve richiesta, verifica disponibilità PMS, applica politiche tariffarie, genera conferma e invia email al cliente</p>
       </div>
       <div class="card">
-        <h4>Ricerca prezzi concorrenti</h4>
-        <p class="text-small">Scansiona OTA ogni ora, confronta con proprie tariffe, suggerisce aggiustamenti revenue manager</p>
+        <h4>💰 Ottimizzazione revenue</h4>
+        <p class="text-small">Analizza storico, eventi locali e competitor → propone automaticamente il piano tariffario settimanale al revenue manager</p>
       </div>
       <div class="card">
-        <h4>Ottimizzazione revenue</h4>
-        <p class="text-small">Analizza storico, previsioni eventi, competitor → propone piano tariffario settimanale</p>
+        <h4>🔍 Monitoraggio competitor</h4>
+        <p class="text-small">Scansiona OTA ogni ora, confronta tariffe con le proprie, notifica il team se il gap supera una soglia definita</p>
       </div>
-      <div class="warning">
-        Gli agenti in produzione richiedono supervisione umana su decisioni ad alto impatto (es. modifiche tariffarie > X%).
+      <div class="card">
+        <h4>⭐ Gestione recensioni</h4>
+        <p class="text-small">Monitora TripAdvisor, Google, Booking in tempo reale, bozza risposte personalizzate e le invia dopo approvazione umana</p>
+      </div>
+      <div class="card">
+        <h4>🗺️ Assistente viaggiatore</h4>
+        <p class="text-small">Pianifica itinerari su misura, prenota ristoranti e attività, risponde a domande pre e post soggiorno in linguaggio naturale</p>
+      </div>
+      <div class="card">
+        <h4>📊 Report operativi</h4>
+        <p class="text-small">Aggrega dati da PMS, CRM e canali OTA ogni mattina → genera report KPI con anomalie evidenziate e pronto per il briefing</p>
+      </div>
+      <div class="warning" style="grid-column:1/-1;">
+        Gli agenti in produzione richiedono supervisione umana su decisioni ad alto impatto (es. modifiche tariffarie, risposte pubbliche, invio comunicazioni).
       </div>
     </div>
     <div class="slide-footer">
@@ -3194,7 +3404,7 @@ Goal: "Trova il volo più economico Roma-Tokyo per luglio
       <h2>Quando gli agenti sono affidabili oggi?</h2>
     </div>
     <div class="slide-body layout-table">
-      <table class="table-keyed">
+      <table class="table-keyed table-compact">
         <tr>
           <th>Scenario</th>
           <th>Affidabilità</th>
@@ -3339,7 +3549,7 @@ Utente: "Qual è la disponibilità del suite del 15 agosto?"
       <h2>Esempi di tool nel turismo</h2>
     </div>
     <div class="slide-body layout-table">
-      <table class="table-keyed">
+      <table class="table-keyed table-compact">
         <tr>
           <th>Tool</th>
           <th>Azione</th>
@@ -3371,6 +3581,105 @@ Utente: "Qual è la disponibilità del suite del 15 agosto?"
           <td>Revenue management system</td>
         </tr>
       </table>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 7.3b — Architettura multi-agente: diagramma -->
+  <section class="slide">
+    <div class="slide-header" style="padding-bottom:0.2em;">
+      <span class="slide-section-label">Sez. 7 · Tools</span>
+      <h2>Architettura multi-agente</h2>
+    </div>
+    <div class="slide-body" style="display:flex; flex-direction:column; justify-content:center; gap:0.4em; font-size:0.72em; padding-top:0.2em; padding-bottom:0.2em;">
+
+      <!-- User request -->
+      <div style="display:flex; justify-content:center;">
+        <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:0.35em 1.8em; color:#334155; font-style:italic; font-size:1.05em;">
+          👤 &nbsp;"Prenota una camera doppia per sabato, cena inclusa, ospite celiaco — mandagli conferma"
+        </div>
+      </div>
+
+      <!-- Down to orchestrator -->
+      <div style="text-align:center; color:#6366f1; line-height:1; font-size:1.1em;">▼</div>
+
+      <!-- Orchestrator -->
+      <div style="display:flex; justify-content:center;">
+        <div style="background:var(--accent-color); color:#fff; border-radius:12px; padding:0.45em 3em; font-weight:700; font-size:1.1em; box-shadow:0 4px 18px rgba(99,102,241,0.4);">
+          🧠 &nbsp;Orchestratore
+        </div>
+      </div>
+
+      <!-- Horizontal bus + arrows to 4 agents -->
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0.8em; position:relative;">
+        <div style="position:absolute; top:0; left:12.5%; right:12.5%; height:2px; background:#6366f1;"></div>
+        <div style="text-align:center; color:#6366f1; line-height:1.6; font-size:1.05em;">▼</div>
+        <div style="text-align:center; color:#6366f1; line-height:1.6; font-size:1.05em;">▼</div>
+        <div style="text-align:center; color:#6366f1; line-height:1.6; font-size:1.05em;">▼</div>
+        <div style="text-align:center; color:#6366f1; line-height:1.6; font-size:1.05em;">▼</div>
+      </div>
+
+      <!-- 4 Sub-agents with tools -->
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0.8em;">
+
+        <!-- Agent 1: Disponibilità -->
+        <div style="display:flex; flex-direction:column; gap:0.28em;">
+          <div style="background:#dbeafe; border:2px solid #3b82f6; border-radius:10px; padding:0.38em 0.5em; text-align:center; font-weight:700; color:#1d4ed8; font-size:1.0em;">
+            🛏️ &nbsp;Disponibilità
+          </div>
+          <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#1e40af; font-size:0.88em;">verifica_camere</div>
+          <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#1e40af; font-size:0.88em;">crea_prenotazione</div>
+          <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#1e40af; font-size:0.88em;">aggiorna_calendario</div>
+          <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#1e40af; font-size:0.88em;">calcola_tariffa</div>
+          <div style="text-align:center; color:#3b82f6; line-height:1.3; font-size:0.9em;">▼</div>
+          <div style="background:#1e3a5f; color:#93c5fd; border-radius:6px; padding:0.18em 0.4em; text-align:center; font-size:0.8em; letter-spacing:0.03em;">PMS · Booking.com · Airbnb</div>
+        </div>
+
+        <!-- Agent 2: Ristorazione -->
+        <div style="display:flex; flex-direction:column; gap:0.28em;">
+          <div style="background:#dcfce7; border:2px solid #22c55e; border-radius:10px; padding:0.38em 0.5em; text-align:center; font-weight:700; color:#15803d; font-size:1.0em;">
+            🍽️ &nbsp;Ristorazione
+          </div>
+          <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#166534; font-size:0.88em;">verifica_tavoli</div>
+          <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#166534; font-size:0.88em;">prenota_tavolo</div>
+          <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#166534; font-size:0.88em;">registra_allergie</div>
+          <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#166534; font-size:0.88em;">avvisa_cucina</div>
+          <div style="text-align:center; color:#22c55e; line-height:1.3; font-size:0.9em;">▼</div>
+          <div style="background:#14532d; color:#86efac; border-radius:6px; padding:0.18em 0.4em; text-align:center; font-size:0.8em; letter-spacing:0.03em;">Gestionale · TheFork</div>
+        </div>
+
+        <!-- Agent 3: Ospitalità -->
+        <div style="display:flex; flex-direction:column; gap:0.28em;">
+          <div style="background:#fef9c3; border:2px solid #eab308; border-radius:10px; padding:0.38em 0.5em; text-align:center; font-weight:700; color:#854d0e; font-size:1.0em;">
+            🗺️ &nbsp;Ospitalità
+          </div>
+          <div style="background:#fefce8; border:1px solid #fde047; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#713f12; font-size:0.88em;">cerca_meteo</div>
+          <div style="background:#fefce8; border:1px solid #fde047; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#713f12; font-size:0.88em;">eventi_locali</div>
+          <div style="background:#fefce8; border:1px solid #fde047; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#713f12; font-size:0.88em;">suggerisci_attività</div>
+          <div style="background:#fefce8; border:1px solid #fde047; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#713f12; font-size:0.88em;">RAG_guida_locale</div>
+          <div style="text-align:center; color:#eab308; line-height:1.3; font-size:0.9em;">▼</div>
+          <div style="background:#422006; color:#fde047; border-radius:6px; padding:0.18em 0.4em; text-align:center; font-size:0.8em; letter-spacing:0.03em;">Maps · OpenWeather · FAQ</div>
+        </div>
+
+        <!-- Agent 4: Comunicazione -->
+        <div style="display:flex; flex-direction:column; gap:0.28em;">
+          <div style="background:#fce7f3; border:2px solid #ec4899; border-radius:10px; padding:0.38em 0.5em; text-align:center; font-weight:700; color:#9d174d; font-size:1.0em;">
+            📬 &nbsp;Comunicazione
+          </div>
+          <div style="background:#fdf2f8; border:1px solid #f9a8d4; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#831843; font-size:0.88em;">invia_conferma</div>
+          <div style="background:#fdf2f8; border:1px solid #f9a8d4; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#831843; font-size:0.88em;">invia_reminder</div>
+          <div style="background:#fdf2f8; border:1px solid #f9a8d4; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#831843; font-size:0.88em;">aggiorna_CRM</div>
+          <div style="background:#fdf2f8; border:1px solid #f9a8d4; border-radius:6px; padding:0.22em 0.4em; text-align:center; font-family:monospace; color:#831843; font-size:0.88em;">chiedi_recensione</div>
+          <div style="text-align:center; color:#ec4899; line-height:1.3; font-size:0.9em;">▼</div>
+          <div style="background:#500724; color:#f9a8d4; border-radius:6px; padding:0.18em 0.4em; text-align:center; font-size:0.8em; letter-spacing:0.03em;">Email · WhatsApp · CRM</div>
+        </div>
+
+      </div>
+
+
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Digitiamo">
@@ -3631,10 +3940,10 @@ write_blog(content_list)</code></pre>
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Sez. 7b · Strumenti AI</span>
-      <h2>Il panorama degli strumenti consumer</h2>
+      <h2>Il panorama degli strumenti grade</h2>
     </div>
     <div class="slide-body layout-table">
-      <table class="table-keyed">
+      <table class="table-keyed table-compact">
         <tr>
           <th>Strumento</th>
           <th>Azienda</th>
@@ -3701,7 +4010,7 @@ write_blog(content_list)</code></pre>
       <div>
         <div class="callout">
           <strong>Prima attività:</strong><br><br>
-          Vai su <strong>chatgpt.com</strong> → incolla una recensione negativa recente → scrivi:<br><br>
+          Vai su <a href="https://chatgpt.com/" target="_blank" rel="noopener"><strong>chatgpt.com</strong></a> → incolla una recensione negativa recente → scrivi:<br><br>
           <em>"Rispondi in tono professionale e comprensivo, max 100 parole, in italiano."</em>
         </div>
         <div class="warning" style="margin-top:0.8em">
@@ -3740,7 +4049,7 @@ write_blog(content_list)</code></pre>
       <div>
         <div class="callout">
           <strong>Prima attività:</strong><br><br>
-          Vai su <strong>claude.ai</strong> → carica il PDF della tua policy di cancellazione → scrivi:<br><br>
+          Vai su <a href="https://claude.ai/" target="_blank" rel="noopener"><strong>claude.ai</strong></a> → carica il PDF della tua policy di cancellazione → scrivi:<br><br>
           <em>"Se un ospite cancella 8 giorni prima, ha diritto a rimborso? Rispondi in modo chiaro e sintetico."</em>
         </div>
         <p class="text-small text-muted" style="margin-top:0.8em">La funzione <strong>Progetti</strong> (piano Pro) salva contesto fisso — policy, tono, istruzioni — senza doverlo riscrivere ad ogni conversazione.</p>
@@ -3777,7 +4086,7 @@ write_blog(content_list)</code></pre>
       <div>
         <div class="callout">
           <strong>Prima attività (gratuita):</strong><br><br>
-          Vai su <strong>copilot.microsoft.com</strong> → scrivi:<br><br>
+          Vai su <a href="https://copilot.microsoft.com" target="_blank" rel="noopener"><strong>copilot.microsoft.com</strong></a> → scrivi:<br><br>
           <em>"Scrivi un'email di benvenuto per un ospite che arriva domani al mio boutique hotel a Firenze. Tono caldo, max 80 parole."</em>
         </div>
         <p class="text-small text-muted" style="margin-top:0.8em">Se usi già Microsoft 365, verifica con il tuo fornitore IT se il piano M365 Copilot è già attivabile sul tuo tenant.</p>
@@ -3814,7 +4123,7 @@ write_blog(content_list)</code></pre>
       <div>
         <div class="callout">
           <strong>Prima attività:</strong><br><br>
-          Vai su <strong>gemini.google.com</strong> → incolla 5–10 recensioni recenti → scrivi:<br><br>
+          Vai su <a href="https://gemini.google.com" target="_blank" rel="noopener"><strong>gemini.google.com</strong></a> → incolla 5–10 recensioni recenti → scrivi:<br><br>
           <em>"Analizza queste recensioni: elenca i 3 punti di forza e le 2 aree di miglioramento più citati."</em>
         </div>
         <p class="text-small text-muted" style="margin-top:0.8em">Chi usa già Google Workspace ottiene il valore maggiore dal piano a pagamento, grazie alle integrazioni native con Gmail e Drive.</p>
@@ -3944,23 +4253,57 @@ write_blog(content_list)</code></pre>
       <span class="slide-section-label">Sez. 8 · Opportunità</span>
       <h2>Matrice impatto / sforzo per l'AI</h2>
     </div>
-    <div class="slide-body layout-diagram">
-      <div class="diagram">
-IMPATTO
-  alto │  [2] Quick wins       │  [1] Progetti strategici
-       │  Alta priorità        │  Pianificare con cura
-       │  (prompting, API)     │  (agenti, fine-tuning)
-       │───────────────────────┼───────────────────────
-  basso│  [4] Non fare ora     │  [3] Basso valore
-       │  Bassa priorità       │  Evitare
-       │──────────────────────────────────────────────
-                    basso                alto
-                                               SFORZO
+    <div class="slide-body layout-list">
+
+      <!-- Matrix (1.5× the square dimensions) -->
+      <div style="display:grid; grid-template-columns:5em 13.5em 13.5em; grid-template-rows:12em 12em 3.5em; gap:0.5em; font-size:0.78em; width:fit-content; margin:0 auto;">
+
+        <!-- Y axis -->
+        <div style="grid-column:1; grid-row:1/3; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:0.6em 0; background:linear-gradient(to bottom, #e0e7ff, #f1f5f9); border-radius:10px; border-right:3px solid #6366f1;">
+          <div style="writing-mode:vertical-rl; transform:rotate(180deg); font-size:0.78em; font-weight:700; color:#4338ca; background:#c7d2fe; border-radius:4px; padding:0.2em 0.35em;">alto</div>
+          <div style="writing-mode:vertical-rl; transform:rotate(180deg); font-size:0.95em; font-weight:800; color:#6366f1; letter-spacing:0.14em;">IMPATTO</div>
+          <div style="writing-mode:vertical-rl; transform:rotate(180deg); font-size:0.78em; font-weight:700; color:#94a3b8; background:#e2e8f0; border-radius:4px; padding:0.2em 0.35em;">basso</div>
+        </div>
+
+        <!-- Q1 top-left: Quick wins -->
+        <div style="grid-column:2; grid-row:1; background:#dcfce7; border:2px solid #22c55e; border-radius:12px; padding:0.7em 1em; display:flex; flex-direction:column; justify-content:center;">
+          <div style="font-weight:700; color:#15803d; font-size:1.1em;">⚡ Quick wins</div>
+          <div style="font-size:0.82em; color:#16a34a; font-style:italic; margin-top:0.2em;">Fare subito</div>
+        </div>
+
+        <!-- Q2 top-right: Strategici -->
+        <div style="grid-column:3; grid-row:1; background:#e0e7ff; border:2px solid #6366f1; border-radius:12px; padding:0.7em 1em; display:flex; flex-direction:column; justify-content:center;">
+          <div style="font-weight:700; color:#4338ca; font-size:1.1em;">🎯 Strategici</div>
+          <div style="font-size:0.82em; color:#4f46e5; font-style:italic; margin-top:0.2em;">Pianificare con cura</div>
+        </div>
+
+        <!-- Q3 bottom-left: Rimandare -->
+        <div style="grid-column:2; grid-row:2; background:#f8fafc; border:2px solid #cbd5e1; border-radius:12px; padding:0.7em 1em; display:flex; flex-direction:column; justify-content:center;">
+          <div style="font-weight:700; color:#64748b; font-size:1.1em;">⏳ Rimandare</div>
+          <div style="font-size:0.82em; color:#64748b; font-style:italic; margin-top:0.2em;">Bassa priorità</div>
+        </div>
+
+        <!-- Q4 bottom-right: Evitare -->
+        <div style="grid-column:3; grid-row:2; background:#fef2f2; border:2px solid #f87171; border-radius:12px; padding:0.7em 1em; display:flex; flex-direction:column; justify-content:center;">
+          <div style="font-weight:700; color:#dc2626; font-size:1.1em;">✗ Evitare ora</div>
+          <div style="font-size:0.82em; color:#ef4444; font-style:italic; margin-top:0.2em;">Alto costo, basso ritorno</div>
+        </div>
+
+        <!-- X axis -->
+        <div style="grid-column:2/4; grid-row:3; display:flex; align-items:center; justify-content:space-between; padding:0 0.8em; background:linear-gradient(to right, #f1f5f9, #e0e7ff); border-radius:10px; border-top:3px solid #6366f1;">
+          <div style="font-size:0.78em; font-weight:700; color:#94a3b8; background:#e2e8f0; border-radius:4px; padding:0.15em 0.5em;">basso</div>
+          <div style="font-size:0.95em; font-weight:800; color:#6366f1; letter-spacing:0.14em;">SFORZO →</div>
+          <div style="font-size:0.78em; font-weight:700; color:#4338ca; background:#c7d2fe; border-radius:4px; padding:0.15em 0.5em;">alto</div>
+        </div>
+
       </div>
-      <ul>
-        <li><strong>Quick wins [2]</strong>: risposta a recensioni, generazione post social, FAQ chatbot</li>
-        <li><strong>Strategici [1]</strong>: revenue management AI, prenotazioni automatizzate, RAG su catalogo</li>
+
+      <!-- Explanatory text -->
+      <ul style="margin-top:1.2em;">
+        <li><strong>Quick wins</strong>: risposta a recensioni, generazione post social, FAQ chatbot, traduzione email ospiti</li>
+        <li><strong>Strategici</strong>: revenue management AI, prenotazioni automatizzate, RAG su catalogo, agente multicanale</li>
       </ul>
+
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Digitiamo">
@@ -3975,7 +4318,7 @@ IMPATTO
       <h2>Adatti vs non adatti all'AI generativa</h2>
     </div>
     <div class="slide-body layout-table">
-      <table>
+      <table class="table-compact">
         <tr>
           <th>Adatti</th>
           <th>Non adatti (o non ancora)</th>
@@ -4091,7 +4434,6 @@ IMPATTO
           <td></td>
         </tr>
       </table>
-      <p class="text-muted text-small">Condivisione in gruppo: 5 minuti dopo</p>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Digitiamo">
@@ -4386,7 +4728,7 @@ Max 80 parole. Tono evocativo."</pre>
       <h2>Errori comuni nel prompting</h2>
     </div>
     <div class="slide-body layout-table">
-      <table class="table-keyed">
+      <table class="table-keyed table-compact">
         <tr>
           <th>Errore</th>
           <th>Effetto</th>
@@ -4597,7 +4939,7 @@ Formato output: JSON strutturato</code></pre>
       <h2>Rischi specifici: cosa può andare storto</h2>
     </div>
     <div class="slide-body layout-table">
-      <table class="table-keyed">
+      <table class="table-keyed table-compact">
         <tr>
           <th>Rischio</th>
           <th>Descrizione</th>
@@ -4685,7 +5027,7 @@ Formato output: JSON strutturato</code></pre>
         </ul>
       </div>
       <div class="warning">
-        Le versioni consumer gratuite (ChatGPT free) non offrono le stesse garanzie delle API a pagamento.
+        Le versioni consumer grade gratuite (ChatGPT free) non offrono le stesse garanzie delle API a pagamento.
       </div>
     </div>
     <div class="slide-footer">
@@ -4859,7 +5201,7 @@ per il tuo problema specifico
       <div>
         <h3>Strumenti da esplorare</h3>
         <ul>
-          <li><a href="https://claude.ai/" target="_blank" rel="noopener"><strong>Claude.ai</strong></a> — interfaccia consumer Anthropic</li>
+          <li><a href="https://claude.ai/" target="_blank" rel="noopener"><strong>Claude.ai</strong></a> — interfaccia Anthropic</li>
           <li><a href="https://chatgpt.com/" target="_blank" rel="noopener"><strong>ChatGPT</strong></a> — interfaccia OpenAI</li>
           <li><a href="https://www.perplexity.ai/" target="_blank" rel="noopener"><strong>Perplexity</strong></a> — ricerca con AI</li>
           <li><a href="https://www.make.com/" target="_blank" rel="noopener"><strong>Make</strong></a> / <a href="https://n8n.io/" target="_blank" rel="noopener"><strong>n8n</strong></a> — automazioni no-code con AI</li>
@@ -4881,10 +5223,62 @@ per il tuo problema specifico
     </div>
   </section>
 
-  <!-- 11.5 — Q&A -->
+  <!-- 11.4 — Q&A -->
   <section class="slide-closing">
     <h2>Domande?</h2>
     <p>Grazie per la giornata.<br><br>Appuntamento al Giorno 2.</p>
+  </section>
+
+</section>
+
+
+<section data-section-title="Glossario">
+
+  <!-- 12.0 — Titolo sezione -->
+  <section class="slide-section">
+    <div class="section-eyebrow">Sezione 12</div>
+    <h2>Glossario</h2>
+    <p class="section-desc">Abbreviazioni e termini usati durante la giornata</p>
+  </section>
+
+  <!-- 12.1 — Glossario -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 12 · Glossario</span>
+      <h2>Abbreviazioni e termini chiave</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Turismo &amp; Business</h3>
+        <table class="table-keyed" style="font-size:0.65em;">
+          <tr><td><strong>OTA</strong></td><td>Online Travel Agency — piattaforme di prenotazione online (Booking.com, Expedia, Airbnb)</td></tr>
+          <tr><td><strong>PMS</strong></td><td>Property Management System — gestionale hotel per prenotazioni, camere e fatturazione</td></tr>
+          <tr><td><strong>CRM</strong></td><td>Customer Relationship Management — sistema per gestire dati e relazioni con i clienti</td></tr>
+          <tr><td><strong>KPI</strong></td><td>Key Performance Indicator — indicatore chiave di performance aziendale</td></tr>
+          <tr><td><strong>FAQ</strong></td><td>Frequently Asked Questions — domande frequenti con risposte precompilate</td></tr>
+          <tr><td><strong>DMC</strong></td><td>Destination Management Company — operatore locale che organizza servizi turistici in loco</td></tr>
+          <tr><td><strong>B2B / B2C</strong></td><td>Business-to-Business / Business-to-Consumer — tipo di relazione commerciale</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>AI &amp; Tecnologia</h3>
+        <table class="table-keyed" style="font-size:0.65em;">
+          <tr><td><strong>LLM</strong></td><td>Large Language Model — modello AI addestrato su grandi quantità di testo</td></tr>
+          <tr><td><strong>ML</strong></td><td>Machine Learning — disciplina dell'AI che apprende da dati senza regole esplicite</td></tr>
+          <tr><td><strong>RAG</strong></td><td>Retrieval Augmented Generation — tecnica che collega un LLM a documenti esterni</td></tr>
+          <tr><td><strong>API</strong></td><td>Application Programming Interface — interfaccia per la comunicazione tra sistemi software</td></tr>
+          <tr><td><strong>MCP</strong></td><td>Model Context Protocol — standard Anthropic per collegare agenti AI a strumenti esterni</td></tr>
+          <tr><td><strong>GPU</strong></td><td>Graphics Processing Unit — processore specializzato usato per addestrare modelli AI</td></tr>
+          <tr><td><strong>GDPR</strong></td><td>General Data Protection Regulation — regolamento UE sulla protezione dei dati personali</td></tr>
+          <tr><td><strong>DPA</strong></td><td>Data Processing Agreement — accordo contrattuale sul trattamento dei dati con fornitori terzi</td></tr>
+          <tr><td style="white-space:nowrap;"><strong>SOC 2</strong></td><td>Service Organization Control 2 — certificazione di sicurezza per fornitori cloud</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
   </section>
 
 </section>
