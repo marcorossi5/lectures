@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI per il Turismo — Giorno 1</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236366f1'/%3E%3Ctext x='16' y='22' font-family='system-ui,sans-serif' font-size='14' font-weight='700' fill='white' text-anchor='middle' letter-spacing='-0.5'%3EAI%3C/text%3E%3C/svg%3E">
   <style>
 /*!
 * reveal.js 5.1.0
@@ -598,7 +599,7 @@ html, body {
 
 .reveal .slide-body.layout-list {
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   gap: var(--gap-sm);
 }
 
@@ -606,24 +607,28 @@ html, body {
   display: grid !important;
   grid-template-columns: 1fr 1fr;
   gap: var(--gap-lg);
-  align-content: start;
+  align-content: center;
 }
 
 .reveal .slide-body.layout-three-col {
   display: grid !important;
   grid-template-columns: 1fr 1fr 1fr;
   gap: var(--gap-md);
-  align-content: start;
+  align-content: center;
 }
 
 .reveal .slide-body.layout-code {
   flex-direction: column;
+  justify-content: center;
   gap: var(--gap-sm);
 }
 
 .reveal .slide-body.layout-code pre { flex: 1; }
 
-.reveal .slide-body.layout-table { flex-direction: column; }
+.reveal .slide-body.layout-table {
+  flex-direction: column;
+  justify-content: center;
+}
 .reveal .slide-body.layout-table table { flex: 1; }
 
 .reveal .slide-body.layout-diagram {
@@ -635,7 +640,7 @@ html, body {
   display: grid !important;
   grid-template-columns: 40% 1fr;
   gap: var(--gap-lg);
-  align-content: start;
+  align-content: center;
 }
 
 .reveal .slide-body.layout-image-text .slide-image {
@@ -1178,6 +1183,7 @@ html, body {
   .reveal .slide-body.layout-image-text {
     display: flex !important;
     flex-direction: column !important;
+    justify-content: center;
     gap: var(--gap-md);
   }
 
@@ -1677,7 +1683,7 @@ html, body {
               <ul>
                 <li>Agenti AI</li>
                 <li>Tools &amp; Functions</li>
-                <li>Paradigmi agentici</li>
+                <li>Strumenti pratici</li>
               </ul>
             </div>
           </div>
@@ -1858,6 +1864,29 @@ html, body {
       </div>
       <div class="callout">
         La soglia d'ingresso si è abbassata drasticamente: un prompt ben scritto sostituisce mesi di sviluppo ML.
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 1.5 — Challenge -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 1 · Panoramica</span>
+      <h2>Challenge</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <div class="callout">
+        Nella tua attività, quale processo ti occupa più tempo ogni settimana e potrebbe beneficiare dell'AI generativa? Pensa a task che si ripetono, richiedono testo o comunicazione, e hanno un output definibile.
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0.6em; margin-top: 0.5em;">
+        <div style="width: 180px; height: 180px; border: 2px dashed var(--border-color); border-radius: var(--border-radius-lg); background: var(--accent-bg); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.75em; letter-spacing: 0.05em;">
+          QR Code
+        </div>
+        <a class="text-small text-muted" href="https://PLACEHOLDER_LINK_SEZ_1" target="_blank" rel="noopener">forms.gle/PLACEHOLDER_SEZ_1</a>
       </div>
     </div>
     <div class="slide-footer">
@@ -2083,39 +2112,27 @@ Modello allineato (utile, sicuro, onesto)
       <span class="slide-section-label">Sez. 2 · LLM</span>
       <h2>I principali modelli oggi</h2>
     </div>
-    <div class="slide-body layout-table">
-      <table class="table-keyed">
-        <tr>
-          <th>Modello</th>
-          <th>Sviluppatore</th>
-          <th>Punti di forza</th>
-        </tr>
-        <tr>
-          <td>GPT-4o</td>
-          <td>OpenAI</td>
-          <td>Multimodale, ampio ecosistema, veloce</td>
-        </tr>
-        <tr>
-          <td>Claude 3.5/4</td>
-          <td>Anthropic</td>
-          <td>Ragionamento, contesto lungo, sicurezza</td>
-        </tr>
-        <tr>
-          <td>Gemini 2 Pro</td>
-          <td>Google</td>
-          <td>Integrazione Google Workspace, multimodale</td>
-        </tr>
-        <tr>
-          <td>LLaMA 3</td>
-          <td>Meta</td>
-          <td>Open weights, deployabile on-premise</td>
-        </tr>
-        <tr>
-          <td>Mistral Large</td>
-          <td>Mistral AI</td>
-          <td>EU-based, efficiente, open</td>
-        </tr>
-      </table>
+    <div class="slide-body layout-list">
+      <p class="text-muted text-small">
+        La classifica aggiornata dei modelli è curata da un sito di terze parti —
+        <a href="https://artificialanalysis.ai/" target="_blank" rel="noopener">artificialanalysis.ai</a>
+      </p>
+      <div style="width: 90%; display: flex; justify-content: flex-end; margin: 0 auto 4px;">
+        <button
+          onclick="var f=document.getElementById('aa-frame'); f.src=f.src;"
+          style="padding: 3px 10px; font-size: 0.5em; font-family: inherit; background: var(--accent-bg); color: var(--accent-dark); border: 1px solid var(--accent-color); border-radius: 9999px; cursor: pointer; opacity: 0.75;"
+          title="Torna alla home di artificialanalysis.ai"
+        >↺ home</button>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <iframe
+          id="aa-frame"
+          src="https://artificialanalysis.ai/"
+          style="width: 90%; height: 100%; border: 1px solid var(--border-color); border-radius: var(--border-radius-lg);"
+          title="Artificial Analysis — AI Model Leaderboard"
+          loading="lazy"
+        ></iframe>
+      </div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Digitiamo">
@@ -2164,11 +2181,11 @@ Modello allineato (utile, sicuro, onesto)
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Sez. 2 · LLM</span>
-      <h2>API vs interfacce consumer</h2>
+      <h2>Consumer grade interfaces vs API</h2>
     </div>
     <div class="slide-body layout-two-col">
       <div>
-        <h3>Interfacce consumer</h3>
+        <h3>Consumer grade interfaces</h3>
         <p class="text-small">(ChatGPT, Claude.ai, Gemini)</p>
         <ul>
           <li>Uso manuale, sessione per sessione</li>
@@ -2210,6 +2227,29 @@ Modello allineato (utile, sicuro, onesto)
       </ul>
       <div class="callout">
         Regola pratica: usa il modello più piccolo/economico che risolve il tuo problema.
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.11 — Challenge -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 2 · LLM</span>
+      <h2>Challenge</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <div class="callout">
+        Se dovessi introdurre un assistente AI nel tuo team a partire da questa settimana, per quale attività specifica lo useresti? Sceglieresti un'interfaccia consumer (ChatGPT, Claude.ai) o un'integrazione via API — e perché?
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0.6em; margin-top: 0.5em;">
+        <div style="width: 180px; height: 180px; border: 2px dashed var(--border-color); border-radius: var(--border-radius-lg); background: var(--accent-bg); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.75em; letter-spacing: 0.05em;">
+          QR Code
+        </div>
+        <a class="text-small text-muted" href="https://PLACEHOLDER_LINK_SEZ_2" target="_blank" rel="noopener">forms.gle/PLACEHOLDER_SEZ_2</a>
       </div>
     </div>
     <div class="slide-footer">
@@ -2372,6 +2412,29 @@ Modello allineato (utile, sicuro, onesto)
       </div>
       <div class="warning">
         Non confondere "può processare 1M token" con "lo fa bene": verifica sempre con benchmark sul tuo caso d'uso.
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.6 — Challenge -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 3 · Context Window</span>
+      <h2>Challenge</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <div class="callout">
+        Quali documenti aziendali (listino prezzi, policy di cancellazione, FAQ, manuale operativo) vorresti che un assistente AI potesse consultare per rispondere agli ospiti? Sono già in formato digitale e aggiornati?
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0.6em; margin-top: 0.5em;">
+        <div style="width: 180px; height: 180px; border: 2px dashed var(--border-color); border-radius: var(--border-radius-lg); background: var(--accent-bg); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.75em; letter-spacing: 0.05em;">
+          QR Code
+        </div>
+        <a class="text-small text-muted" href="https://PLACEHOLDER_LINK_SEZ_3" target="_blank" rel="noopener">forms.gle/PLACEHOLDER_SEZ_3</a>
       </div>
     </div>
     <div class="slide-footer">
@@ -2632,6 +2695,29 @@ check-out tardivo?"</code></pre>
           <td>Sviluppatore o ML engineer</td>
         </tr>
       </table>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 4.8 — Challenge -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 4 · Fine-tuning</span>
+      <h2>Challenge</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <div class="callout">
+        La tua azienda ha uno stile di comunicazione riconoscibile verso gli ospiti? Hai già raccolto esempi di email o risposte che rappresentano il tuo standard — e quanti ne potresti mettere insieme in un mese?
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0.6em; margin-top: 0.5em;">
+        <div style="width: 180px; height: 180px; border: 2px dashed var(--border-color); border-radius: var(--border-radius-lg); background: var(--accent-bg); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.75em; letter-spacing: 0.05em;">
+          QR Code
+        </div>
+        <a class="text-small text-muted" href="https://PLACEHOLDER_LINK_SEZ_4" target="_blank" rel="noopener">forms.gle/PLACEHOLDER_SEZ_4</a>
+      </div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Digitiamo">
@@ -2903,6 +2989,29 @@ results = db.search(query, top_k=3)</code></pre>
     </div>
   </section>
 
+  <!-- 5.9 — Challenge -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 5 · RAG</span>
+      <h2>Challenge</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <div class="callout">
+        Se potessi fare una domanda a un assistente AI addestrato sui tuoi documenti aziendali e ricevere una risposta precisa e aggiornata, quale sarebbe quella domanda? A quali documenti gli daresti accesso?
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0.6em; margin-top: 0.5em;">
+        <div style="width: 180px; height: 180px; border: 2px dashed var(--border-color); border-radius: var(--border-radius-lg); background: var(--accent-bg); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.75em; letter-spacing: 0.05em;">
+          QR Code
+        </div>
+        <a class="text-small text-muted" href="https://PLACEHOLDER_LINK_SEZ_5" target="_blank" rel="noopener">forms.gle/PLACEHOLDER_SEZ_5</a>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
 </section>
 
 
@@ -3127,6 +3236,29 @@ Goal: "Trova il volo più economico Roma-Tokyo per luglio
           <td>Supervisione umana sempre</td>
         </tr>
       </table>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 6.8 — Challenge -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 6 · Agenti AI</span>
+      <h2>Challenge</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <div class="callout">
+        Per quali operazioni saresti disposto ad autorizzare un agente AI ad agire in autonomia — modificare una tariffa, inviare una notifica, aggiornare una prenotazione — e dove vorresti invece mantenere sempre un'approvazione umana?
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0.6em; margin-top: 0.5em;">
+        <div style="width: 180px; height: 180px; border: 2px dashed var(--border-color); border-radius: var(--border-radius-lg); background: var(--accent-bg); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.75em; letter-spacing: 0.05em;">
+          QR Code
+        </div>
+        <a class="text-small text-muted" href="https://PLACEHOLDER_LINK_SEZ_6" target="_blank" rel="noopener">forms.gle/PLACEHOLDER_SEZ_6</a>
+      </div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Digitiamo">
@@ -3463,105 +3595,93 @@ write_blog(content_list)</code></pre>
     </div>
   </section>
 
+  <!-- 7.9 — Challenge -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 7 · Tools</span>
+      <h2>Challenge</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <div class="callout">
+        Quali sistemi usi oggi nella tua attività (PMS, CRM, channel manager, email)? Quale integrazione con un assistente AI genererebbe il valore immediato più alto — e perché?
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0.6em; margin-top: 0.5em;">
+        <div style="width: 180px; height: 180px; border: 2px dashed var(--border-color); border-radius: var(--border-radius-lg); background: var(--accent-bg); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.75em; letter-spacing: 0.05em;">
+          QR Code
+        </div>
+        <a class="text-small text-muted" href="https://PLACEHOLDER_LINK_SEZ_7" target="_blank" rel="noopener">forms.gle/PLACEHOLDER_SEZ_7</a>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
 </section>
 
 
-<section data-section-title="Paradigmi Agentici nel Coding">
+<section data-section-title="Pausa Pranzo">
 
-  <!-- Section title -->
   <section class="slide-section">
-    <div class="section-eyebrow">Sezione 7b</div>
-    <h2>Paradigmi Agentici nel Coding</h2>
-    <p class="section-desc">Dall'autocompletamento all'Agent Swarm: evoluzione architetturale</p>
+    <div class="section-eyebrow">Pausa</div>
+    <h2>Pranzo</h2>
+    <p class="section-desc">Si riprende nel pomeriggio</p>
   </section>
 
-  <!-- 7b.1 — Panoramica evolutiva -->
+</section>
+
+
+<section data-section-title="Strumenti AI: guida pratica">
+
+  <!-- 7b.0 — Titolo sezione -->
+  <section class="slide-section">
+    <div class="section-eyebrow">Sezione 7b</div>
+    <h2>Strumenti AI: guida pratica</h2>
+    <p class="section-desc">ChatGPT, Claude, Copilot e Gemini — accesso, costi e prime attività concrete</p>
+  </section>
+
+  <!-- 7b.1 — Panoramica -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Sez. 7b · Coding Agents</span>
-      <h2>Evoluzione dei paradigmi: panoramica</h2>
+      <span class="slide-section-label">Sez. 7b · Strumenti AI</span>
+      <h2>Il panorama degli strumenti consumer</h2>
     </div>
     <div class="slide-body layout-table">
       <table class="table-keyed">
         <tr>
-          <th>Paradigma</th>
-          <th>Autonomia</th>
-          <th>Granularità</th>
-          <th>Limite principale</th>
+          <th>Strumento</th>
+          <th>Azienda</th>
+          <th>Punto di forza</th>
+          <th>Gratis?</th>
         </tr>
         <tr>
-          <td>Code Completion</td>
-          <td>Nessuna</td>
-          <td>Snippet / funzione</td>
-          <td>Solo autocompletamento, nessuna azione</td>
+          <td>ChatGPT</td>
+          <td>OpenAI</td>
+          <td>Uso generale, il più noto; immagini (DALL-E 3)</td>
+          <td>Sì (limitato)</td>
         </tr>
         <tr>
-          <td>Chatbot Code Gen</td>
-          <td>Nessuna</td>
-          <td>Script intero</td>
-          <td>Nessuna integrazione — copia manuale</td>
+          <td>Claude.ai</td>
+          <td>Anthropic</td>
+          <td>Scrittura lunga, analisi documenti PDF</td>
+          <td>Sì (limitato)</td>
         </tr>
         <tr>
-          <td>Coding Agent</td>
-          <td>Media (tool set)</td>
-          <td>Codebase</td>
-          <td>Context rot su sessioni lunghe</td>
+          <td>Microsoft Copilot</td>
+          <td>Microsoft</td>
+          <td>Integrato in Outlook, Teams, Excel, Word</td>
+          <td>Sì (web)</td>
         </tr>
         <tr>
-          <td>Multi-Agent</td>
-          <td>Alta (specializzazione)</td>
-          <td>Progetto complesso</td>
-          <td>Orchestratore accumula contesto</td>
-        </tr>
-        <tr>
-          <td>Agent Loop</td>
-          <td>Molto alta</td>
-          <td>Progetto autonomo</td>
-          <td>Esecuzione sequenziale dei subtask</td>
-        </tr>
-        <tr>
-          <td><strong>Agent Swarm</strong></td>
-          <td>Massima</td>
-          <td>Progetto complesso parallelo</td>
-          <td>Overhead di coordinazione</td>
+          <td>Google Gemini</td>
+          <td>Google</td>
+          <td>Integrato in Gmail, Docs, Drive, Sheets</td>
+          <td>Sì (base)</td>
         </tr>
       </table>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Digitiamo">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 7b.2 — Code Completion e Chatbot -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Sez. 7b · Coding Agents</span>
-      <h2>Paradigmi 1–2: Code Completion e Chatbot</h2>
-    </div>
-    <div class="slide-body layout-two-col">
-      <div>
-        <h3>Code Completion</h3>
-        <ul>
-          <li>Modello fine-tuned su corpora di codice per il task di predizione del token successivo</li>
-          <li>Input: token precedenti nel file (+ posizione cursore o commento NL) → Output: continuazione</li>
-          <li>Granularità: snippet o singola funzione</li>
-          <li>Integrato nell'editor come estensione; nessun accesso al filesystem o all'ambiente di esecuzione</li>
-          <li>Latenza bassa richiesta: tipicamente modelli piccoli, specializzati</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Chatbot Code Generation</h3>
-        <ul>
-          <li>LLM generalista senza tool access</li>
-          <li>Input: prompt in linguaggio naturale → Output: script completo, classe, test</li>
-          <li>Capacità superiori rispetto alla code completion: intero file, più componenti</li>
-          <li>Nessuna integrazione con l'ambiente: l'utente copia e incolla manualmente</li>
-          <li>Stateless: ogni sessione è indipendente dalla codebase esistente</li>
-        </ul>
-      </div>
       <div class="callout">
-        Entrambi i paradigmi sono ancora in uso. Il loro limite condiviso è l'assenza di accesso diretto al filesystem e all'ambiente di esecuzione: il modello produce testo, l'utente esegue manualmente le azioni.
+        Tutti e quattro funzionano via browser — nessuna installazione richiesta. La versione gratuita è sufficiente per iniziare a sperimentare.
       </div>
     </div>
     <div class="slide-footer">
@@ -3570,37 +3690,192 @@ write_blog(content_list)</code></pre>
     </div>
   </section>
 
-  <!-- 7b.3 — Coding Agent -->
+  <!-- 7b.2 — ChatGPT -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Sez. 7b · Coding Agents</span>
-      <h2>Paradigma 3: Coding Agent</h2>
+      <span class="slide-section-label">Sez. 7b · Strumenti AI</span>
+      <h2>ChatGPT — chatgpt.com</h2>
     </div>
     <div class="slide-body layout-two-col">
-      <p>Un LLM equipaggiato con un set di tool che gli consentono di operare direttamente sulla codebase e sull'ambiente di esecuzione, integrato nell'editor.</p>
       <div>
-        <h3>File system &amp; Shell</h3>
-        <ul style="font-size:0.8em">
-          <li><code>file_read</code> — legge il contenuto di un file</li>
-          <li><code>file_write</code> — crea o sovrascrive un file</li>
-          <li><code>file_str_replace</code> — sostituisce una stringa specifica in un file</li>
-          <li><code>file_find_by_name</code> — localizza file per nome o pattern</li>
-          <li><code>shell_exec</code> — esegue comandi nella shell (install, build, test, run)</li>
-          <li><code>shell_wait</code> / <code>shell_kill</code> — gestisce processi in background</li>
+        <h3>Per il turismo</h3>
+        <ul>
+          <li>Rispondere a recensioni positive e negative</li>
+          <li>Scrivere post social (Instagram, Facebook)</li>
+          <li>Creare itinerari personalizzati su richiesta</li>
+          <li>Tradurre comunicazioni in più lingue</li>
+          <li>Generare descrizioni di camere e pacchetti</li>
+        </ul>
+        <h3 style="margin-top:0.8em">Piani</h3>
+        <ul>
+          <li><strong>Free</strong> — GPT-5.2 limitato</li>
+          <li><strong>Plus</strong> — $20/mese · GPT-5.2 illimitato, file, immagini</li>
         </ul>
       </div>
       <div>
-        <h3>Ricerca &amp; Interfaccia</h3>
-        <ul style="font-size:0.8em">
-          <li><code>search_content</code> — ricerca semantica o per keyword nella codebase</li>
-          <li><code>web_search</code> / <code>web_fetch</code> — recupero informazioni da web</li>
-          <li><code>browser_navigate</code> / <code>browser_click</code> / <code>browser_input</code> — automazione browser</li>
-          <li><code>browser_view</code> — screenshot per verifica visiva del risultato</li>
-          <li><code>message_user</code> — notifica l'utente o attende input per decisioni critiche</li>
+        <div class="callout">
+          <strong>Prima attività:</strong><br><br>
+          Vai su <strong>chatgpt.com</strong> → incolla una recensione negativa recente → scrivi:<br><br>
+          <em>"Rispondi in tono professionale e comprensivo, max 100 parole, in italiano."</em>
+        </div>
+        <div class="warning" style="margin-top:0.8em">
+          Non inserire nome, email o dati personali dell'ospite nel prompt.
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 7b.3 — Claude.ai -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 7b · Strumenti AI</span>
+      <h2>Claude.ai — claude.ai</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Per il turismo</h3>
+        <ul>
+          <li>Analizzare documenti lunghi (contratti, policy, PDF)</li>
+          <li>Rispondere a domande sul contenuto di un documento</li>
+          <li>Scrivere testi articolati nel tono del brand</li>
+          <li>Riepilogare feedback e identificare pattern</li>
+          <li>Ragionare su scenari complessi (scelte tariffarie, offerte)</li>
+        </ul>
+        <h3 style="margin-top:0.8em">Piani</h3>
+        <ul>
+          <li><strong>Free</strong> — Claude Sonnet, Haiku (uso giornaliero limitato)</li>
+          <li><strong>Pro</strong> — $18/mese · Claude Opus, uso esteso, file, Progetti</li>
         </ul>
       </div>
+      <div>
+        <div class="callout">
+          <strong>Prima attività:</strong><br><br>
+          Vai su <strong>claude.ai</strong> → carica il PDF della tua policy di cancellazione → scrivi:<br><br>
+          <em>"Se un ospite cancella 8 giorni prima, ha diritto a rimborso? Rispondi in modo chiaro e sintetico."</em>
+        </div>
+        <p class="text-small text-muted" style="margin-top:0.8em">La funzione <strong>Progetti</strong> (piano Pro) salva contesto fisso — policy, tono, istruzioni — senza doverlo riscrivere ad ogni conversazione.</p>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 7b.4 — Microsoft Copilot -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 7b · Strumenti AI</span>
+      <h2>Microsoft Copilot — copilot.microsoft.com</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Per il turismo</h3>
+        <ul>
+          <li><strong>Outlook</strong> — bozza email di benvenuto, pre-arrivo, follow-up</li>
+          <li><strong>Teams</strong> — riassunto riunione con action items</li>
+          <li><strong>Excel</strong> — analisi dati prenotazioni, grafici occupazione</li>
+          <li><strong>Word</strong> — contratti tipo, offerte commerciali</li>
+          <li>Web (gratuito) — ricerca con fonti, risposta in tempo reale</li>
+        </ul>
+        <h3 style="margin-top:0.8em">Piani</h3>
+        <ul>
+          <li><strong>Free</strong> — copilot.microsoft.com (GPT-5.1 + web search)</li>
+          <li><strong>M365 Copilot</strong> — $30/utente/mese · integrato nelle app Office</li>
+        </ul>
+      </div>
+      <div>
+        <div class="callout">
+          <strong>Prima attività (gratuita):</strong><br><br>
+          Vai su <strong>copilot.microsoft.com</strong> → scrivi:<br><br>
+          <em>"Scrivi un'email di benvenuto per un ospite che arriva domani al mio boutique hotel a Firenze. Tono caldo, max 80 parole."</em>
+        </div>
+        <p class="text-small text-muted" style="margin-top:0.8em">Se usi già Microsoft 365, verifica con il tuo fornitore IT se il piano M365 Copilot è già attivabile sul tuo tenant.</p>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 7b.5 — Google Gemini -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 7b · Strumenti AI</span>
+      <h2>Google Gemini — gemini.google.com</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Per il turismo</h3>
+        <ul>
+          <li><strong>Gmail</strong> — bozza risposte a richieste di prenotazione</li>
+          <li><strong>Google Docs</strong> — generazione offerte, guide locali, comunicati</li>
+          <li><strong>Google Sheets</strong> — analisi dati con linguaggio naturale</li>
+          <li>Ricerca web in tempo reale (prezzi competitor, eventi locali)</li>
+          <li>Analisi immagini — foto struttura, menu, allestimenti</li>
+        </ul>
+        <h3 style="margin-top:0.8em">Piani</h3>
+        <ul>
+          <li><strong>Free</strong> — Gemini 2.5 Flash su gemini.google.com</li>
+          <li><strong>Google One AI Premium</strong> — €21.99/mese · Gemini 3.1 Pro + Workspace</li>
+        </ul>
+      </div>
+      <div>
+        <div class="callout">
+          <strong>Prima attività:</strong><br><br>
+          Vai su <strong>gemini.google.com</strong> → incolla 5–10 recensioni recenti → scrivi:<br><br>
+          <em>"Analizza queste recensioni: elenca i 3 punti di forza e le 2 aree di miglioramento più citati."</em>
+        </div>
+        <p class="text-small text-muted" style="margin-top:0.8em">Chi usa già Google Workspace ottiene il valore maggiore dal piano a pagamento, grazie alle integrazioni native con Gmail e Drive.</p>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 7b.6 — Quale scegliere -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 7b · Strumenti AI</span>
+      <h2>Quale strumento scegliere</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <table class="table-keyed">
+        <tr>
+          <th>Se…</th>
+          <th>Usa</th>
+          <th>Piano</th>
+        </tr>
+        <tr>
+          <td>Usi già Microsoft 365 (Outlook, Teams, Excel)</td>
+          <td>Microsoft Copilot M365</td>
+          <td>$30/utente/mese</td>
+        </tr>
+        <tr>
+          <td>Usi già Google Workspace (Gmail, Drive)</td>
+          <td>Google Gemini</td>
+          <td>€21.99/mese</td>
+        </tr>
+        <tr>
+          <td>Vuoi analizzare documenti e scrivere testi articolati</td>
+          <td>Claude.ai</td>
+          <td>Free per iniziare, Pro ($18/mese) per uso quotidiano</td>
+        </tr>
+        <tr>
+          <td>Vuoi l'opzione più versatile, con generazione immagini</td>
+          <td>ChatGPT</td>
+          <td>Free per iniziare, Plus ($20/mese) per uso quotidiano</td>
+        </tr>
+      </table>
       <div class="callout">
-        Il coding agent gestisce l'intero progetto, non il singolo script: legge file esistenti, li modifica, esegue test e verifica il risultato visivamente. Esempi: Claude Code, Cursor, Cline, Codex.
+        Non devi scegliere uno solo. Inizia gratis, passa al piano a pagamento solo se lo usi ogni giorno.
       </div>
     </div>
     <div class="slide-footer">
@@ -3609,135 +3884,21 @@ write_blog(content_list)</code></pre>
     </div>
   </section>
 
-  <!-- 7b.4 — RAG e Context Rot -->
+  <!-- 7b.7 — Challenge -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Sez. 7b · Coding Agents</span>
-      <h2>Gestione della codebase: RAG e Context Rot</h2>
+      <span class="slide-section-label">Sez. 7b · Strumenti AI</span>
+      <h2>Challenge</h2>
     </div>
-    <div class="slide-body layout-two-col">
-      <div>
-        <h3>Il problema: codebase &gt;&gt; context window</h3>
-        <div class="diagram" style="font-size:0.57em; margin-top:4px">
-[src/*.py, *.ts, *.css …]  → spesso milioni di token
-          ↓  indicizzazione offline (una tantum)
-[Chunking] → snippet di codice sovrapposti
-[Embedding model] → vettori semantici
-[Vector DB] → spazio vettoriale indicizzato
-
-  Query utente → [Embed] → ricerca top-K semantica
-                                   ↓
-                          [Reranker] → filtra i più rilevanti
-                                   ↓
-               Snippet selezionati → input all'agente
-        </div>
-        <p class="text-small text-muted" style="margin-top:4px">Tutti i coding agent (Claude Code, Codex, Cursor) costruiscono un indice RAG sulla cartella del progetto. Cfr. Sezione 5.</p>
+    <div class="slide-body layout-list">
+      <div class="callout">
+        Tra i quattro strumenti presentati (ChatGPT, Claude, Copilot, Gemini), quale proveresti per primo nella tua attività — e per quale compito specifico?
       </div>
-      <div>
-        <h3>Context Rot</h3>
-        <ul>
-          <li>Le performance dei modelli degradano significativamente oltre il <strong>~50% della context window</strong> (<em>lost-in-the-middle effect</em>)</li>
-          <li>In una sessione lunga di coding agent, le istruzioni e i risultati precedenti si accumulano nel contesto</li>
-          <li>Sintomi: il modello reintroduce bug già corretti, ignora vincoli dati in precedenza, genera output inconsistenti</li>
-          <li>A saturazione completa, l'agente smette di funzionare</li>
-        </ul>
-        <div class="warning" style="margin-top:0.5em">
-          Context rot non è un bug: è una limitazione strutturale del meccanismo di attenzione su sequenze molto lunghe, documentata su tutti i modelli attuali.
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0.6em; margin-top: 0.5em;">
+        <div style="width: 180px; height: 180px; border: 2px dashed var(--border-color); border-radius: var(--border-radius-lg); background: var(--accent-bg); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.75em; letter-spacing: 0.05em;">
+          QR Code
         </div>
-      </div>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Digitiamo">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 7b.5 — Multi-Agent e Agent Loop -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Sez. 7b · Coding Agents</span>
-      <h2>Paradigmi 4–5: Multi-Agent e Agent Loop</h2>
-    </div>
-    <div class="slide-body layout-two-col">
-      <div>
-        <h3>Multi-Agent (Paradigma 4)</h3>
-        <div class="diagram" style="font-size:0.57em; margin-top:4px">
-[Orchestratore]  ctx: 0 ──→ saturo
-  send_message(agent_id, task)
-       ├──→ [Frontend Agent]   ctx: 0 → max
-       ├──→ [Backend Agent]    ctx: 0 → max
-       └──→ [Test Agent]       ctx: 0 → max
-        </div>
-        <ul style="margin-top:4px; font-size:0.8em">
-          <li>Ogni sub-agente ha context window propria, parte da zero</li>
-          <li>Redistribuisce il carico su agenti specializzati per dominio</li>
-          <li><strong>Limite residuo</strong>: l'orchestratore accumula tutti i risultati ricevuti → satura comunque</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Agent Loop (Paradigma 5)</h3>
-        <div class="diagram" style="font-size:0.57em; margin-top:4px">
-[PRD.md] + [progress.md]  ← memoria su filesystem
-
-┌── Session N (ctx = 0) ──────────────────┐
-│  1. leggi PRD + stato avanzamento        │
-│  2. esegui prossimo subtask              │
-│  3. aggiorna progress.md                 │
-└──────────────── ↓ loop runner ───────────┘
-┌── Session N+1 (ctx = 0) ────────────────┐
-└─────────────────────────────────────────┘
-        </div>
-        <ul style="margin-top:4px; font-size:0.8em">
-          <li>Singolo agente rieseguito in loop; contesto azzerato ad ogni iterazione → no context rot</li>
-          <li><strong>Variante A — nuova sessione</strong>: ogni iterazione reinizia da zero (es. roo-code loop)</li>
-          <li><strong>Variante B — compattazione</strong>: sezioni obsolete del contesto vengono riassunte o eliminate (Claude Code, Codex)</li>
-        </ul>
-      </div>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Digitiamo">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 7b.6 — Agent Swarm -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Sez. 7b · Coding Agents</span>
-      <h2>Paradigma 6: Agent Swarm</h2>
-    </div>
-    <div class="slide-body layout-two-col">
-      <div>
-        <h3>Architettura</h3>
-        <div class="diagram" style="font-size:0.57em; margin-top:4px">
-[Orchestratore]
-  tools: create_agent(system_prompt, tools)
-         assign_task(agent_id, task)
-         (+ standard tool set)
-           │
-           ├──→ [Agent_1: task_A]  ← agent loop
-           ├──→ [Agent_2: task_B]  ← agent loop  }  parallelo
-           ├──→ [Agent_3: task_C]  ← agent loop
-           └──→ [Agent_n …]        ← agent loop
-                 (fino a 100 agenti)
-        </div>
-        <ul style="margin-top:4px; font-size:0.8em">
-          <li>L'orchestratore <strong>genera dinamicamente</strong> i sub-agenti: nessun workflow o sub-agente predefinito</li>
-          <li>Ogni sub-agente riceve system prompt, tool set e task specifici</li>
-          <li>L'orchestratore è responsabile di strutturare i task in sottotask parallelizzabili</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Proprietà e benchmark</h3>
-        <ul>
-          <li><strong>Parallelismo</strong>: N task eseguiti in simultanea → speedup misurato ~4–5× rispetto all'Agent Loop sequenziale</li>
-          <li>Fino a <strong>100 sub-agenti</strong> attivi e <strong>1.500 tool call</strong> per sessione di orchestrazione</li>
-          <li>Ogni sub-agente opera in agent loop proprio → nessun context rot a livello foglia</li>
-          <li>Prima implementazione rilevante su larga scala: Kimi K2.5 (MoonshotAI, 2025)</li>
-        </ul>
-        <div class="callout" style="margin-top:0.6em">
-          Agent Swarm integra i vantaggi dell'Agent Loop (no context rot, autonomia prolungata) con quelli del Multi-Agent (parallelismo, specializzazione), rimuovendo la necessità di definire manualmente la topologia degli agenti.
-        </div>
+        <a class="text-small text-muted" href="https://PLACEHOLDER_LINK_SEZ_7B" target="_blank" rel="noopener">forms.gle/PLACEHOLDER_SEZ_7B</a>
       </div>
     </div>
     <div class="slide-footer">
@@ -3753,7 +3914,7 @@ write_blog(content_list)</code></pre>
 
   <!-- 8.0 — Titolo sezione -->
   <section class="slide-section">
-    <div class="section-eyebrow">Sezione 8 — Pomeriggio</div>
+    <div class="section-eyebrow">Sezione 8</div>
     <h2>Identificare Opportunità</h2>
     <p class="section-desc">Dove l'AI crea valore nella tua attività turistica</p>
   </section>
@@ -3954,6 +4115,29 @@ IMPATTO
     </div>
   </section>
 
+  <!-- 8.6 — Challenge -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 8 · Opportunità</span>
+      <h2>Challenge</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <div class="callout">
+        Hai completato la matrice impatto/sforzo. Qual è il tuo "quick win" — il processo ad alto impatto e basso sforzo che potresti automatizzare entro le prossime quattro settimane? Qual è il primo passo concreto?
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0.6em; margin-top: 0.5em;">
+        <div style="width: 180px; height: 180px; border: 2px dashed var(--border-color); border-radius: var(--border-radius-lg); background: var(--accent-bg); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.75em; letter-spacing: 0.05em;">
+          QR Code
+        </div>
+        <a class="text-small text-muted" href="https://PLACEHOLDER_LINK_SEZ_8" target="_blank" rel="noopener">forms.gle/PLACEHOLDER_SEZ_8</a>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
 </section>
 
 
@@ -4118,14 +4302,16 @@ terra. Vi aspettiamo il 15 marzo.
       <span class="slide-section-label">Sez. 9 · Prompting</span>
       <h2>Esempio pratico: risposta a recensioni</h2>
     </div>
-    <div class="slide-body layout-two-col">
+    <div class="slide-body layout-list" style="gap: var(--gap-lg);">
       <div>
         <h3>Recensione (negativa)</h3>
-        <div class="warning" style="font-size:0.75em">
+        <div class="warning">
           "Camera deludente, diversa dalle foto. Il bagno era piccolo e il WiFi non funzionava. Non tornerò." — 2 stelle
         </div>
-        <h3 style="margin-top:1em">Prompt</h3>
-        <pre style="font-size:0.6em">"Rispondi a questa recensione negativa.
+      </div>
+      <div>
+        <h3>Prompt</h3>
+        <pre>"Rispondi a questa recensione negativa.
 Tono: professionale e comprensivo.
 Riconosci i problemi specifici.
 Offri un contatto diretto.
@@ -4133,7 +4319,7 @@ Max 100 parole. Non essere difensivo."</pre>
       </div>
       <div>
         <h3>Output</h3>
-        <div class="callout" style="font-size:0.72em">
+        <div class="callout">
           "Gentile ospite, la ringraziamo per il suo feedback. Siamo dispiaciuti che l'esperienza non abbia soddisfatto le sue aspettative, in particolare riguardo alla camera e alla connettività. Questi sono aspetti su cui stiamo attivamente lavorando. Le chiediamo di contattarci direttamente a ospiti@hotel.it per poterci confrontare e, se possibile, rimediare. Speriamo di poterla riaccogliere con un'esperienza all'altezza delle sue aspettative."
         </div>
       </div>
@@ -4357,6 +4543,29 @@ Formato output: JSON strutturato</code></pre>
       <span class="footer-page"></span>
     </div>
   </section>
+
+  <!-- 9.12 — Challenge -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 9 · Prompting</span>
+      <h2>Challenge</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <div class="callout">
+        Hai già usato ChatGPT, Claude o strumenti simili per un task lavorativo? Descrivi un caso in cui il risultato ti ha sorpreso — in positivo o in negativo — e cosa avresti fatto diversamente con il prompt.
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0.6em; margin-top: 0.5em;">
+        <div style="width: 180px; height: 180px; border: 2px dashed var(--border-color); border-radius: var(--border-radius-lg); background: var(--accent-bg); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.75em; letter-spacing: 0.05em;">
+          QR Code
+        </div>
+        <a class="text-small text-muted" href="https://PLACEHOLDER_LINK_SEZ_9" target="_blank" rel="noopener">forms.gle/PLACEHOLDER_SEZ_9</a>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
 </section>
 
 
@@ -4537,6 +4746,29 @@ Formato output: JSON strutturato</code></pre>
     </div>
   </section>
 
+  <!-- 10.6 — Challenge -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sez. 10 · Sicurezza</span>
+      <h2>Challenge</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <div class="callout">
+        Nella tua azienda, chi ha accesso agli strumenti AI e quali dati degli ospiti circolano nei prompt? Sono già in atto misure — come un DPA firmato o una policy interna — per garantire l'uso sicuro e conforme al GDPR?
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0.6em; margin-top: 0.5em;">
+        <div style="width: 180px; height: 180px; border: 2px dashed var(--border-color); border-radius: var(--border-radius-lg); background: var(--accent-bg); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.75em; letter-spacing: 0.05em;">
+          QR Code
+        </div>
+        <a class="text-small text-muted" href="https://PLACEHOLDER_LINK_SEZ_10" target="_blank" rel="noopener">forms.gle/PLACEHOLDER_SEZ_10</a>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Digitiamo">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
 </section>
 
 
@@ -4637,31 +4869,32 @@ per il tuo problema specifico
       <div>
         <h3>Letture</h3>
         <ul>
-          <li><em>The Alignment Problem</em> — Brian Christian</li>
-          <li><em>Co-Intelligence</em> — Ethan Mollick</li>
-          <li>Anthropic Research Blog — anthropic.com</li>
-          <li>OpenAI Research — openai.com/research</li>
+          <li><a href="https://brianchristian.org/the-alignment-problem/" target="_blank" rel="noopener"><em>The Alignment Problem</em></a> — Brian Christian</li>
+          <li><a href="https://www.penguinrandomhouse.com/books/741805/co-intelligence-by-ethan-mollick/" target="_blank" rel="noopener"><em>Co-Intelligence</em></a> — Ethan Mollick</li>
+          <li><a href="https://www.anthropic.com/research" target="_blank" rel="noopener">Anthropic Research Blog</a></li>
+          <li><a href="https://openai.com/research" target="_blank" rel="noopener">OpenAI Research</a></li>
+          <li><a href="https://docs.anthropic.com/" target="_blank" rel="noopener">Claude API Docs</a> — guide tecniche e concetti approfonditi</li>
         </ul>
         <h3 style="margin-top:0.8em">Corsi online</h3>
         <ul>
-          <li>deeplearning.ai — corsi pratici, gratuiti</li>
-          <li>fast.ai — ML applicato</li>
-          <li>Prompt Engineering Guide — promptingguide.ai</li>
+          <li><a href="https://www.deeplearning.ai/" target="_blank" rel="noopener">deeplearning.ai</a> — corsi pratici, gratuiti</li>
+          <li><a href="https://www.fast.ai/" target="_blank" rel="noopener">fast.ai</a> — ML applicato</li>
+          <li><a href="https://www.promptingguide.ai/" target="_blank" rel="noopener">Prompt Engineering Guide</a></li>
         </ul>
       </div>
       <div>
         <h3>Strumenti da esplorare</h3>
         <ul>
-          <li><strong>Claude.ai</strong> — interfaccia consumer Anthropic</li>
-          <li><strong>ChatGPT</strong> — interfaccia OpenAI</li>
-          <li><strong>Perplexity</strong> — ricerca con AI</li>
-          <li><strong>Make / n8n</strong> — automazioni no-code con AI</li>
-          <li><strong>Dify / Flowise</strong> — RAG e chatbot no-code</li>
+          <li><a href="https://claude.ai/" target="_blank" rel="noopener"><strong>Claude.ai</strong></a> — interfaccia consumer Anthropic</li>
+          <li><a href="https://chatgpt.com/" target="_blank" rel="noopener"><strong>ChatGPT</strong></a> — interfaccia OpenAI</li>
+          <li><a href="https://www.perplexity.ai/" target="_blank" rel="noopener"><strong>Perplexity</strong></a> — ricerca con AI</li>
+          <li><a href="https://www.make.com/" target="_blank" rel="noopener"><strong>Make</strong></a> / <a href="https://n8n.io/" target="_blank" rel="noopener"><strong>n8n</strong></a> — automazioni no-code con AI</li>
+          <li><a href="https://dify.ai/" target="_blank" rel="noopener"><strong>Dify</strong></a> / <a href="https://flowiseai.com/" target="_blank" rel="noopener"><strong>Flowise</strong></a> — RAG e chatbot no-code</li>
         </ul>
         <h3 style="margin-top:0.8em">Community</h3>
         <ul>
-          <li>r/LocalLLaMA (Reddit)</li>
-          <li>Hugging Face community</li>
+          <li><a href="https://www.reddit.com/r/LocalLLaMA/" target="_blank" rel="noopener">r/LocalLLaMA</a> (Reddit)</li>
+          <li><a href="https://huggingface.co/" target="_blank" rel="noopener">Hugging Face community</a></li>
         </ul>
       </div>
     </div>
@@ -4687,14 +4920,15 @@ per il tuo problema specifico
         <li>Leggi i termini di servizio del provider AI che stai usando (5 minuti)</li>
         <li>Porta un esempio reale di output AI che hai usato (positivo o negativo)</li>
       </ol>
-      <div class="two-col" style="margin-top:1em">
-        <div class="card">
+      <div style="display: flex; align-items: stretch; gap: 0; margin-top: 1em;">
+        <div class="card" style="flex: 1;">
           <h4>Giorno 2 — anteprima</h4>
           <p class="text-small">Integrazione pratica: API, no-code tools, costruire il tuo primo chatbot. Portate i laptop.</p>
         </div>
-        <div class="card">
+        <div style="width: 1px; background: var(--border-color); margin: 0 var(--gap-md); flex-shrink: 0;"></div>
+        <div class="card" style="flex: 1;">
           <h4>Materiali del corso</h4>
-          <p class="text-small">Slide, template prompt e checklist sicurezza disponibili su [link condiviso].</p>
+          <p class="text-small">Le slide della lezione corrente sono disponibili a <a href="https://marcorossi5.github.io/lectures/20260302_AI_per_turismo/" target="_blank" rel="noopener">questo link</a>.</p>
         </div>
       </div>
     </div>
