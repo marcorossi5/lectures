@@ -1928,7 +1928,209 @@ html, body {
     <p class="section-desc">Prompt engineering efficace · Model Context Protocol · Skill Claude riutilizzabili in azienda</p>
   </section>
 
-  <!-- ORA3_CONTENT_PLACEHOLDER: Task 4 inserts slides here -->
+  <!-- 3.1 — Anatomia di un prompt -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 3 · Prompting</span>
+      <h2>Anatomia di un prompt efficace</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <ul>
+        <li><strong>Ruolo</strong> — chi deve "essere" il modello (es. "Sei un analista finanziario")</li>
+        <li><strong>Contesto</strong> — informazioni di sfondo rilevanti per il task</li>
+        <li><strong>Istruzione</strong> — cosa deve fare, in modo specifico e verificabile</li>
+        <li><strong>Formato di output</strong> — come vuoi la risposta (elenco, tabella, lunghezza, tono)</li>
+        <li><strong>Esempi</strong> — 1-2 esempi di input/output atteso, quando il formato è particolare</li>
+      </ul>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.2 — Tecniche -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 3 · Prompting</span>
+      <h2>Zero-shot, Few-shot, Chain-of-Thought</h2>
+    </div>
+    <div class="slide-body layout-three-col">
+      <div class="card">
+        <h4>Zero-shot</h4>
+        <p>Chiedi direttamente, senza esempi. Funziona bene per task comuni e ben definiti.</p>
+      </div>
+      <div class="card">
+        <h4>Few-shot</h4>
+        <p>Fornisci 2-3 esempi di input/output prima della richiesta reale. Utile per formati specifici o stile particolare.</p>
+      </div>
+      <div class="card">
+        <h4>Chain-of-Thought</h4>
+        <p>Chiedi al modello di ragionare passo passo prima della risposta finale. Migliora l'accuratezza su task complessi.</p>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.3 — Esempio pratico -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 3 · Prompting</span>
+      <h2>Esempio: da prompt vago a prompt efficace</h2>
+    </div>
+    <div class="slide-body layout-code">
+      <div class="warning" style="margin-bottom:0.6em;">
+        <strong>Vago:</strong> "Scrivi una risposta a questo cliente."
+      </div>
+      <div class="success">
+        <strong>Efficace:</strong> "Sei l'assistente customer care di [azienda]. Il cliente ha scritto lamentando un ritardo nella consegna. Scrivi una risposta in italiano, tono professionale ed empatico, massimo 100 parole, che: 1) riconosca il disagio, 2) spieghi la causa in una frase, 3) offra un'azione concreta di rimedio. Non promettere sconti non autorizzati."
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.4 — Errori comuni -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 3 · Prompting</span>
+      <h2>Errori comuni nel prompting</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <ul>
+        <li>Istruzioni ambigue o troppo generiche ("migliora questo testo")</li>
+        <li>Nessun formato di output richiesto: il modello sceglie per te, spesso in modo incoerente</li>
+        <li>Troppo contesto irrilevante, che diluisce l'attenzione del modello</li>
+        <li>Nessuna verifica dell'output: il modello può essere sicuro e sbagliato allo stesso tempo</li>
+        <li>Un unico prompt enorme invece di scomporre il task in passi più piccoli</li>
+      </ul>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.5 — MCP concetto -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 3 · MCP</span>
+      <h2>MCP — Model Context Protocol</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Il problema</h3>
+        <ul>
+          <li>Ogni applicazione AI che vuole usare strumenti esterni (calendario, CRM, file, database) dovrebbe integrarli uno per uno</li>
+          <li>Duplicazione di lavoro tra team e strumenti diversi</li>
+        </ul>
+      </div>
+      <div>
+        <h3>La soluzione</h3>
+        <ul>
+          <li>MCP è uno standard aperto: un "server" espone un set di strumenti in un formato comune</li>
+          <li>Qualsiasi client compatibile (Claude incluso) può collegarsi e usarli, senza integrazione custom</li>
+          <li>Un server MCP per il CRM aziendale, ad esempio, funziona sia con Claude che con altri strumenti compatibili</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.6 — MCP esempio -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 3 · MCP</span>
+      <h2>Esempio pratico: assistente collegato a un tool</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <p class="text-muted text-small">Scenario: "Controlla se ci sono riunioni libere domani pomeriggio e proponi 3 orari."</p>
+      <ul>
+        <li>Il modello riconosce che serve leggere un calendario e richiama lo strumento <code>get_calendar_events</code> esposto da un server MCP collegato al calendario aziendale</li>
+        <li>Riceve la lista di eventi come risultato strutturato (JSON)</li>
+        <li>Genera la risposta finale in linguaggio naturale, basata sui dati reali ricevuti — non inventati</li>
+      </ul>
+      <div class="callout">Senza il tool, il modello potrebbe "inventare" orari plausibili ma falsi. Con il tool, la risposta è ancorata a dati reali.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.7 — Cos'è una Skill (ripresa) -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 3 · Skill Aziendali</span>
+      <h2>Dalla Skill personale alla Skill aziendale</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Cosa abbiamo visto nell'Ora 2</h3>
+        <ul>
+          <li>Una Skill è un file <strong>SKILL.md</strong>: trigger, descrizione "quando usarla" / "quando NON usarla", istruzioni passo-passo</li>
+          <li>Si attiva automaticamente quando Claude riconosce il task</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Perché renderla "aziendale"</h3>
+        <ul>
+          <li>Una skill codifica un processo che normalmente vive solo nella testa di una persona (o in un documento che nessuno legge)</li>
+          <li>Condivisa nel team, garantisce lo stesso standard di qualità/formato a chiunque la usi</li>
+          <li>È un asset riutilizzabile: si aggiorna una volta, migliora ogni utilizzo futuro</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.8 — Skill aziendali Hup (placeholder) -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 3 · Skill Aziendali</span>
+      <h2>Skill aziendali Hup — da completare</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <div class="callout">
+        Questa slide è un segnaposto: verrà completata con esempi reali di skill Claude usate internamente in Hup (nome, scopo, quando si attivano, cosa producono).
+      </div>
+      <p class="text-muted text-small">Struttura suggerita per ogni skill da presentare: nome del trigger · problema che risolve · input tipico · output prodotto · impatto misurato.</p>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.9 — Riepilogo -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 3 · Prompting</span>
+      <h2>Riepilogo Ora 3</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <ul>
+        <li>Un buon prompt definisce ruolo, contesto, istruzione, formato e — quando serve — esempi</li>
+        <li>MCP standardizza come un modello si collega a strumenti e dati esterni</li>
+        <li>Le skill aziendali trasformano un processo individuale in uno standard condiviso dal team</li>
+      </ul>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
 
 </section>
 
