@@ -507,7 +507,7 @@ html, body {
   position: relative;
 }
 
-/* Thin indigo accent line at top of every slide */
+/* Thin hup-blue accent line at top of every slide */
 .reveal .slide-header::before {
   content: '';
   position: absolute;
@@ -1038,7 +1038,7 @@ html, body {
 .reveal code {
   font-family: var(--font-mono);
   background: var(--code-bg);
-  color: #4f46e5;   /* indigo-600 — gives a nice accent to inline code */
+  color: var(--accent-color);   /* hup-blue — gives a nice accent to inline code */
   padding: 0.1em 0.35em;
   border-radius: 4px;
   font-size: 0.87em;
@@ -2142,13 +2142,63 @@ html, body {
     <p class="section-desc">Esempi pratici applicati al nostro contesto di lavoro</p>
   </section>
 
-  <!-- ORA4_CONTENT_PLACEHOLDER: Task 5 inserts slides here -->
+  <!-- 4.1 — Use case (placeholder) -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 4 · Use Case</span>
+      <h2>Use case — da definire</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <div class="callout">
+        Questa sezione è un segnaposto: verrà completata con i casi d'uso pratici scelti per il nostro contesto di lavoro.
+      </div>
+      <p class="text-muted text-small">Per ogni use case: scenario di partenza · strumento/approccio usato (prompting, RAG, agente, skill) · risultato ottenuto.</p>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
 
 </section>
 
 <section data-section-title="Chiusura">
 
-  <!-- CHIUSURA_CONTENT_PLACEHOLDER: Task 5 inserts slides here -->
+  <!-- 5.1 — Riepilogo finale -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Chiusura</span>
+      <h2>Riepilogo della sessione</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Concetti e Claude</h3>
+        <ul>
+          <li>Come funziona un LLM e quando usare prompting, RAG o fine-tuning</li>
+          <li>Agenti, tool calling e MCP</li>
+          <li>I 4 livelli della guida Claude 101</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Prompting e pratica</h3>
+        <ul>
+          <li>Anatomia di un prompt efficace e tecniche few-shot/CoT</li>
+          <li>Come MCP e le skill aziendali automatizzano processi ricorrenti</li>
+          <li>I nostri use case (Ora 4)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 5.2 — Domande -->
+  <section class="slide-closing">
+    <h2>Domande?</h2>
+    <p>Grazie per l'attenzione.</p>
+  </section>
 
 </section>
 
@@ -2160,7 +2210,33 @@ html, body {
     <p class="section-desc">Termini chiave usati durante la sessione</p>
   </section>
 
-  <!-- GLOSSARIO_CONTENT_PLACEHOLDER: Task 5 inserts slides here -->
+  <!-- 6.1 — Glossario -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Appendice</span>
+      <h2>Abbreviazioni e termini chiave</h2>
+    </div>
+    <div class="slide-body layout-table">
+      <table class="table-keyed table-compact">
+        <tr><th>Termine</th><th>Significato</th></tr>
+        <tr><td><strong>LLM</strong></td><td>Large Language Model — modello addestrato a predire testo</td></tr>
+        <tr><td><strong>Token</strong></td><td>Unità minima di testo elaborata dal modello (parola o frammento)</td></tr>
+        <tr><td><strong>Context window</strong></td><td>Quantità massima di token che il modello può considerare in una richiesta</td></tr>
+        <tr><td><strong>Fine-tuning</strong></td><td>Riaddestramento del modello su esempi specifici</td></tr>
+        <tr><td><strong>RAG</strong></td><td>Retrieval Augmented Generation — recupero di documenti rilevanti inseriti nel prompt</td></tr>
+        <tr><td><strong>Embedding</strong></td><td>Rappresentazione numerica del significato di un testo</td></tr>
+        <tr><td><strong>Agente</strong></td><td>Sistema che pianifica ed esegue autonomamente una sequenza di azioni</td></tr>
+        <tr><td><strong>MCP</strong></td><td>Model Context Protocol — standard aperto per collegare modelli a strumenti esterni</td></tr>
+        <tr><td><strong>Function calling</strong></td><td>Meccanismo con cui un modello richiede l'esecuzione di una funzione esterna</td></tr>
+        <tr><td><strong>Prompt engineering</strong></td><td>Disciplina di scrittura di istruzioni efficaci per un modello</td></tr>
+        <tr><td><strong>Skill</strong></td><td>Istruzioni Claude riutilizzabili, attivate automaticamente in base al task</td></tr>
+      </table>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
 
 </section>
 
