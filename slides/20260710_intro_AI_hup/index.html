@@ -2288,7 +2288,220 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
     </div>
   </section>
 
-  <!-- ORA2_LEVEL3_PLACEHOLDER: Task 3 inserts Livello 3 slides here -->
+  <!-- 2.15 — Livello 3: cosa vedremo -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude</span>
+      <h2>Livello 3 — Advanced: cosa vedremo</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <ul>
+        <li><strong>Claude to sound like you</strong> (12 min) — catturare lo stile di scrittura di un team</li>
+        <li><strong>Stop hitting Claude limits</strong> (12 min) — gestire i limiti di utilizzo</li>
+        <li><strong>Stop Prompting</strong> (10 min) — tecniche oltre il prompt engineering tradizionale</li>
+        <li><strong>Claude replaced me</strong> (4 min) — trasformare competenza ripetuta in una skill</li>
+        <li><strong>Stop sounding like AI</strong> (20 min) — eliminare i pattern linguistici artificiali</li>
+        <li><strong>Excel with Claude cowork</strong> (7 min) — creare fogli di calcolo con l'AI</li>
+      </ul>
+      <div class="callout">Chiudiamo il livello con un esercizio pratico: verificare un tuo testo con il file di stile anti-AI.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.16 — Claude to sound like you -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude</span>
+      <h2>Claude to sound like you</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Cosa cattura</h3>
+        <ul>
+          <li>Lo stile di scrittura di un team (scelte lessicali, tono, struttura) può essere catturato in un file di testo e riutilizzato in ogni conversazione</li>
+          <li>Processo di estrazione: intervista guidata (100 domande) su tono, regole di scrittura, esempi da imitare/evitare</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Il file risultante</h3>
+        <ul>
+          <li>Il risultato viene compresso da decine di migliaia di parole a un file di 2.000-5.000 token — solo le istruzioni ad alto segnale restano</li>
+          <li>Va salvato nella cartella Cowork per essere caricato automaticamente ad ogni sessione</li>
+          <li>È portabile su altri assistenti AI ed è un documento vivo, da aggiornare nel tempo</li>
+        </ul>
+      </div>
+      <div class="callout">Pensala come alla guida di stile del tuo team, applicata automaticamente da Claude a ogni comunicazione.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.17 — Stop hitting Claude limits -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude</span>
+      <h2>Stop hitting Claude limits</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Da dove vengono i costi</h3>
+        <ul>
+          <li>Ogni messaggio rilegge l'intera cronologia della conversazione — i messaggi successivi costano esponenzialmente di più</li>
+          <li>Un PDF costa 1.500-3.000 token a pagina, uno screenshot ~1.300 — convertire in testo semplice riduce i costi</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Come ridurli</h3>
+        <ul>
+          <li>Abbinamento prodotto-task: Chat+modello leggero per domande rapide, Cowork+Opus per report su file, Code+Sonnet per task sui dati</li>
+          <li>Le conversazioni lunghe diventano "fornaci di token" (il 98,5% della spesa va a rileggere la cronologia) — riparti dopo 15-20 messaggi</li>
+          <li>"Modifica invece di rispondere": usa Edit su un messaggio precedente e rigenera, invece di accumulare follow-up</li>
+        </ul>
+      </div>
+      <div class="callout">Disattiva ricerca web/connector/extended thinking quando non servono — sono le prime voci di spreco di token.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.18 — Stop Prompting -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude</span>
+      <h2>Stop Prompting</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Il problema</h3>
+        <ul>
+          <li>I prompt "usa e getta" producono risultati generici perché mancano di contesto su stile, pubblico, obiettivi</li>
+        </ul>
+      </div>
+      <div>
+        <h3>La soluzione</h3>
+        <ul>
+          <li>Cowork collega Claude a una cartella locale di file di istruzioni in markdown, letti automaticamente ad ogni sessione</li>
+          <li>Un editor di note esterno (gratuito) permette di modificare facilmente quella stessa cartella</li>
+          <li>Le Skill trasformano workflow ricorrenti in comandi riutilizzabili</li>
+        </ul>
+      </div>
+      <div class="callout">Il salto di qualità non è "un prompt migliore", ma smettere di ripartire da zero ogni volta.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.19 — Claude replaced me -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude</span>
+      <h2>Claude replaced me</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <ul>
+        <li>L'autore ha creato una skill che automatizza una guida che prima scriveva a mano ogni settimana per i suoi lettori</li>
+        <li>Il valore umano si sposta su "la parte difficile": risolvere eccezioni, testare iterazioni, accompagnare le persone nel cambiamento</li>
+        <li>Modello consigliato per skill complesse: un modello di fascia alta con "effort" alto</li>
+      </ul>
+      <div class="callout">La stessa logica vale per qualunque processo che spieghi spesso ai colleghi — può diventare una skill condivisa, non solo un documento che nessuno legge.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.20 — Stop sounding like AI -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude</span>
+      <h2>Stop sounding like AI</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>I segnali</h3>
+        <ul>
+          <li>Il pattern "non è X, è Y" appare 4 volte più spesso nei documenti aziendali recenti — è un segnale riconoscibile di testo generato da AI</li>
+          <li>Lista di 100+ parole da evitare ("sfruttare", "sinergia", "senza soluzione di continuità"...)</li>
+          <li>Oltre 15 pattern strutturali da evitare, non solo di vocabolario</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Come intervenire</h3>
+        <ul>
+          <li>La specificità batte la levigatezza: sostituire affermazioni vaghe con dettagli concreti</li>
+          <li>Un file di stile "anti-AI" letto da Claude prima di ogni task, invece di ripetere le istruzioni ogni volta</li>
+        </ul>
+      </div>
+      <div class="callout">Rivedi periodicamente le tue ultime bozze e aggiorna la lista di pattern da evitare — i "tell" dell'AI cambiano nel tempo.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.21 — Esercizio pratico: Verifica il tuo testo -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude · Esercizio</span>
+      <h2>Esercizio pratico — Verifica il tuo testo</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <p class="text-muted text-small">~8-10 minuti · serve un tuo testo aziendale reale</p>
+      <ol>
+        <li>Crea un file di stile "anti-AI" con la lista di parole/pattern da evitare (fornito durante la sessione)</li>
+        <li>Prendi un tuo testo aziendale reale (email, comunicazione, report breve)</li>
+        <li>Chiedi a Claude: "Verifica questo testo usando il file di stile anti-AI: quali pattern trovi?"</li>
+        <li>Rivedi insieme le correzioni proposte</li>
+      </ol>
+      <div class="callout">L'obiettivo non è eliminare ogni traccia di AI, ma riconoscere i pattern che rendono un testo generico e sostituirli con dettagli concreti.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.22 — Excel with Claude cowork -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude</span>
+      <h2>Excel with Claude cowork</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Perché Cowork</h3>
+        <ul>
+          <li>Risultato il miglior strumento per costruire fogli di calcolo da zero, testato contro altri 10 strumenti AI</li>
+          <li>Workflow a 3 strumenti: Cowork (creazione) → foglio condiviso (condivisione/archiviazione) → editor esterno (modifica avanzata)</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Come strutturare il prompt</h3>
+        <ul>
+          <li>Scopo, fogli necessari, specifiche di formattazione, e "le 10 assunzioni principali da verificare" prima di procedere</li>
+          <li>Richiede piano Pro per l'app desktop; un connector cloud storage semplifica il trasferimento</li>
+        </ul>
+      </div>
+      <div class="callout">Chiedi sempre a Claude di elencare le sue assunzioni prima di generare il foglio — evita errori silenziosi su formule e numeri.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- ORA2_LEVEL4_PLACEHOLDER: Task 4 inserts Livello 4 slides and Riepilogo here -->
 
 </section>
 
