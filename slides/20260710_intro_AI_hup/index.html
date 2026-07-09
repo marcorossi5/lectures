@@ -1995,6 +1995,35 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
     </div>
   </section>
 
+  <!-- 3.4b — Anatomia di un mega-prompt -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Prompting</span>
+      <h2>Il mega-prompt: anatomia completa (avanzata)</h2>
+    </div>
+    <div class="slide-body layout-image-text">
+      <div class="slide-image">
+        <img src="public/images/prompt-anatomy.jpg" alt="The Anatomy of a Claude prompt: struttura di un mega-prompt in 8 blocchi">
+      </div>
+      <div>
+        <ul>
+          <li><strong>Task</strong> — cosa vuoi ottenere e qual è il criterio di successo</li>
+          <li><strong>File di contesto</strong> — quali file leggere prima di rispondere, e cosa contengono</li>
+          <li><strong>Riferimento</strong> — un esempio da imitare, con le regole di stile che ne derivano</li>
+          <li><strong>Success Brief</strong> — formato e lunghezza attesi, cosa evitare, cosa significa "successo"</li>
+          <li><strong>Regole</strong> — vincoli e standard da rispettare sempre</li>
+          <li><strong>Conversazione</strong> — chiedi al modello di fare domande di chiarimento prima di iniziare</li>
+          <li><strong>Piano</strong> — chiedi un piano d'esecuzione (max 5 passi) prima di scrivere qualsiasi cosa</li>
+          <li><strong>Allineamento</strong> — si parte solo dopo esservi allineati sul piano</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
   <!-- 3.5 — MCP concetto -->
   <section class="slide">
     <div class="slide-header">
@@ -2074,17 +2103,20 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
     </div>
   </section>
 
-  <!-- 3.8 — Skill aziendali Hup (placeholder) -->
+  <!-- 3.8 — Skill aziendali Hup: esempio reale -->
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Ora 2 · Skill Aziendali</span>
-      <h2>Skill aziendali Hup — da completare</h2>
+      <h2>Skill aziendale Hup: carta intestata automatica</h2>
     </div>
     <div class="slide-body layout-list">
-      <div class="callout">
-        Questa slide è un segnaposto: verrà completata con esempi reali di skill Claude usate internamente in Hup (nome, scopo, quando si attivano, cosa producono).
-      </div>
-      <p class="text-muted text-small">Struttura suggerita per ogni skill da presentare: nome del trigger · problema che risolve · input tipico · output prodotto · impatto misurato.</p>
+      <ul>
+        <li><strong>Trigger</strong> — ogni volta che si genera un documento di testo aziendale (lettera, comunicazione, relazione)</li>
+        <li><strong>Problema che risolve</strong> — impaginare manualmente ogni documento in carta intestata Hup: lavoro ripetitivo, facile da dimenticare o da fare in modo incoerente tra colleghi</li>
+        <li><strong>Input tipico</strong> — il contenuto/testo del documento da produrre</li>
+        <li><strong>Output prodotto</strong> — il documento finale, già formattato in carta intestata Hup, pronto per l'invio</li>
+      </ul>
+      <div class="callout">Tutti i documenti di testo aziendali vengono generati automaticamente già in carta intestata: la skill applica il formato corretto senza bisogno di ricordarselo ogni volta.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -2243,7 +2275,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
       <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
       <h2>Esercizio pratico — Costruisci una skill</h2>
     </div>
-    <div class="slide-body layout-two-col">
+    <div class="slide-body layout-three-col">
       <div class="card">
         <h4>A — Gestire i CV in entrata</h4>
         <p>Valutazione strutturata, accesso ai file in cloud, organizzazione dei CV con Cowork</p>
@@ -2252,7 +2284,11 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
         <h4>B — Project management</h4>
         <p>Contesto di team, triage delle email in arrivo, gestione delle carte in Asana</p>
       </div>
-      <div class="callout">Scegli uno dei due workflow, richiesti da colleghi come te: l'obiettivo è costruire, con lo Skill Creator, una skill che lo automatizzi. In futuro questi dati arriveranno direttamente dai sistemi aziendali tramite ORO, il nostro MCP interno (in arrivo) — per ora lavoriamo sui file locali.</div>
+      <div class="card">
+        <h4>C — Riscrivi i tuoi prompt</h4>
+        <p>Trasforma un prompt vago in un mega-prompt, seguendo l'anatomia vista poco fa</p>
+      </div>
+      <div class="callout">Scegli uno dei tre workflow: i primi due, richiesti da colleghi come te, useranno per ora file locali — in futuro arriveranno direttamente dai sistemi aziendali tramite ORO, il nostro MCP interno (in arrivo). Il terzo lavora sui tuoi prompt. In tutti i casi l'obiettivo è costruire, con lo Skill Creator, una skill che automatizzi il workflow scelto.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -2293,6 +2329,26 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
         <li><strong>Carte in Asana</strong> — legge le carte aperte, compila e assegna nuove carte, aiuta a gestire la board</li>
       </ul>
       <div class="callout">Costruisci una skill che ripete questi tre passi ogni volta che serve un aggiornamento del progetto.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.4c — Esercizio C: Riscrivi i tuoi prompt -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
+      <h2>Esercizio C — Riscrivi i tuoi prompt come mega-prompt</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <ul>
+        <li><strong>Raccogliere un prompt reale</strong> — parti da un prompt vago che usi spesso (es. "scrivi una mail", "riassumi questo documento")</li>
+        <li><strong>Riscriverlo con la struttura del mega-prompt</strong> — aggiungi Task, Success Brief, Regole e Riferimento seguendo l'anatomia vista in questa sezione</li>
+        <li><strong>Costruire la skill</strong> — con lo Skill Creator, crea una skill che, dato un prompt vago, lo riscriva automaticamente seguendo questa struttura</li>
+      </ul>
+      <div class="callout">Costruisci una skill che applica questa trasformazione ogni volta che scrivi un prompt troppo generico.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -2361,8 +2417,10 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
       <div>
         <h3>Economia dei token</h3>
         <ul>
-          <li>Il messaggio 30 costa ~31 volte il messaggio 1 — riparti da una nuova chat dopo ~20 messaggi</li>
-          <li>Sonnet/Haiku per task semplici, Opus + Extended Thinking per lavoro complesso</li>
+          <li>Il messaggio 30 costa ~31 volte il messaggio 1 — riparti da una nuova chat dopo ~15-20 messaggi</li>
+          <li>Usa "Riavvia la conversazione da qui" invece di aggiungere follow-up: elimina la cronologia accumulata</li>
+          <li>Raggruppa più richieste in un unico prompt, invece di messaggi separati</li>
+          <li>Sonnet/Haiku per task semplici, Opus + Extended Thinking per lavoro complesso; distribuisci i task nella finestra mobile di 5 ore invece di consumarla in una sessione</li>
         </ul>
       </div>
       <div class="callout">Mantieni ABOUT ME sotto i 6.000 token totali — più contesto non è sempre meglio (lo avevamo già visto in Ora 1).</div>
@@ -2383,11 +2441,13 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
       <p class="text-muted text-small">~10 minuti · serve l'app desktop di Claude</p>
       <ol>
         <li>Apri l'app desktop di Claude e crea una cartella "Claude Cowork" con tre sottocartelle: ABOUT ME, OUTPUTS, TEMPLATES</li>
-        <li>Scrivi un <code>about-me.md</code> essenziale: 5-6 righe su ruolo, stile di lavoro, priorità</li>
-        <li>Imposta le Istruzioni Globali (Impostazioni → Cowork) perché legga sempre quella cartella</li>
+        <li>In ABOUT ME crea <code>about-me.md</code>: chiedi a Claude di intervistarti (~20 domande su ruolo, stile di lavoro, standard) e di condensare le risposte in un file sotto i 2.000 token</li>
+        <li>Se hai tempo, aggiungi anche <code>my-company.md</code> (obiettivi e priorità del team, sotto i 1.000 token)</li>
+        <li>Imposta le Istruzioni Globali (Impostazioni → Cowork) perché legga sempre ABOUT ME e non tocchi OUTPUTS/TEMPLATES se non richiesto</li>
         <li>Fai una prima richiesta reale: "Leggi la cartella e riassumi cosa sai di me"</li>
       </ol>
-      <div class="callout">Bastano poche righe ben scritte — la qualità del file conta più della lunghezza.</div>
+      <div class="callout">Bastano poche righe ben scritte — la qualità del file conta più della lunghezza. Mantieni ABOUT ME sotto i 6.000 token totali.</div>
+      <p class="text-small text-muted">Guida di riferimento: <a href="https://ruben.substack.com/i/193363117/i-my-cowork-folder-updated" target="_blank" rel="noopener">My Cowork folder (updated)</a></p>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -2589,9 +2649,11 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
           <li>Abbinamento prodotto-task: Chat+modello leggero per domande rapide, Cowork+Opus per report su file, Code+Sonnet per task sui dati</li>
           <li>Le conversazioni lunghe diventano "fornaci di token" (il 98,5% della spesa va a rileggere la cronologia) — riparti dopo 15-20 messaggi</li>
           <li>"Modifica invece di rispondere": usa Edit su un messaggio precedente e rigenera, invece di accumulare follow-up</li>
+          <li>Pianifica in Chat (più economico), crea il documento finale solo in Cowork</li>
+          <li>Nei Projects, carica i documenti ricorrenti una sola volta: il caching riduce il costo delle conversazioni successive</li>
         </ul>
       </div>
-      <div class="callout">Disattiva ricerca web/connector/extended thinking quando non servono — sono le prime voci di spreco di token.</div>
+      <div class="callout">Disattiva ricerca web/connector/extended thinking quando non servono, e non caricare intere cartelle in Cowork: seleziona solo i file utili al task.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
