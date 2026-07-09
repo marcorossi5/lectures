@@ -1289,9 +1289,9 @@ html, body {
       <ul>
         <li>Spiegare cos'è un LLM e come genera testo (token, contesto, addestramento)</li>
         <li>Distinguere fine-tuning, RAG e prompting e scegliere l'approccio corretto</li>
-        <li>Orientarti tra i livelli e le risorse della guida Claude 101</li>
         <li>Scrivere prompt strutturati ed efficaci per il lavoro quotidiano</li>
         <li>Capire cosa sono MCP, tool calling e le skill Claude riutilizzabili in azienda</li>
+        <li>Orientarti tra i livelli e le risorse della guida Claude 101</li>
       </ul>
     </div>
     <div class="slide-footer">
@@ -1390,21 +1390,21 @@ html, body {
           </tr>
           <tr class="sched-row">
             <td class="col-time">60 min</td>
-            <td class="col-part">Ora 2 · Claude</td>
+            <td class="col-part">Ora 2 · Prompting &amp; Skill</td>
             <td class="col-topics">
               <ul>
-                <li>I 4 livelli della guida Claude 101</li>
-                <li>Cowork, Projects, Skills</li>
+                <li>Prompt engineering efficace</li>
+                <li>MCP, tool calling, skill aziendali</li>
               </ul>
             </td>
           </tr>
           <tr class="sched-row">
             <td class="col-time">60 min</td>
-            <td class="col-part">Ora 3 · Prompting &amp; Skill</td>
+            <td class="col-part">Ora 3 · Claude</td>
             <td class="col-topics">
               <ul>
-                <li>Prompt engineering efficace</li>
-                <li>MCP, tool calling, skill aziendali</li>
+                <li>I 4 livelli della guida Claude 101</li>
+                <li>Cowork, Projects, Skills</li>
               </ul>
             </td>
           </tr>
@@ -1809,7 +1809,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   [Reason] → Ho i dati aggregati, task completato
   [Output]  → "Riepilogo pronto: Vendite +12%, Marketing stabile..."
       </div>
-      <div class="callout" style="margin-top:0.8em">Questi sono gli stessi strumenti che ritroviamo con Claude: l'accesso ai file lo vedremo con Cowork nell'Ora 2; esecuzione di codice e comandi da terminale sono il dominio di Claude Code, che incontriamo più avanti nella guida.</div>
+      <div class="callout" style="margin-top:0.8em">Questi sono gli stessi strumenti che ritroviamo con Claude: l'accesso ai file lo vedremo con Cowork nell'Ora 3; esecuzione di codice e comandi da terminale sono il dominio di Claude Code, che incontriamo più avanti nella guida.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -1837,7 +1837,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
         <ul>
           <li>Uno standard aperto per collegare un modello a strumenti e sorgenti dati esterne</li>
           <li>Invece di integrare ogni tool a mano per ogni applicazione, un server MCP espone gli stessi strumenti a qualsiasi client compatibile</li>
-          <li>Ne riparliamo con esempi pratici nell'Ora 3</li>
+          <li>Ne riparliamo con esempi pratici nell'Ora 2</li>
         </ul>
       </div>
     </div>
@@ -1899,10 +1899,224 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
 
 </section>
 
-<section data-section-title="Ora 2 — Introduzione a Claude">
+<section data-section-title="Ora 2 — Prompting, MCP e Skill Aziendali">
 
   <section class="slide-section">
     <div class="section-eyebrow">Ora 2</div>
+    <h2>Prompting, MCP e Skill Aziendali</h2>
+    <p class="section-desc">Prompt engineering efficace · Model Context Protocol · Skill Claude riutilizzabili in azienda</p>
+  </section>
+
+  <!-- 3.1 — Anatomia di un prompt -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Prompting</span>
+      <h2>Anatomia di un prompt efficace</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <ul>
+        <li><strong>Ruolo</strong> — chi deve "essere" il modello (es. "Sei un analista finanziario")</li>
+        <li><strong>Contesto</strong> — informazioni di sfondo rilevanti per il task</li>
+        <li><strong>Istruzione</strong> — cosa deve fare, in modo specifico e verificabile</li>
+        <li><strong>Formato di output</strong> — come vuoi la risposta (elenco, tabella, lunghezza, tono)</li>
+        <li><strong>Esempi</strong> — 1-2 esempi di input/output atteso, quando il formato è particolare</li>
+      </ul>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.2 — Tecniche -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Prompting</span>
+      <h2>Zero-shot, Few-shot, Chain-of-Thought</h2>
+    </div>
+    <div class="slide-body layout-three-col">
+      <div class="card">
+        <h4>Zero-shot</h4>
+        <p>Chiedi direttamente, senza esempi. Funziona bene per task comuni e ben definiti.</p>
+      </div>
+      <div class="card">
+        <h4>Few-shot</h4>
+        <p>Fornisci 2-3 esempi di input/output prima della richiesta reale. Utile per formati specifici o stile particolare.</p>
+      </div>
+      <div class="card">
+        <h4>Chain-of-Thought</h4>
+        <p>Chiedi al modello di ragionare passo passo prima della risposta finale. Migliora l'accuratezza su task complessi.</p>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.3 — Esempio pratico -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Prompting</span>
+      <h2>Esempio: da prompt vago a prompt efficace</h2>
+    </div>
+    <div class="slide-body layout-code">
+      <div class="warning" style="margin-bottom:0.6em;">
+        <strong>Vago:</strong> "Scrivi una risposta a questo cliente."
+      </div>
+      <div class="success">
+        <strong>Efficace:</strong> "Sei l'assistente customer care di [azienda]. Il cliente ha scritto lamentando un ritardo nella consegna. Scrivi una risposta in italiano, tono professionale ed empatico, massimo 100 parole, che: 1) riconosca il disagio, 2) spieghi la causa in una frase, 3) offra un'azione concreta di rimedio. Non promettere sconti non autorizzati."
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.4 — Errori comuni -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Prompting</span>
+      <h2>Errori comuni nel prompting</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <ul>
+        <li>Istruzioni ambigue o troppo generiche ("migliora questo testo")</li>
+        <li>Nessun formato di output richiesto: il modello sceglie per te, spesso in modo incoerente</li>
+        <li>Troppo contesto irrilevante, che diluisce l'attenzione del modello</li>
+        <li>Nessuna verifica dell'output: il modello può essere sicuro e sbagliato allo stesso tempo</li>
+        <li>Un unico prompt enorme invece di scomporre il task in passi più piccoli</li>
+      </ul>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.5 — MCP concetto -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · MCP</span>
+      <h2>MCP — Model Context Protocol</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Il problema</h3>
+        <ul>
+          <li>Ogni applicazione AI che vuole usare strumenti esterni (calendario, CRM, file, database) dovrebbe integrarli uno per uno</li>
+          <li>Duplicazione di lavoro tra team e strumenti diversi</li>
+        </ul>
+      </div>
+      <div>
+        <h3>La soluzione</h3>
+        <ul>
+          <li>MCP è uno standard aperto: un "server" espone un set di strumenti in un formato comune</li>
+          <li>Qualsiasi client compatibile (Claude incluso) può collegarsi e usarli, senza integrazione custom</li>
+          <li>Un server MCP per il CRM aziendale, ad esempio, funziona sia con Claude che con altri strumenti compatibili</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.6 — MCP esempio -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · MCP</span>
+      <h2>Esempio pratico: assistente collegato a un tool</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <p class="text-muted text-small">Scenario: "Controlla se ci sono riunioni libere domani pomeriggio e proponi 3 orari."</p>
+      <ul>
+        <li>Il modello riconosce che serve leggere un calendario e richiama lo strumento <code>get_calendar_events</code> esposto da un server MCP collegato al calendario aziendale</li>
+        <li>Riceve la lista di eventi come risultato strutturato (JSON)</li>
+        <li>Genera la risposta finale in linguaggio naturale, basata sui dati reali ricevuti — non inventati</li>
+      </ul>
+      <div class="callout">Senza il tool, il modello potrebbe "inventare" orari plausibili ma falsi. Con il tool, la risposta è ancorata a dati reali.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.7 — Cos'è una Skill (ripresa) -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Skill Aziendali</span>
+      <h2>Skill aziendali: cosa sono e perché contano</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Cos'è una Skill</h3>
+        <ul>
+          <li>Una Skill è un file <strong>SKILL.md</strong>: trigger, descrizione "quando usarla" / "quando NON usarla", istruzioni passo-passo</li>
+          <li>Si attiva automaticamente quando Claude riconosce il task</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Perché renderla "aziendale"</h3>
+        <ul>
+          <li>Una skill codifica un processo che normalmente vive solo nella testa di una persona (o in un documento che nessuno legge)</li>
+          <li>Condivisa nel team, garantisce lo stesso standard di qualità/formato a chiunque la usi</li>
+          <li>È un asset riutilizzabile: si aggiorna una volta, migliora ogni utilizzo futuro</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.8 — Skill aziendali Hup (placeholder) -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Skill Aziendali</span>
+      <h2>Skill aziendali Hup — da completare</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <div class="callout">
+        Questa slide è un segnaposto: verrà completata con esempi reali di skill Claude usate internamente in Hup (nome, scopo, quando si attivano, cosa producono).
+      </div>
+      <p class="text-muted text-small">Struttura suggerita per ogni skill da presentare: nome del trigger · problema che risolve · input tipico · output prodotto · impatto misurato.</p>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 3.9 — Riepilogo -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Prompting</span>
+      <h2>Riepilogo Ora 2</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <ul>
+        <li>Un buon prompt definisce ruolo, contesto, istruzione, formato e — quando serve — esempi</li>
+        <li>MCP standardizza come un modello si collega a strumenti e dati esterni</li>
+        <li>Le skill aziendali trasformano un processo individuale in uno standard condiviso dal team</li>
+      </ul>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+</section>
+
+<section data-section-title="Ora 3 — Introduzione a Claude">
+
+  <section class="slide-section">
+    <div class="section-eyebrow">Ora 3</div>
     <h2>Introduzione a Claude</h2>
     <p class="section-desc">Le 18 pagine della guida Claude 101, livello per livello, con 4 esercizi pratici dal vivo</p>
   </section>
@@ -1910,7 +2124,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.1 — Overview dei 4 livelli -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Claude 101: una guida a 4 livelli</h2>
     </div>
     <div class="slide-body layout-list">
@@ -1931,7 +2145,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.2 — Livello 1: cosa vedremo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Livello 1 — Beginner: cosa vedremo</h2>
     </div>
     <div class="slide-body layout-list">
@@ -1950,7 +2164,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.3 — Claude For Dummies -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Claude For Dummies</h2>
     </div>
     <div class="slide-body layout-list">
@@ -1970,7 +2184,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.3a — Cinque regole per prompt efficaci -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Cinque regole per prompt efficaci</h2>
     </div>
     <div class="slide-body layout-list">
@@ -1991,7 +2205,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.3b — Claude: cosa fa bene, cosa fa male -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Claude: cosa fa bene, cosa fa male</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2026,7 +2240,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.4 — Esercizio pratico: Costruisci una skill (scelta) -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude · Esercizio</span>
+      <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
       <h2>Esercizio pratico — Costruisci una skill</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2049,7 +2263,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.4a — Esercizio A: Gestire i CV in entrata con Cowork -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude · Esercizio</span>
+      <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
       <h2>Esercizio A — Gestire i CV in entrata con Cowork</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2069,7 +2283,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.4b — Esercizio B: Project management -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude · Esercizio</span>
+      <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
       <h2>Esercizio B — Project management</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2089,7 +2303,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.5 — Be good at Claude is (stupidly) simple -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Be good at Claude is (stupidly) simple</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2110,7 +2324,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.7 — Livello 2: cosa vedremo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Livello 2 — Intermediate: cosa vedremo</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2132,7 +2346,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.8 — Claude Cowork -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Claude Cowork</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2162,7 +2376,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.9 — Esercizio pratico: Configura il tuo Cowork -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude · Esercizio</span>
+      <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
       <h2>Esercizio pratico — Configura il tuo Cowork</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2184,7 +2398,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.10 — Claude for teams -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Claude for teams</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2214,7 +2428,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.11 — Claude Design -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Claude Design</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2244,7 +2458,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.12 — Claude Cowork + Projects -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Claude Cowork + Projects</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2274,7 +2488,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.14 — Claude Skills -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Claude Skills</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2305,7 +2519,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.15 — Livello 3: cosa vedremo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Livello 3 — Advanced: cosa vedremo</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2328,7 +2542,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.16 — Claude to sound like you -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Claude to sound like you</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2358,7 +2572,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.17 — Stop hitting Claude limits -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Stop hitting Claude limits</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2388,7 +2602,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.18 — Stop Prompting -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Stop Prompting</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2417,7 +2631,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.19 — Claude replaced me -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Claude replaced me</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2437,7 +2651,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.20 — Stop sounding like AI -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Stop sounding like AI</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2467,7 +2681,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.21 — Esercizio pratico: Verifica il tuo testo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude · Esercizio</span>
+      <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
       <h2>Esercizio pratico — Verifica il tuo testo</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2489,7 +2703,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.22 — Excel with Claude cowork -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Excel with Claude cowork</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2518,7 +2732,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.23 — Livello 4: cosa vedremo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Livello 4 — Expert: cosa vedremo</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2527,7 +2741,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
         <li><strong>Claude Code</strong> (14 min) — costruire app/siti senza saper programmare</li>
         <li><strong>Stop using your own Claude at work</strong> (9 min) — governance e sicurezza dell'AI personale in azienda</li>
       </ul>
-      <div class="callout">Chiudiamo il livello, e l'Ora 2, con un esercizio pratico: mettere in sicurezza il tuo account.</div>
+      <div class="callout">Chiudiamo il livello, e l'Ora 3, con un esercizio pratico: mettere in sicurezza il tuo account.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -2538,7 +2752,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.24 — Claude Connectors -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Claude Connectors</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2568,7 +2782,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.25 — Claude Code -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Claude Code</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2587,7 +2801,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
           <li>Il passaggio a sviluppatori professionisti avviene tramite un documento di consegna (stack usato, funzionalità pronte, punti da rifinire)</li>
         </ul>
       </div>
-      <div class="callout">Sapere quando NON usare Claude Code è importante quanto sapere come usarlo — per un singolo componente, un documento o un foglio di calcolo, gli strumenti visti in questa Ora 2 sono più adatti.</div>
+      <div class="callout">Sapere quando NON usare Claude Code è importante quanto sapere come usarlo — per un singolo componente, un documento o un foglio di calcolo, gli strumenti visti in questa Ora 3 sono più adatti.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -2598,7 +2812,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.26 — Stop using your own Claude at work -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
+      <span class="slide-section-label">Ora 3 · Claude</span>
       <h2>Stop using your own Claude at work</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2629,7 +2843,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.27 — Esercizio pratico: Metti in sicurezza il tuo account -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude · Esercizio</span>
+      <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
       <h2>Esercizio pratico — Metti in sicurezza il tuo account</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2651,229 +2865,15 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.28 — Riepilogo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Claude</span>
-      <h2>Riepilogo Ora 2</h2>
+      <span class="slide-section-label">Ora 3 · Claude</span>
+      <h2>Riepilogo Ora 3</h2>
     </div>
     <div class="slide-body layout-list">
       <ul>
         <li>claude101.com copre 4 livelli e 18 articoli, da primo utilizzo ad adozione aziendale avanzata</li>
         <li>Cowork porta Claude a lavorare direttamente sui tuoi file locali, con contesto persistente; i Project isolano memoria e istruzioni per ogni area di lavoro</li>
-        <li>Le Skill automatizzano processi ricorrenti: le vediamo applicate in azienda nell'Ora 3</li>
+        <li>Le Skill automatizzano processi ricorrenti: le abbiamo viste applicate in azienda nell'Ora 2</li>
         <li>Abbiamo messo in pratica 4 esercizi dal vivo: riscrittura nel tuo stile, setup Cowork, verifica anti-AI di un testo, messa in sicurezza dell'account</li>
-      </ul>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-</section>
-
-<section data-section-title="Ora 3 — Prompting, MCP e Skill Aziendali">
-
-  <section class="slide-section">
-    <div class="section-eyebrow">Ora 3</div>
-    <h2>Prompting, MCP e Skill Aziendali</h2>
-    <p class="section-desc">Prompt engineering efficace · Model Context Protocol · Skill Claude riutilizzabili in azienda</p>
-  </section>
-
-  <!-- 3.1 — Anatomia di un prompt -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Prompting</span>
-      <h2>Anatomia di un prompt efficace</h2>
-    </div>
-    <div class="slide-body layout-list">
-      <ul>
-        <li><strong>Ruolo</strong> — chi deve "essere" il modello (es. "Sei un analista finanziario")</li>
-        <li><strong>Contesto</strong> — informazioni di sfondo rilevanti per il task</li>
-        <li><strong>Istruzione</strong> — cosa deve fare, in modo specifico e verificabile</li>
-        <li><strong>Formato di output</strong> — come vuoi la risposta (elenco, tabella, lunghezza, tono)</li>
-        <li><strong>Esempi</strong> — 1-2 esempi di input/output atteso, quando il formato è particolare</li>
-      </ul>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 3.2 — Tecniche -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Prompting</span>
-      <h2>Zero-shot, Few-shot, Chain-of-Thought</h2>
-    </div>
-    <div class="slide-body layout-three-col">
-      <div class="card">
-        <h4>Zero-shot</h4>
-        <p>Chiedi direttamente, senza esempi. Funziona bene per task comuni e ben definiti.</p>
-      </div>
-      <div class="card">
-        <h4>Few-shot</h4>
-        <p>Fornisci 2-3 esempi di input/output prima della richiesta reale. Utile per formati specifici o stile particolare.</p>
-      </div>
-      <div class="card">
-        <h4>Chain-of-Thought</h4>
-        <p>Chiedi al modello di ragionare passo passo prima della risposta finale. Migliora l'accuratezza su task complessi.</p>
-      </div>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 3.3 — Esempio pratico -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Prompting</span>
-      <h2>Esempio: da prompt vago a prompt efficace</h2>
-    </div>
-    <div class="slide-body layout-code">
-      <div class="warning" style="margin-bottom:0.6em;">
-        <strong>Vago:</strong> "Scrivi una risposta a questo cliente."
-      </div>
-      <div class="success">
-        <strong>Efficace:</strong> "Sei l'assistente customer care di [azienda]. Il cliente ha scritto lamentando un ritardo nella consegna. Scrivi una risposta in italiano, tono professionale ed empatico, massimo 100 parole, che: 1) riconosca il disagio, 2) spieghi la causa in una frase, 3) offra un'azione concreta di rimedio. Non promettere sconti non autorizzati."
-      </div>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 3.4 — Errori comuni -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Prompting</span>
-      <h2>Errori comuni nel prompting</h2>
-    </div>
-    <div class="slide-body layout-list">
-      <ul>
-        <li>Istruzioni ambigue o troppo generiche ("migliora questo testo")</li>
-        <li>Nessun formato di output richiesto: il modello sceglie per te, spesso in modo incoerente</li>
-        <li>Troppo contesto irrilevante, che diluisce l'attenzione del modello</li>
-        <li>Nessuna verifica dell'output: il modello può essere sicuro e sbagliato allo stesso tempo</li>
-        <li>Un unico prompt enorme invece di scomporre il task in passi più piccoli</li>
-      </ul>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 3.5 — MCP concetto -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · MCP</span>
-      <h2>MCP — Model Context Protocol</h2>
-    </div>
-    <div class="slide-body layout-two-col">
-      <div>
-        <h3>Il problema</h3>
-        <ul>
-          <li>Ogni applicazione AI che vuole usare strumenti esterni (calendario, CRM, file, database) dovrebbe integrarli uno per uno</li>
-          <li>Duplicazione di lavoro tra team e strumenti diversi</li>
-        </ul>
-      </div>
-      <div>
-        <h3>La soluzione</h3>
-        <ul>
-          <li>MCP è uno standard aperto: un "server" espone un set di strumenti in un formato comune</li>
-          <li>Qualsiasi client compatibile (Claude incluso) può collegarsi e usarli, senza integrazione custom</li>
-          <li>Un server MCP per il CRM aziendale, ad esempio, funziona sia con Claude che con altri strumenti compatibili</li>
-        </ul>
-      </div>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 3.6 — MCP esempio -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · MCP</span>
-      <h2>Esempio pratico: assistente collegato a un tool</h2>
-    </div>
-    <div class="slide-body layout-list">
-      <p class="text-muted text-small">Scenario: "Controlla se ci sono riunioni libere domani pomeriggio e proponi 3 orari."</p>
-      <ul>
-        <li>Il modello riconosce che serve leggere un calendario e richiama lo strumento <code>get_calendar_events</code> esposto da un server MCP collegato al calendario aziendale</li>
-        <li>Riceve la lista di eventi come risultato strutturato (JSON)</li>
-        <li>Genera la risposta finale in linguaggio naturale, basata sui dati reali ricevuti — non inventati</li>
-      </ul>
-      <div class="callout">Senza il tool, il modello potrebbe "inventare" orari plausibili ma falsi. Con il tool, la risposta è ancorata a dati reali.</div>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 3.7 — Cos'è una Skill (ripresa) -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Skill Aziendali</span>
-      <h2>Dalla Skill personale alla Skill aziendale</h2>
-    </div>
-    <div class="slide-body layout-two-col">
-      <div>
-        <h3>Cosa abbiamo visto nell'Ora 2</h3>
-        <ul>
-          <li>Una Skill è un file <strong>SKILL.md</strong>: trigger, descrizione "quando usarla" / "quando NON usarla", istruzioni passo-passo</li>
-          <li>Si attiva automaticamente quando Claude riconosce il task</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Perché renderla "aziendale"</h3>
-        <ul>
-          <li>Una skill codifica un processo che normalmente vive solo nella testa di una persona (o in un documento che nessuno legge)</li>
-          <li>Condivisa nel team, garantisce lo stesso standard di qualità/formato a chiunque la usi</li>
-          <li>È un asset riutilizzabile: si aggiorna una volta, migliora ogni utilizzo futuro</li>
-        </ul>
-      </div>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 3.8 — Skill aziendali Hup (placeholder) -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Skill Aziendali</span>
-      <h2>Skill aziendali Hup — da completare</h2>
-    </div>
-    <div class="slide-body layout-list">
-      <div class="callout">
-        Questa slide è un segnaposto: verrà completata con esempi reali di skill Claude usate internamente in Hup (nome, scopo, quando si attivano, cosa producono).
-      </div>
-      <p class="text-muted text-small">Struttura suggerita per ogni skill da presentare: nome del trigger · problema che risolve · input tipico · output prodotto · impatto misurato.</p>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 3.9 — Riepilogo -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Prompting</span>
-      <h2>Riepilogo Ora 3</h2>
-    </div>
-    <div class="slide-body layout-list">
-      <ul>
-        <li>Un buon prompt definisce ruolo, contesto, istruzione, formato e — quando serve — esempi</li>
-        <li>MCP standardizza come un modello si collega a strumenti e dati esterni</li>
-        <li>Le skill aziendali trasformano un processo individuale in uno standard condiviso dal team</li>
       </ul>
     </div>
     <div class="slide-footer">
