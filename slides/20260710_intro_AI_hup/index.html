@@ -1437,7 +1437,7 @@ html, body {
   <section class="slide-section">
     <div class="section-eyebrow">Ora 1</div>
     <h2>Concetti Fondamentali di AI</h2>
-    <p class="section-desc">Cos'è un LLM · Context window · Fine-tuning, RAG e prompting · Agenti e tool calling</p>
+    <p class="section-desc">Modelli e tokenizzazione · Context window e context rot · Fine-tuning, RAG e prompting · Agenti e tool reali</p>
   </section>
 
   <!-- 1.1 — AI, ML, DL, GenAI -->
@@ -1461,7 +1461,37 @@ html, body {
     </div>
   </section>
 
-  <!-- 1.2 — Cos'è un LLM -->
+  <!-- 1.2 — Esempi concreti di modelli -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <h2>Esempi concreti: modelli in uso oggi</h2>
+    </div>
+    <div class="slide-body layout-three-col">
+      <div class="card">
+        <h4>Machine Learning</h4>
+        <p>Regressione, alberi decisionali, random forest.</p>
+        <p class="text-muted text-small">Previsione vendite, scoring crediti, rilevamento frodi.</p>
+      </div>
+      <div class="card">
+        <h4>Deep Learning</h4>
+        <p>Reti neurali profonde, reti convoluzionali (CNN).</p>
+        <p class="text-muted text-small">Riconoscimento immagini, trascrizione vocale.</p>
+      </div>
+      <div class="card">
+        <h4>AI Generativa</h4>
+        <p>LLM (GPT-4, Claude, Gemini, Llama); modelli immagine (Midjourney, DALL-E, Stable Diffusion).</p>
+        <p class="text-muted text-small">Genera testo, codice, immagini.</p>
+      </div>
+      <div class="callout">Stesso principio — apprendere pattern dai dati — output molto diversi.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 1.3 — Cos'è un LLM -->
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Ora 1 · Concetti AI</span>
@@ -1494,7 +1524,61 @@ html, body {
     </div>
   </section>
 
-  <!-- 1.3 — Context window -->
+  <!-- 1.4 — Tokenizzazione -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <h2>Tokenizzazione: il testo diventa numeri</h2>
+    </div>
+    <div class="slide-body layout-diagram">
+      <p>Prima di elaborare il testo, l'LLM lo converte in <strong>token</strong> (frammenti di parole).</p>
+      <div class="diagram">
+"Fatturazione" → ["Fatt", "ura", "zione"] → [4921, 1203, 3847]
+
+"dashboard"    → ["dash", "board"]        → [10314, 2898]
+
+"€"            → ["€"]                     → [27975]
+      </div>
+      <ul style="margin-top:0.8em">
+        <li>~1 token ≈ 0.75 parole in inglese / ~0.6 parole in italiano</li>
+        <li>Il costo delle chiamate API si misura in token (input + output)</li>
+        <li>Parole rare o tecniche → più token → più costose</li>
+      </ul>
+      <p class="text-small text-muted">Strumento interattivo: <a href="https://platform.openai.com/tokenizer" target="_blank" rel="noopener">platform.openai.com/tokenizer</a></p>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 1.5 — Come un LLM genera testo -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <h2>Come un LLM genera testo</h2>
+    </div>
+    <div class="slide-body layout-diagram">
+      <div class="diagram">
+Input: "Il report di vendita mostra un calo del"
+   ↓
+[LLM: predice una probabilità per ogni token possibile]
+   ↓
+"15" (68%)  →  "10" (12%)  →  "20" (9%)  →  ...
+   ↓
+Sceglie "15", lo aggiunge al testo, e ripete da capo
+      </div>
+      <div class="callout" style="margin-top:1em">
+        Il modello genera un token alla volta: ogni nuovo token tiene conto di tutto il testo precedente, incluso quello che ha appena generato lui stesso.
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 1.6 — Context window -->
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Ora 1 · Concetti AI</span>
@@ -1520,6 +1604,117 @@ html, body {
       <div class="callout">
         Regola pratica: dai al modello solo il contesto rilevante per il task, non tutto quello che hai a disposizione.
       </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 1.7 — Context window: esempio di conversazione -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <h2>Context window: un esempio di conversazione</h2>
+    </div>
+    <div class="slide-body" style="display:grid; grid-template-columns:1.4fr 1fr; gap:var(--gap-lg); align-content:center;">
+      <div>
+        <h3>Cosa succede in pratica</h3>
+        <ul>
+          <li>Ogni nuovo messaggio si aggiunge alla conversazione, ma la finestra di contesto ha una dimensione massima</li>
+          <li>I messaggi più vecchi, se il contesto è pieno, escono dalla finestra: il modello smette di "vederli"</li>
+          <li>Il modello risponde solo in base a ciò che rientra ancora nella finestra</li>
+        </ul>
+        <div class="callout" style="margin-top:0.8em">
+          Nell'esempio a destra, i primi scambi (sbiaditi) sono ormai fuori dalla context window: se chiedessi di nuovo "che laptop ha richiesto Marco", il modello non lo saprebbe più.
+        </div>
+      </div>
+
+      <!-- Chat mock -->
+      <div style="display:flex; flex-direction:column; font-size:0.56em; background:#f8f9fb; border-radius:12px; overflow:hidden; border:1px solid var(--border-color); box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+        <div style="display:flex; align-items:center; gap:0.5em; background:var(--accent-color); color:#fff; padding:0.55em 0.9em; flex-shrink:0;">
+          <div style="width:1.8em; height:1.8em; background:rgba(255,255,255,0.25); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1em; flex-shrink:0;">💬</div>
+          <div>
+            <div style="font-weight:700; line-height:1.2;">Assistente Operations</div>
+            <div style="font-size:0.75em; color:#4ade80;">● online</div>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:0.14em; padding:0.6em 0.65em; flex:1; overflow:hidden;">
+
+          <!-- Out-of-context messages — faded -->
+          <div style="opacity:0.35; display:flex; flex-direction:column; gap:0.14em;">
+            <div style="align-self:flex-end; background:var(--accent-color); color:#fff; padding:0.28em 0.6em; border-radius:10px 10px 2px 10px; max-width:82%; line-height:1.35;">
+              Ho aperto il ticket IT-4021 per il laptop di Marco.
+            </div>
+            <div style="align-self:flex-start; background:#fff; border:1px solid #e2e8f0; padding:0.28em 0.6em; border-radius:10px 10px 10px 2px; max-width:88%; box-shadow:0 1px 3px rgba(0,0,0,0.06); line-height:1.35;">
+              Registrato. Modello richiesto: 14", 16GB RAM.
+            </div>
+            <div style="align-self:flex-end; background:var(--accent-color); color:#fff; padding:0.28em 0.6em; border-radius:10px 10px 2px 10px; max-width:82%; line-height:1.35;">
+              Puoi anche ordinare un secondo monitor?
+            </div>
+            <div style="align-self:flex-start; background:#fff; border:1px solid #e2e8f0; padding:0.28em 0.6em; border-radius:10px 10px 10px 2px; max-width:88%; box-shadow:0 1px 3px rgba(0,0,0,0.06); line-height:1.35;">
+              Aggiunto alla richiesta.
+            </div>
+            <div style="align-self:flex-end; background:var(--accent-color); color:#fff; padding:0.28em 0.6em; border-radius:10px 10px 2px 10px; max-width:82%; line-height:1.35;">
+              Quando arriva di solito il materiale?
+            </div>
+            <div style="align-self:flex-start; background:#fff; border:1px solid #e2e8f0; padding:0.28em 0.6em; border-radius:10px 10px 10px 2px; max-width:88%; box-shadow:0 1px 3px rgba(0,0,0,0.06); line-height:1.35;">
+              In genere 5-7 giorni lavorativi dall'ordine.
+            </div>
+          </div>
+
+          <!-- Context window box -->
+          <div style="position:relative; border:2px solid #f59e0b; border-radius:8px; padding:0.45em 0.5em 0.45em 0.5em; margin-top:0.3em; background:rgba(245,158,11,0.07); display:flex; flex-direction:column; gap:0.14em;">
+            <div style="position:absolute; top:-0.75em; left:50%; transform:translateX(-50%); background:#f59e0b; color:#fff; font-size:0.75em; font-weight:700; padding:0.1em 0.5em; border-radius:6px; white-space:nowrap; letter-spacing:0.03em;">
+              ↕ context window
+            </div>
+
+            <div style="align-self:flex-end; background:var(--accent-color); color:#fff; padding:0.28em 0.6em; border-radius:10px 10px 2px 10px; max-width:82%; line-height:1.35;">
+              E per l'accesso al VPN aziendale?
+            </div>
+            <div style="align-self:flex-start; background:#fff; border:1px solid #e2e8f0; padding:0.28em 0.6em; border-radius:10px 10px 10px 2px; max-width:88%; box-shadow:0 1px 3px rgba(0,0,0,0.06); line-height:1.35;">
+              Serve un ticket separato all'IT Security: te lo apro ora?
+            </div>
+            <div style="align-self:flex-end; background:var(--accent-color); color:#fff; padding:0.28em 0.6em; border-radius:10px 10px 2px 10px; max-width:82%; line-height:1.35;">
+              Sì grazie. Aggiungimi anche il badge per il parcheggio.
+            </div>
+            <div style="align-self:flex-start; background:#fff; border:1px solid #e2e8f0; padding:0.28em 0.6em; border-radius:10px 10px 10px 2px; max-width:88%; box-shadow:0 1px 3px rgba(0,0,0,0.06); line-height:1.35;">
+              Fatto: ticket Security aperto, richiesta badge inoltrata a reception.
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:0.4em; padding:0.45em 0.65em; background:#fff; border-top:1px solid #e2e8f0; flex-shrink:0;">
+          <div style="flex:1; background:#f1f5f9; border:1px solid #e2e8f0; border-radius:20px; padding:0.32em 0.8em; color:#94a3b8; font-size:0.95em;">
+            Scrivi un messaggio…
+          </div>
+          <div style="width:1.7em; height:1.7em; background:var(--accent-color); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.85em; flex-shrink:0; box-shadow:0 2px 6px rgba(42,104,212,0.4);">➤</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 1.8 — Context rot -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <h2>Context rot: quando iniziare una nuova conversazione</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <p>Man mano che il contesto cresce — specialmente se pieno di informazioni irrilevanti o contraddittorie — la qualità delle risposte peggiora. Non solo quando il contesto è "pieno": già prima.</p>
+      <h3 style="margin-top:0.8em">Regola pratica: apri una nuova conversazione quando</h3>
+      <ul>
+        <li>Cambi argomento in modo netto rispetto a quanto discusso finora</li>
+        <li>Il modello inizia a ignorare istruzioni date in precedenza</li>
+        <li>La conversazione ha accumulato molti tentativi e correzioni falliti</li>
+        <li>Stai per iniziare un task grande, indipendente dal precedente</li>
+      </ul>
+      <div class="callout" style="margin-top:0.8em">Una conversazione pulita e mirata batte quasi sempre una conversazione lunga e affollata.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
