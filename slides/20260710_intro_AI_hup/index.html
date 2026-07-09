@@ -2062,7 +2062,233 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
     </div>
   </section>
 
-  <!-- ORA2_LEVEL2_PLACEHOLDER: Task 2 inserts Livello 2 slides here -->
+  <!-- 2.7 — Livello 2: cosa vedremo -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude</span>
+      <h2>Livello 2 — Intermediate: cosa vedremo</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <ul>
+        <li><strong>Claude Cowork</strong> (18 min) — collaborazione locale con l'AI</li>
+        <li><strong>Claude for teams</strong> (11 min) — onboarding e configurazione per i team</li>
+        <li><strong>Claude Design</strong> (9 min) — siti, slide e video con l'AI</li>
+        <li><strong>Claude Cowork + Projects</strong> (10 min) — spazi di lavoro persistenti</li>
+        <li><strong>Claude for slides</strong> (7 min) — metodo per creare presentazioni</li>
+        <li><strong>Claude Skills</strong> (6 min) — automatizzare workflow ricorrenti</li>
+      </ul>
+      <div class="callout">Chiudiamo il livello con un esercizio pratico: configurare il tuo primo Cowork.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.8 — Claude Cowork -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude</span>
+      <h2>Claude Cowork</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Architettura a cartelle</h3>
+        <ul>
+          <li><strong>ABOUT ME</strong>: chi sei, il tuo stile, gli obiettivi aziendali — letto prima di ogni sessione</li>
+          <li><strong>OUTPUTS</strong>: risultati generati per ogni progetto</li>
+          <li><strong>TEMPLATES</strong>: strutture riutilizzabili dai tuoi lavori migliori</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Economia dei token</h3>
+        <ul>
+          <li>Il messaggio 30 costa ~31 volte il messaggio 1 — riparti da una nuova chat dopo ~20 messaggi</li>
+          <li>Sonnet/Haiku per task semplici, Opus + Extended Thinking per lavoro complesso</li>
+        </ul>
+      </div>
+      <div class="callout">Mantieni ABOUT ME sotto i 6.000 token totali — più contesto non è sempre meglio (lo avevamo già visto in Ora 1).</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.9 — Esercizio pratico: Configura il tuo Cowork -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude · Esercizio</span>
+      <h2>Esercizio pratico — Configura il tuo Cowork</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <p class="text-muted text-small">~10 minuti · serve l'app desktop di Claude</p>
+      <ol>
+        <li>Apri l'app desktop di Claude e crea una cartella "Claude Cowork" con tre sottocartelle: ABOUT ME, OUTPUTS, TEMPLATES</li>
+        <li>Scrivi un <code>about-me.md</code> essenziale: 5-6 righe su ruolo, stile di lavoro, priorità</li>
+        <li>Imposta le Istruzioni Globali (Impostazioni → Cowork) perché legga sempre quella cartella</li>
+        <li>Fai una prima richiesta reale: "Leggi la cartella e riassumi cosa sai di me"</li>
+      </ol>
+      <div class="callout">Bastano poche righe ben scritte — la qualità del file conta più della lunghezza.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.10 — Claude for teams -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude</span>
+      <h2>Claude for teams</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Setup</h3>
+        <ul>
+          <li>Piano Team: minimo 5 posti (fino a 150), livello Premium consigliato per uso quotidiano</li>
+          <li>Architettura a Project: 3-5 Project per tipo di deliverable ricorrente, ognuno con istruzioni e documenti mirati</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Adozione</h3>
+        <ul>
+          <li>Converti prima un collega oberato di lavoro, poi usa il suo entusiasmo per il rollout</li>
+          <li>Prompt template a una frase, un solo campo di input, pronti da copiare per i colleghi</li>
+          <li>Claude non si addestra sui dati del team, a nessun livello di piano</li>
+        </ul>
+      </div>
+      <div class="callout">Percorso di adozione in 5 giorni: setup Project → template pronti → demo prima/dopo → conversione di un singolo utente → rollout team. Non eseguibile in aula, ma riutilizzabile come piano concreto.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.11 — Claude Design -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude</span>
+      <h2>Claude Design</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Cos'è</h3>
+        <ul>
+          <li>Prodotto separato su claude.ai/design, richiede piano Pro/Max o abilitazione admin per Team/Enterprise</li>
+          <li>Tre formati di output: siti ad alta fedeltà, presentazioni (con note del relatore), video animati</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Attenzioni</h3>
+        <ul>
+          <li>Il consumo di token è molto rapido — richiede monitoraggio attento</li>
+          <li>Un file DESIGN.md (linee guida di brand estratte) permette a Claude di applicare uno stile coerente senza doverlo rispecificare ogni volta</li>
+          <li>Workflow avanzato: post/brief → ricerca → video animato → deck di slide, spesso con risultati migliori della generazione diretta del deck</li>
+        </ul>
+      </div>
+      <div class="callout">La scelta finale tra le varianti generate resta una decisione umana, non automatizzabile.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.12 — Claude Cowork + Projects -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude</span>
+      <h2>Claude Cowork + Projects</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Cosa risolve</h3>
+        <ul>
+          <li>Combina memoria persistente e ambito ristretto con esecuzione agentica, integrato nell'app desktop</li>
+          <li>Tre modalità di creazione: da zero, da un Project esistente, o da una cartella locale</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Limiti e usi</h3>
+        <ul>
+          <li>La memoria isolata per Project evita che il contesto di un progetto contamini un altro</li>
+          <li>I task pianificati automatizzano attività ricorrenti quando l'app desktop è attiva</li>
+          <li>Limite: i Project Cowork sono locali alla macchina — non ancora condivisibili in team</li>
+        </ul>
+      </div>
+      <div class="callout">Quattro casi d'uso tipici: newsletter, deliverable per clienti, proposte commerciali, report operativi ricorrenti.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.13 — Claude for slides -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude</span>
+      <h2>Claude for slides</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Tre metodi</h3>
+        <ul>
+          <li>Claude da solo — rapido ma design piatto</li>
+          <li>Uno strumento di design esterno — output rifinito, immagini AI, analytics</li>
+          <li>I due combinati — consigliato per deck importanti</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Pipeline consigliata</h3>
+        <ul>
+          <li>Standardizzazione del brand aziendale tramite un tema condiviso + un file brand-deck-rules.md</li>
+          <li>Pipeline "ricerca → brief": Claude fa la ricerca web, produce un brief strutturato, poi un outline slide-per-slide</li>
+        </ul>
+      </div>
+      <div class="callout">La generazione diretta di slide senza ricerca/outline preliminare produce quasi sempre risultati generici — vale anche per le slide di questa stessa sessione.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.14 — Claude Skills -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 2 · Claude</span>
+      <h2>Claude Skills</h2>
+    </div>
+    <div class="slide-body layout-two-col">
+      <div>
+        <h3>Cos'è una Skill</h3>
+        <ul>
+          <li>Istruzioni persistenti e riutilizzabili, richiamabili automaticamente (es. via <code>/comando</code>) quando Claude riconosce il task giusto</li>
+          <li>Non serve invocarla a mano: si attiva da sola in base alla descrizione</li>
+          <li>Si costruisce con lo Skill Creator integrato (intervista guidata) e produce un file <strong>SKILL.md</strong></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Cosa rende una skill efficace</h3>
+        <ul>
+          <li>La descrizione "quando usarla" è ciò che ne determina l'attivazione — se è vaga, la skill non parte</li>
+          <li>Il "quando NON usarla" conta più del "quando usarla": evita che la skill si attivi a sproposito</li>
+          <li>Un task che richiedeva 12.000 token e 15 scambi è sceso a 6.000 token e 2 scambi grazie a una skill</li>
+        </ul>
+      </div>
+      <div class="callout">Anche con una skill ben scritta, prevedi comunque una revisione umana del ~20% dell'output.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- ORA2_LEVEL3_PLACEHOLDER: Task 3 inserts Livello 3 slides here -->
 
 </section>
 
