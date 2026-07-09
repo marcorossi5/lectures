@@ -2063,14 +2063,12 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
     </div>
     <div class="slide-body layout-list">
       <ul>
-        <li>Usa Opus (a pagamento) invece di Sonnet gratuito quando possibile; attiva "Thinking" su High per task complessi</li>
-        <li>Tecnica AskUserQuestion: istruisci Claude a farti domande di chiarimento prima di eseguire, invece di scrivere il prompt perfetto</li>
-        <li>Gli strumenti di dettatura vocale permettono di parlare a Claude fino a 4 volte più veloce che scrivere</li>
-        <li>Cowork crea file reali (PDF, fogli di calcolo) salvati su disco, senza copia-incolla</li>
+        <li><strong>Cambia modello</strong>: Opus per task complessi e di ragionamento (effort), Sonnet per task noti</li>
+        <li>Tecnica AskUserQuestion: istruisci Claude a farti domande di chiarimento prima di eseguire — es. <em>"Aiutami a fare [X] per [Y]. Usa AskUserQuestion prima."</em> Di solito fa 3-5 domande: più rispondi, meglio è la risposta finale</li>
         <li>I Connector integrano email, calendario, trascrizioni di riunioni per dare contesto</li>
-        <li>Il comando <code>/skill-creator</code> costruisce skill personalizzate passo passo</li>
+        <li>Il comando <code>/skill-creator</code> costruisce skill personalizzate passo passo — es. <em>"Voglio insegnare a Claude a creare fogli Excel come piacciono a me, ma fammi prima delle domande."</em> Una volta salvata, la skill si richiama con un comando come <code>/excel-style</code></li>
       </ul>
-      <div class="callout">Non serve scrivere prompt perfetti — basta far fare a Claude le domande giuste.</div>
+      <div class="callout">Non serve scrivere prompt perfetti — basta far fare a Claude le domande giuste. AskUserQuestion sarà il nostro esercizio pratico.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
