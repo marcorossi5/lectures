@@ -1738,45 +1738,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
     </div>
   </section>
 
-  <!-- 1.10 — Fine-tuning vs Prompting vs RAG -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
-      <h2>Fine-tuning, Prompting, RAG: quando usare cosa</h2>
-    </div>
-    <div class="slide-body layout-table">
-      <table class="table-keyed table-compact">
-        <tr>
-          <th>Approccio</th>
-          <th>Cosa fa</th>
-          <th>Quando ha senso</th>
-        </tr>
-        <tr>
-          <td><strong>Prompting</strong></td>
-          <td>Istruisci il modello con testo, nella conversazione</td>
-          <td>Quasi sempre il primo passo: veloce, economico, nessun dato da preparare</td>
-        </tr>
-        <tr>
-          <td><strong>RAG</strong></td>
-          <td>Recupera documenti rilevanti e li inserisce nel contesto prima di rispondere</td>
-          <td>Serve conoscenza aggiornata o specifica (documenti interni, policy, cataloghi)</td>
-        </tr>
-        <tr>
-          <td><strong>Fine-tuning</strong></td>
-          <td>Riaddestra il modello su esempi specifici, cambiandone i pesi</td>
-          <td>Serve uno stile/formato molto specifico e ripetuto su grandi volumi — raro per le PMI</td>
-        </tr>
-      </table>
-      <div class="callout" style="margin-top:0.8em">In pratica: si parte sempre dal prompting, si aggiunge RAG quando serve conoscenza esterna, si arriva al fine-tuning solo per casi molto specifici e ad alto volume.</div>
-      <div class="callout" style="margin-top:0.8em">Il modello non impara nulla di nuovo in prompting e RAG: i suoi pesi restano identici, cambia solo cosa gli mettiamo nel contesto. Il fine-tuning è l'eccezione — lì i pesi cambiano davvero — ma resta un caso raro.</div>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 1.11 — RAG -->
+  <!-- 1.10 — RAG -->
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Ora 1 · Concetti AI</span>
@@ -1787,14 +1749,12 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
         <img src="public/images/rag_architecture.png" alt="Architettura RAG">
       </div>
       <div>
-        <h3>Il problema che risolve</h3>
-        <p style="font-size:0.85em; margin-bottom:0.6em;">Un LLM non conosce i tuoi documenti interni, le tue policy, i tuoi dati aggiornati. RAG glieli fornisce al momento giusto.</p>
-        <h3>Come funziona, in 3 passi</h3>
         <ul>
-          <li>I documenti vengono trasformati in vettori numerici (embedding) e indicizzati</li>
-          <li>Alla domanda dell'utente, si recuperano i passaggi più simili semanticamente</li>
-          <li>Questi passaggi vengono inseriti nel prompt: il modello risponde basandosi su di essi</li>
+          <li>Documenti → vettori numerici (embedding)</li>
+          <li>Domanda → recupero dei passaggi più simili</li>
+          <li>Passaggi nel prompt → risposta basata su di essi</li>
         </ul>
+        <div class="callout" style="margin-top:0.6em">Dà al modello conoscenza che non aveva: i tuoi documenti, aggiornati.</div>
       </div>
     </div>
     <div class="slide-footer">
@@ -1803,29 +1763,32 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
     </div>
   </section>
 
-  <!-- 1.12 — Agenti AI -->
+  <!-- 1.11 — Fine-tuning vs Prompting vs RAG -->
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Ora 1 · Concetti AI</span>
-      <h2>Agenti AI: LLM, Assistente, Agente</h2>
+      <h2>Fine-tuning, Prompting, RAG: quando usare cosa</h2>
     </div>
-    <div class="slide-body layout-three-col">
-      <div class="card" style="text-align:center;">
-        <div style="width:2.6em; height:2.6em; margin:0 auto 0.5em; border-radius:50%; background:#e2e8f0; display:flex; align-items:center; justify-content:center; font-size:1.4em;">🧠</div>
-        <h4>LLM</h4>
-        <p>Risponde a una domanda con una singola generazione di testo. Nessuna azione sul mondo esterno.</p>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div style="width:2.6em; height:2.6em; margin:0 auto 0.5em; border-radius:50%; background:rgba(42,104,212,0.08); display:flex; align-items:center; justify-content:center; font-size:1.4em;">💬</div>
-        <h4>Assistente</h4>
-        <p>Conversazione con memoria del contesto. Può richiamare uno strumento se glielo chiedi esplicitamente.</p>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div style="width:2.6em; height:2.6em; margin:0 auto 0.5em; border-radius:50%; background:rgba(42,104,212,0.15); display:flex; align-items:center; justify-content:center; font-size:1.4em;">🤖</div>
-        <h4>Agente</h4>
-        <p>Pianifica autonomamente una sequenza di passi: <strong>Reason → Act → Observe</strong>, ripetuta finché il task è completo.</p>
-      </div>
-      <p class="text-muted text-small" style="margin-top:0.8em">Gli agenti sono potenti ma meno prevedibili: vanno supervisionati, specialmente su azioni con conseguenze reali (invio email, modifiche a dati).</p>
+    <div class="slide-body layout-table">
+      <table class="table-keyed table-compact">
+        <tr>
+          <th>Approccio</th>
+          <th>Quando</th>
+        </tr>
+        <tr>
+          <td><strong>Prompting</strong></td>
+          <td>Quasi sempre il primo passo</td>
+        </tr>
+        <tr>
+          <td><strong>RAG</strong></td>
+          <td>Conoscenza aggiornata o specifica</td>
+        </tr>
+        <tr>
+          <td><strong>Fine-tuning</strong></td>
+          <td>Stile molto specifico, alto volume — raro</td>
+        </tr>
+      </table>
+      <div class="callout" style="margin-top:0.8em">Il modello non impara nulla di nuovo in prompting e RAG: cambia solo il contesto. Solo il fine-tuning cambia davvero i pesi — resta un caso raro.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -1833,7 +1796,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
     </div>
   </section>
 
-  <!-- 1.13 — Agenti con accesso a strumenti reali -->
+  <!-- 1.12 — Agenti con accesso a strumenti reali -->
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Ora 1 · Concetti AI</span>
@@ -1863,7 +1826,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
     </div>
   </section>
 
-  <!-- 1.14 — Tools, Function Calling, MCP -->
+  <!-- 1.13 — Tools, Function Calling, MCP -->
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Ora 1 · Concetti AI</span>
@@ -1886,6 +1849,36 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
           <li>Ne riparliamo con esempi pratici nell'Ora 3</li>
         </ul>
       </div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 1.14 — Agenti AI -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <h2>Agenti AI: LLM, Assistente, Agente</h2>
+    </div>
+    <div class="slide-body layout-three-col">
+      <div class="card" style="text-align:center;">
+        <div style="width:2.6em; height:2.6em; margin:0 auto 0.5em; border-radius:50%; background:#e2e8f0; display:flex; align-items:center; justify-content:center; font-size:1.4em;">🧠</div>
+        <h4>LLM</h4>
+        <p>Risponde a una domanda con una singola generazione di testo. Nessuna azione sul mondo esterno.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="width:2.6em; height:2.6em; margin:0 auto 0.5em; border-radius:50%; background:rgba(42,104,212,0.08); display:flex; align-items:center; justify-content:center; font-size:1.4em;">💬</div>
+        <h4>Assistente</h4>
+        <p>Conversazione con memoria del contesto. Può richiamare uno strumento se glielo chiedi esplicitamente.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="width:2.6em; height:2.6em; margin:0 auto 0.5em; border-radius:50%; background:rgba(42,104,212,0.15); display:flex; align-items:center; justify-content:center; font-size:1.4em;">🤖</div>
+        <h4>Agente</h4>
+        <p>Pianifica autonomamente una sequenza di passi: <strong>Reason → Act → Observe</strong>, ripetuta finché il task è completo.</p>
+      </div>
+      <p class="text-muted text-small" style="margin-top:0.8em">Gli agenti sono potenti ma meno prevedibili: vanno supervisionati, specialmente su azioni con conseguenze reali (invio email, modifiche a dati).</p>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
