@@ -1049,7 +1049,7 @@ html, body {
 .reveal .block-diagram,
 .reveal .diagram {
   font-family: var(--font-mono);
-  font-size: 0.62em;
+  font-size: 0.85em;
   background: #f8fafc;
   border: 1px solid var(--code-border);
   border-radius: var(--border-radius);
@@ -1467,21 +1467,21 @@ html, body {
       <span class="slide-section-label">Ora 1 · Concetti AI</span>
       <h2>Esempi concreti: modelli in uso oggi</h2>
     </div>
-    <div class="slide-body layout-three-col">
+    <div class="slide-body layout-three-col" style="font-size:1.2em;">
       <div class="card">
         <h4>Machine Learning</h4>
         <p>Regressione, alberi decisionali, random forest.</p>
-        <p class="text-muted text-small">Previsione vendite, scoring crediti, rilevamento frodi.</p>
+        <p class="text-muted">Previsione vendite, scoring crediti, rilevamento frodi.</p>
       </div>
       <div class="card">
         <h4>Deep Learning</h4>
         <p>Reti neurali profonde, reti convoluzionali (CNN).</p>
-        <p class="text-muted text-small">Riconoscimento immagini, trascrizione vocale.</p>
+        <p class="text-muted">Riconoscimento immagini, trascrizione vocale.</p>
       </div>
       <div class="card">
         <h4>AI Generativa</h4>
         <p>LLM (GPT-4, Claude, Gemini, Llama); modelli immagine (Midjourney, DALL-E, Stable Diffusion).</p>
-        <p class="text-muted text-small">Genera testo, codice, immagini.</p>
+        <p class="text-muted">Genera testo, codice, immagini.</p>
       </div>
       <div class="callout">Stesso principio — apprendere pattern dai dati — output molto diversi.</div>
     </div>
@@ -1631,7 +1631,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
       </div>
 
       <!-- Chat mock -->
-      <div style="display:flex; flex-direction:column; font-size:0.56em; background:#f8f9fb; border-radius:12px; overflow:hidden; border:1px solid var(--border-color); box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+      <div style="display:flex; flex-direction:column; font-size:0.72em; background:#f8f9fb; border-radius:12px; overflow:hidden; border:1px solid var(--border-color); box-shadow:0 4px 16px rgba(0,0,0,0.08);">
         <div style="display:flex; align-items:center; gap:0.5em; background:var(--accent-color); color:#fff; padding:0.55em 0.9em; flex-shrink:0;">
           <div style="width:1.8em; height:1.8em; background:rgba(255,255,255,0.25); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1em; flex-shrink:0;">💬</div>
           <div>
@@ -1722,7 +1722,23 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
     </div>
   </section>
 
-  <!-- 1.9 — Fine-tuning vs Prompting vs RAG -->
+  <!-- 1.9 — Context rot: i dati -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <h2>Context rot: cosa dicono i benchmark</h2>
+    </div>
+    <div class="slide-body layout-diagram">
+      <img src="public/images/context_rot.webp" alt="Context Rot: come l'aumento dei token in input impatta le performance degli LLM, confronto tra modelli" style="width:78%; height:auto; border-radius:var(--border-radius); box-shadow:var(--card-shadow);">
+      <p class="text-muted text-small" style="margin-top:0.8em">Accuratezza al crescere della lunghezza del contesto in input, su diversi modelli — non è un problema isolato di un singolo modello, è un pattern osservato su tutti gli LLM principali.</p>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 1.10 — Fine-tuning vs Prompting vs RAG -->
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Ora 1 · Concetti AI</span>
@@ -1760,7 +1776,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
     </div>
   </section>
 
-  <!-- 1.10 — RAG -->
+  <!-- 1.11 — RAG -->
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Ora 1 · Concetti AI</span>
@@ -1787,7 +1803,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
     </div>
   </section>
 
-  <!-- 1.11 — Agenti AI -->
+  <!-- 1.12 — Agenti AI -->
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Ora 1 · Concetti AI</span>
@@ -1817,7 +1833,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
     </div>
   </section>
 
-  <!-- 1.12 — Agenti con accesso a strumenti reali -->
+  <!-- 1.13 — Agenti con accesso a strumenti reali -->
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Ora 1 · Concetti AI</span>
@@ -1847,7 +1863,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
     </div>
   </section>
 
-  <!-- 1.13 — Tools, Function Calling, MCP -->
+  <!-- 1.14 — Tools, Function Calling, MCP -->
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Ora 1 · Concetti AI</span>
@@ -1877,7 +1893,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
     </div>
   </section>
 
-  <!-- 1.14 — Riepilogo -->
+  <!-- 1.15 — Riepilogo -->
   <section class="slide">
     <div class="slide-header">
       <span class="slide-section-label">Ora 1 · Concetti AI</span>
