@@ -2189,7 +2189,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
         <li><strong>Claude For Dummies</strong> (5 min) — primi passi con Claude</li>
         <li><strong>Be good at Claude is (stupidly) simple</strong> (5 min) — guida di sopravvivenza all'uso quotidiano</li>
       </ul>
-      <div class="callout">Il livello include un esercizio pratico dal vivo: costruire una skill, a scelta tra tre workflow.</div>
+      <div class="callout">L'esercizio di costruzione di una skill arriva più avanti, alla fine del Livello 2, dopo Cowork e Claude Skills: prima la teoria, poi la pratica.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -2287,94 +2287,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
         <li>I Connector integrano email, calendario, trascrizioni di riunioni per dare contesto</li>
         <li>Il comando <code>/skill-creator</code> costruisce skill personalizzate passo passo — es. <em>"Voglio insegnare a Claude a creare fogli Excel come piacciono a me, ma fammi prima delle domande."</em> Una volta salvata, la skill si richiama con un comando come <code>/excel-style</code></li>
       </ul>
-      <div class="callout">Non serve scrivere prompt perfetti — basta far fare a Claude le domande giuste. Nell'esercizio che segue userai proprio lo Skill Creator per costruire una skill.</div>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 2.4 — Esercizio pratico: Costruisci una skill (scelta) -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
-      <h2>Esercizio pratico — Costruisci una skill</h2>
-    </div>
-    <div class="slide-body layout-three-col">
-      <div class="card">
-        <h4>A — Gestire i CV in entrata</h4>
-        <p>Valutazione strutturata, accesso ai file in cloud, organizzazione dei CV con Cowork</p>
-      </div>
-      <div class="card">
-        <h4>B — Project management</h4>
-        <p>Contesto di team, triage delle email in arrivo, gestione delle carte in Asana</p>
-      </div>
-      <div class="card">
-        <h4>C — Riscrivi i tuoi prompt</h4>
-        <p>Trasforma un prompt vago in un mega-prompt, seguendo l'anatomia vista in Sezione 2</p>
-      </div>
-      <div class="callout">Scegli uno dei tre workflow: i primi due, richiesti da colleghi come te, useranno per ora file locali — in futuro arriveranno direttamente dai sistemi aziendali tramite ORO, il nostro MCP interno (in arrivo). Il terzo lavora sui tuoi prompt. In tutti i casi l'obiettivo è costruire, con lo Skill Creator, una skill che automatizzi il workflow scelto.</div>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 2.4a — Esercizio A: Gestire i CV in entrata con Cowork -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
-      <h2>Esercizio A — Gestire i CV in entrata con Cowork</h2>
-    </div>
-    <div class="slide-body layout-list">
-      <ul>
-        <li><strong>Strutturare la valutazione</strong> — crea un Excel che evidenzi anagrafica e caratteristiche principali di ogni candidato</li>
-        <li><strong>Accedere ai dati in cloud</strong> — scarica i file da SharePoint in una cartella locale: Cowork li legge direttamente da lì</li>
-        <li><strong>Organizzare i CV in modo strutturato</strong> — l'Excel diventa il tuo database dei CV; i CV originali vengono rinominati e organizzati secondo una naming convention definita</li>
-      </ul>
-      <div class="callout">Costruisci una skill che ripete questi tre passi ogni volta che arriva un nuovo CV.</div>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 2.4b — Esercizio B: Project management -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
-      <h2>Esercizio B — Project management</h2>
-    </div>
-    <div class="slide-body layout-list">
-      <ul>
-        <li><strong>Setup del contesto del team</strong> — dai a Claude il contesto su progetti, persone e priorità del team</li>
-        <li><strong>Mail in arrivo</strong> — estrae le email in arrivo e propone un briefing</li>
-        <li><strong>Carte in Asana</strong> — legge le carte aperte, compila e assegna nuove carte, aiuta a gestire la board</li>
-      </ul>
-      <div class="callout">Costruisci una skill che ripete questi tre passi ogni volta che serve un aggiornamento del progetto.</div>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 2.4c — Esercizio C: Riscrivi i tuoi prompt -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
-      <h2>Esercizio C — Riscrivi i tuoi prompt come mega-prompt</h2>
-    </div>
-    <div class="slide-body layout-list">
-      <ul>
-        <li><strong>Raccogliere un prompt reale</strong> — parti da un prompt vago che usi spesso (es. "scrivi una mail", "riassumi questo documento")</li>
-        <li><strong>Riscriverlo con la struttura del mega-prompt</strong> — aggiungi Task, Success Brief, Regole e Riferimento seguendo l'anatomia vista in Sezione 2</li>
-        <li><strong>Costruire la skill</strong> — con lo Skill Creator, crea una skill che, dato un prompt vago, lo riscriva automaticamente seguendo questa struttura</li>
-      </ul>
-      <div class="callout">Costruisci una skill che applica questa trasformazione ogni volta che scrivi un prompt troppo generico.</div>
+      <div class="callout">Non serve scrivere prompt perfetti — basta far fare a Claude le domande giuste. Lo Skill Creator tornerà più avanti, nell'esercizio di costruzione di una skill.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -2396,7 +2309,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
         <li><strong>Claude Cowork + Projects</strong> — spazi di lavoro persistenti</li>
         <li><strong>Claude Skills</strong> — automatizzare workflow ricorrenti</li>
       </ul>
-      <div class="callout">Il livello include un esercizio pratico dal vivo: configurare il tuo primo Cowork.</div>
+      <div class="callout">Il livello include due esercizi pratici dal vivo: configurare il tuo primo Cowork, e — a chiusura del livello — costruire una skill che automatizzi un workflow.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -2575,6 +2488,93 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
         </ul>
       </div>
       <div class="callout">Anche con una skill ben scritta, prevedi comunque una revisione umana del ~20% dell'output.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.14a — Esercizio pratico: Costruisci una skill (scelta) -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
+      <h2>Esercizio pratico — Costruisci una skill</h2>
+    </div>
+    <div class="slide-body layout-three-col">
+      <div class="card">
+        <h4>A — Gestire i CV in entrata</h4>
+        <p>Valutazione strutturata, accesso ai file in cloud, organizzazione dei CV con Cowork</p>
+      </div>
+      <div class="card">
+        <h4>B — Project management</h4>
+        <p>Contesto di team, triage delle email in arrivo, gestione delle carte in Asana</p>
+      </div>
+      <div class="card">
+        <h4>C — Riscrivi i tuoi prompt</h4>
+        <p>Trasforma un prompt vago in un mega-prompt, seguendo l'anatomia vista in Sezione 2</p>
+      </div>
+      <div class="callout">Scegli uno dei tre workflow: i primi due, richiesti da colleghi come te, useranno per ora file locali — in futuro arriveranno direttamente dai sistemi aziendali tramite ORO, il nostro MCP interno (in arrivo). Il terzo lavora sui tuoi prompt. In tutti i casi l'obiettivo è costruire, con lo Skill Creator, una skill che automatizzi il workflow scelto.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.14b — Esercizio A: Gestire i CV in entrata con Cowork -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
+      <h2>Esercizio A — Gestire i CV in entrata con Cowork</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <ul>
+        <li><strong>Strutturare la valutazione</strong> — crea un Excel che evidenzi anagrafica e caratteristiche principali di ogni candidato</li>
+        <li><strong>Accedere ai dati in cloud</strong> — scarica i file da SharePoint in una cartella locale: Cowork li legge direttamente da lì</li>
+        <li><strong>Organizzare i CV in modo strutturato</strong> — l'Excel diventa il tuo database dei CV; i CV originali vengono rinominati e organizzati secondo una naming convention definita</li>
+      </ul>
+      <div class="callout">Costruisci una skill che ripete questi tre passi ogni volta che arriva un nuovo CV.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.14c — Esercizio B: Project management -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
+      <h2>Esercizio B — Project management</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <ul>
+        <li><strong>Setup del contesto del team</strong> — dai a Claude il contesto su progetti, persone e priorità del team</li>
+        <li><strong>Mail in arrivo</strong> — estrae le email in arrivo e propone un briefing</li>
+        <li><strong>Carte in Asana</strong> — legge le carte aperte, compila e assegna nuove carte, aiuta a gestire la board</li>
+      </ul>
+      <div class="callout">Costruisci una skill che ripete questi tre passi ogni volta che serve un aggiornamento del progetto.</div>
+    </div>
+    <div class="slide-footer">
+      <img class="footer-logo" alt="Hup.">
+      <span class="footer-page"></span>
+    </div>
+  </section>
+
+  <!-- 2.14d — Esercizio C: Riscrivi i tuoi prompt -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
+      <h2>Esercizio C — Riscrivi i tuoi prompt come mega-prompt</h2>
+    </div>
+    <div class="slide-body layout-list">
+      <ul>
+        <li><strong>Raccogliere un prompt reale</strong> — parti da un prompt vago che usi spesso (es. "scrivi una mail", "riassumi questo documento")</li>
+        <li><strong>Riscriverlo con la struttura del mega-prompt</strong> — aggiungi Task, Success Brief, Regole e Riferimento seguendo l'anatomia vista in Sezione 2</li>
+        <li><strong>Costruire la skill</strong> — con lo Skill Creator, crea una skill che, dato un prompt vago, lo riscriva automaticamente seguendo questa struttura</li>
+      </ul>
+      <div class="callout">Costruisci una skill che applica questa trasformazione ogni volta che scrivi un prompt troppo generico.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -2941,7 +2941,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
         <li>claude101.com copre 4 livelli e 18 articoli, da primo utilizzo ad adozione aziendale avanzata</li>
         <li>Cowork porta Claude a lavorare direttamente sui tuoi file locali, con contesto persistente; i Project isolano memoria e istruzioni per ogni area di lavoro</li>
         <li>Le Skill automatizzano processi ricorrenti: le abbiamo viste applicate in azienda nella Sezione 2</li>
-        <li>Abbiamo messo in pratica 4 esercizi dal vivo: costruzione di una skill (CV, project management o mega-prompt), setup Cowork, verifica anti-AI di un testo, messa in sicurezza dell'account</li>
+        <li>Abbiamo messo in pratica 4 esercizi dal vivo: setup Cowork, costruzione di una skill (CV, project management o mega-prompt), verifica anti-AI di un testo, messa in sicurezza dell'account</li>
       </ul>
     </div>
     <div class="slide-footer">
