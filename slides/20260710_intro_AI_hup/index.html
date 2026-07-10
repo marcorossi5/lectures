@@ -1345,6 +1345,10 @@ html, body {
     white-space: nowrap;
     border-right: 2px solid var(--border-color);
   }
+
+  .schedule-tbl thead th.col-time {
+    color: var(--table-header-text);
+  }
   .schedule-tbl .col-part {
     font-weight: 700;
     white-space: nowrap;
@@ -1380,7 +1384,7 @@ html, body {
         <tbody>
           <tr class="sched-row">
             <td class="col-time">60 min</td>
-            <td class="col-part">Ora 1 · Concetti AI</td>
+            <td class="col-part">Sezione 1 · Concetti AI</td>
             <td class="col-topics">
               <ul>
                 <li>LLM, context window, fine-tuning</li>
@@ -1390,7 +1394,7 @@ html, body {
           </tr>
           <tr class="sched-row">
             <td class="col-time">60 min</td>
-            <td class="col-part">Ora 2 · Prompting &amp; Skill</td>
+            <td class="col-part">Sezione 2 · Prompting &amp; Skill</td>
             <td class="col-topics">
               <ul>
                 <li>Prompt engineering efficace</li>
@@ -1399,8 +1403,8 @@ html, body {
             </td>
           </tr>
           <tr class="sched-row">
-            <td class="col-time">60 min</td>
-            <td class="col-part">Ora 3 · Claude</td>
+            <td class="col-time">120 min</td>
+            <td class="col-part">Sezione 3 · Claude (ore 3-4)</td>
             <td class="col-topics">
               <ul>
                 <li>I 4 livelli della guida Claude 101</li>
@@ -1423,10 +1427,10 @@ html, body {
 
 
 
-<section data-section-title="Ora 1 — Concetti Fondamentali AI">
+<section data-section-title="Sezione 1 — Concetti Fondamentali AI">
 
   <section class="slide-section">
-    <div class="section-eyebrow">Ora 1</div>
+    <div class="section-eyebrow">Sezione 1</div>
     <h2>Concetti Fondamentali di AI</h2>
     <p class="section-desc">Modelli e tokenizzazione · Context window e context rot · Fine-tuning, RAG e prompting · Agenti e tool reali</p>
   </section>
@@ -1434,7 +1438,7 @@ html, body {
   <!-- 1.1 — AI, ML, DL, GenAI -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
       <h2>AI, ML, Deep Learning, AI Generativa</h2>
     </div>
     <div class="slide-body layout-diagram">
@@ -1455,7 +1459,7 @@ html, body {
   <!-- 1.2 — Esempi concreti di modelli -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
       <h2>Esempi concreti: modelli in uso oggi</h2>
     </div>
     <div class="slide-body layout-three-col" style="font-size:1.2em;">
@@ -1485,7 +1489,7 @@ html, body {
   <!-- 1.3 — Cos'è un LLM -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
       <h2>Cos'è un Large Language Model</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -1518,7 +1522,7 @@ html, body {
   <!-- 1.4 — Tokenizzazione -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
       <h2>Tokenizzazione: il testo diventa numeri</h2>
     </div>
     <div class="slide-body layout-diagram">
@@ -1546,7 +1550,7 @@ html, body {
   <!-- 1.5 — Come un LLM genera testo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
       <h2>Come un LLM genera testo</h2>
     </div>
     <div class="slide-body layout-diagram">
@@ -1572,7 +1576,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
   <!-- 1.6 — Context window -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
       <h2>Context Window</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -1605,7 +1609,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
   <!-- 1.7 — Context window: esempio di conversazione -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
       <h2>Context window: un esempio di conversazione</h2>
     </div>
     <div class="slide-body" style="display:grid; grid-template-columns:1.4fr 1fr; gap:var(--gap-lg); align-content:center;">
@@ -1693,7 +1697,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
   <!-- 1.8 — Context rot -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
       <h2>Context rot: quando iniziare una nuova conversazione</h2>
     </div>
     <div class="slide-body layout-list">
@@ -1716,7 +1720,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
   <!-- 1.9 — Context rot: i dati -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
       <h2>Context rot: cosa dicono i benchmark</h2>
     </div>
     <div class="slide-body layout-diagram">
@@ -1732,7 +1736,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
   <!-- 1.10 — RAG -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
       <h2>RAG — Retrieval Augmented Generation</h2>
     </div>
     <div class="slide-body layout-image-text">
@@ -1757,7 +1761,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
   <!-- 1.11 — Fine-tuning vs Prompting vs RAG -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
       <h2>Fine-tuning, Prompting, RAG: quando usare cosa</h2>
     </div>
     <div class="slide-body layout-table">
@@ -1790,7 +1794,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
   <!-- 1.12 — Agenti AI -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
       <h2>Agenti AI: LLM, Assistente, Agente</h2>
     </div>
     <div class="slide-body layout-three-col">
@@ -1820,7 +1824,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
   <!-- 1.13 — Tools, Function Calling, MCP -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
       <h2>Tools, Function Calling e MCP</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -1837,7 +1841,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
         <ul>
           <li>Uno standard aperto per collegare un modello a strumenti e sorgenti dati esterne</li>
           <li>Invece di integrare ogni tool a mano per ogni applicazione, un server MCP espone gli stessi strumenti a qualsiasi client compatibile</li>
-          <li>Ne riparliamo con esempi pratici nell'Ora 2</li>
+          <li>Ne riparliamo con esempi pratici nella Sezione 2</li>
         </ul>
       </div>
     </div>
@@ -1850,7 +1854,7 @@ Sceglie "15", lo aggiunge al testo, e ripete da capo
   <!-- 1.14 — Agenti con accesso a strumenti reali -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
       <h2>Agenti con accesso a strumenti reali</h2>
     </div>
     <div class="slide-body layout-diagram">
@@ -1869,7 +1873,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   [Reason] → Ho i dati aggregati, task completato
   [Output]  → "Riepilogo pronto: Vendite +12%, Marketing stabile..."
       </div>
-      <div class="callout" style="margin-top:0.8em">Questi sono gli stessi strumenti che ritroviamo con Claude: l'accesso ai file lo vedremo con Cowork nell'Ora 3; esecuzione di codice e comandi da terminale sono il dominio di Claude Code, che incontriamo più avanti nella guida.</div>
+      <div class="callout" style="margin-top:0.8em">Questi sono gli stessi strumenti che ritroviamo con Claude: l'accesso ai file lo vedremo con Cowork nella Sezione 3; esecuzione di codice e comandi da terminale sono il dominio di Claude Code, che incontriamo più avanti nella guida.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -1880,8 +1884,8 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 1.15 — Riepilogo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 1 · Concetti AI</span>
-      <h2>Riepilogo Ora 1</h2>
+      <span class="slide-section-label">Sezione 1 · Concetti AI</span>
+      <h2>Riepilogo Sezione 1</h2>
     </div>
     <div class="slide-body layout-list">
       <ul>
@@ -1899,10 +1903,10 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
 
 </section>
 
-<section data-section-title="Ora 2 — Prompting, MCP e Skill Aziendali">
+<section data-section-title="Sezione 2 — Prompting, MCP e Skill Aziendali">
 
   <section class="slide-section">
-    <div class="section-eyebrow">Ora 2</div>
+    <div class="section-eyebrow">Sezione 2</div>
     <h2>Prompting, MCP e Skill Aziendali</h2>
     <p class="section-desc">Prompt engineering efficace · Model Context Protocol · Skill Claude riutilizzabili in azienda</p>
   </section>
@@ -1910,7 +1914,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 3.1 — Anatomia di un prompt -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Prompting</span>
+      <span class="slide-section-label">Sezione 2 · Prompting</span>
       <h2>Anatomia di un prompt efficace</h2>
     </div>
     <div class="slide-body layout-list">
@@ -1931,7 +1935,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 3.2 — Tecniche -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Prompting</span>
+      <span class="slide-section-label">Sezione 2 · Prompting</span>
       <h2>Zero-shot, Few-shot, Chain-of-Thought</h2>
     </div>
     <div class="slide-body layout-three-col">
@@ -1957,7 +1961,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 3.3 — Esempio pratico -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Prompting</span>
+      <span class="slide-section-label">Sezione 2 · Prompting</span>
       <h2>Esempio: da prompt vago a prompt efficace</h2>
     </div>
     <div class="slide-body layout-code">
@@ -1977,7 +1981,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 3.4 — Errori comuni -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Prompting</span>
+      <span class="slide-section-label">Sezione 2 · Prompting</span>
       <h2>Errori comuni nel prompting</h2>
     </div>
     <div class="slide-body layout-list">
@@ -1998,7 +2002,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 3.4b — Anatomia di un mega-prompt -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Prompting</span>
+      <span class="slide-section-label">Sezione 2 · Prompting</span>
       <h2>Il mega-prompt: anatomia completa (avanzata)</h2>
     </div>
     <div class="slide-body layout-image-text">
@@ -2027,7 +2031,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 3.5 — MCP concetto -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · MCP</span>
+      <span class="slide-section-label">Sezione 2 · MCP</span>
       <h2>MCP — Model Context Protocol</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2056,7 +2060,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 3.6 — MCP esempio -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · MCP</span>
+      <span class="slide-section-label">Sezione 2 · MCP</span>
       <h2>Esempio pratico: assistente collegato a un tool</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2077,7 +2081,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 3.7 — Cos'è una Skill (ripresa) -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Skill Aziendali</span>
+      <span class="slide-section-label">Sezione 2 · Skill Aziendali</span>
       <h2>Skill aziendali: cosa sono e perché contano</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2106,7 +2110,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 3.8 — Skill aziendali Hup: esempio reale -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Skill Aziendali</span>
+      <span class="slide-section-label">Sezione 2 · Skill Aziendali</span>
       <h2>Skill aziendale Hup: carta intestata automatica</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2127,8 +2131,8 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 3.9 — Riepilogo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 2 · Prompting</span>
-      <h2>Riepilogo Ora 2</h2>
+      <span class="slide-section-label">Sezione 2 · Prompting</span>
+      <h2>Riepilogo Sezione 2</h2>
     </div>
     <div class="slide-body layout-list">
       <ul>
@@ -2145,10 +2149,10 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
 
 </section>
 
-<section data-section-title="Ora 3 — Introduzione a Claude">
+<section data-section-title="Sezione 3 — Introduzione a Claude">
 
   <section class="slide-section">
-    <div class="section-eyebrow">Ora 3</div>
+    <div class="section-eyebrow">Sezione 3</div>
     <h2>Introduzione a Claude</h2>
     <p class="section-desc">La guida Claude 101, livello per livello, con 4 esercizi pratici dal vivo</p>
   </section>
@@ -2156,7 +2160,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.1 — Overview dei 4 livelli -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Claude 101: una guida a 4 livelli</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2177,7 +2181,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.2 — Livello 1: cosa vedremo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Livello 1 — Beginner: cosa vedremo</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2196,7 +2200,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.3 — Claude For Dummies -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Claude For Dummies</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2216,7 +2220,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.3a — Cinque regole per prompt efficaci -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Cinque regole per prompt efficaci</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2225,9 +2229,9 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
         <li><strong>Fornisci esempi</strong> — incolla un testo che ti piace e digli: <em>"scrivi così"</em></li>
         <li><strong>Dì cosa vuoi, non cosa non vuoi</strong> — meglio <em>"scrivila come a un collega"</em> che <em>"non renderla troppo formale"</em></li>
         <li><strong>Parti breve, aggiungi dettaglio</strong> — inizia con 2 frasi, guarda cosa risponde, poi aggiungi <em>"accorcialo"</em>, <em>"cambia il tono"</em>, <em>"aggiungi una sezione su X"</em></li>
-        <li><strong>Se si confonde, apri una nuova chat</strong> — lo stesso "context rot" visto in Ora 1: quando le risposte iniziano a sembrare fuori fuoco, apri una chat nuova e incolla il contesto chiave</li>
+        <li><strong>Se si confonde, apri una nuova chat</strong> — lo stesso "context rot" visto in Sezione 1: quando le risposte iniziano a sembrare fuori fuoco, apri una chat nuova e incolla il contesto chiave</li>
       </ol>
-      <div class="callout">Queste sono le basi per l'uso quotidiano: il mega-prompt visto in Ora 2 le porta oltre, per i task che meritano più struttura.</div>
+      <div class="callout">Queste sono le basi per l'uso quotidiano: il mega-prompt visto in Sezione 2 le porta oltre, per i task che meritano più struttura.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -2238,7 +2242,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.3b — Claude: cosa fa bene, cosa fa male -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Claude: cosa fa bene, cosa fa male</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2273,7 +2277,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.3c — Be good at Claude is (stupidly) simple -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Be good at Claude is (stupidly) simple</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2294,7 +2298,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.4 — Esercizio pratico: Costruisci una skill (scelta) -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
+      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
       <h2>Esercizio pratico — Costruisci una skill</h2>
     </div>
     <div class="slide-body layout-three-col">
@@ -2308,7 +2312,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
       </div>
       <div class="card">
         <h4>C — Riscrivi i tuoi prompt</h4>
-        <p>Trasforma un prompt vago in un mega-prompt, seguendo l'anatomia vista in Ora 2</p>
+        <p>Trasforma un prompt vago in un mega-prompt, seguendo l'anatomia vista in Sezione 2</p>
       </div>
       <div class="callout">Scegli uno dei tre workflow: i primi due, richiesti da colleghi come te, useranno per ora file locali — in futuro arriveranno direttamente dai sistemi aziendali tramite ORO, il nostro MCP interno (in arrivo). Il terzo lavora sui tuoi prompt. In tutti i casi l'obiettivo è costruire, con lo Skill Creator, una skill che automatizzi il workflow scelto.</div>
     </div>
@@ -2321,7 +2325,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.4a — Esercizio A: Gestire i CV in entrata con Cowork -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
+      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
       <h2>Esercizio A — Gestire i CV in entrata con Cowork</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2341,7 +2345,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.4b — Esercizio B: Project management -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
+      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
       <h2>Esercizio B — Project management</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2361,13 +2365,13 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.4c — Esercizio C: Riscrivi i tuoi prompt -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
+      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
       <h2>Esercizio C — Riscrivi i tuoi prompt come mega-prompt</h2>
     </div>
     <div class="slide-body layout-list">
       <ul>
         <li><strong>Raccogliere un prompt reale</strong> — parti da un prompt vago che usi spesso (es. "scrivi una mail", "riassumi questo documento")</li>
-        <li><strong>Riscriverlo con la struttura del mega-prompt</strong> — aggiungi Task, Success Brief, Regole e Riferimento seguendo l'anatomia vista in Ora 2</li>
+        <li><strong>Riscriverlo con la struttura del mega-prompt</strong> — aggiungi Task, Success Brief, Regole e Riferimento seguendo l'anatomia vista in Sezione 2</li>
         <li><strong>Costruire la skill</strong> — con lo Skill Creator, crea una skill che, dato un prompt vago, lo riscriva automaticamente seguendo questa struttura</li>
       </ul>
       <div class="callout">Costruisci una skill che applica questa trasformazione ogni volta che scrivi un prompt troppo generico.</div>
@@ -2381,7 +2385,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.7 — Livello 2: cosa vedremo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Livello 2 — Intermediate: cosa vedremo</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2403,7 +2407,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.8 — Claude Cowork -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Claude Cowork</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2425,7 +2429,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
           <li>Altri accorgimenti per risparmiare token nel Livello 3, con "Stop hitting Claude limits"</li>
         </ul>
       </div>
-      <div class="callout">Mantieni ABOUT ME sotto i 6.000 token totali — più contesto non è sempre meglio (lo avevamo già visto in Ora 1).</div>
+      <div class="callout">Mantieni ABOUT ME sotto i 6.000 token totali — più contesto non è sempre meglio (lo avevamo già visto in Sezione 1).</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -2436,7 +2440,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.9 — Esercizio pratico: Configura il tuo Cowork -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
+      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
       <h2>Esercizio pratico — Configura il tuo Cowork</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2460,7 +2464,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.10 — Claude for teams -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Claude for teams</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2490,7 +2494,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.11 — Claude Design -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Claude Design</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2520,7 +2524,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.12 — Claude Cowork + Projects -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Claude Cowork + Projects</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2550,14 +2554,14 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.14 — Claude Skills -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Claude Skills</h2>
     </div>
     <div class="slide-body layout-two-col">
       <div>
         <h3>Cos'è una Skill</h3>
         <ul>
-          <li>Istruzioni persistenti e riutilizzabili (come visto in Ora 2), richiamabili automaticamente (es. via <code>/comando</code>) quando Claude riconosce il task giusto</li>
+          <li>Istruzioni persistenti e riutilizzabili (come visto in Sezione 2), richiamabili automaticamente (es. via <code>/comando</code>) quando Claude riconosce il task giusto</li>
           <li>Non serve invocarla a mano: si attiva da sola in base alla descrizione</li>
           <li>Si costruisce con lo Skill Creator integrato (intervista guidata) e produce un file <strong>SKILL.md</strong></li>
         </ul>
@@ -2581,7 +2585,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.15 — Livello 3: cosa vedremo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Livello 3 — Advanced: cosa vedremo</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2604,7 +2608,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.16 — Claude to sound like you -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Claude to sound like you</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2634,7 +2638,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.17 — Stop hitting Claude limits -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Stop hitting Claude limits</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2666,7 +2670,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.18 — Stop Prompting -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Stop Prompting</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2695,7 +2699,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.19 — Claude replaced me -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Claude replaced me</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2715,7 +2719,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.20 — Stop sounding like AI -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Stop sounding like AI</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2745,7 +2749,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.21 — Esercizio pratico: Verifica il tuo testo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
+      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
       <h2>Esercizio pratico — Verifica il tuo testo</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2767,7 +2771,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.22 — Excel with Claude cowork -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Excel with Claude cowork</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2796,7 +2800,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.23 — Livello 4: cosa vedremo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Livello 4 — Expert: cosa vedremo</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2805,7 +2809,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
         <li><strong>Claude Code</strong> (14 min) — costruire app/siti senza saper programmare</li>
         <li><strong>Stop using your own Claude at work</strong> (9 min) — governance e sicurezza dell'AI personale in azienda</li>
       </ul>
-      <div class="callout">Chiudiamo il livello, e l'Ora 3, con un esercizio pratico: mettere in sicurezza il tuo account.</div>
+      <div class="callout">Chiudiamo il livello, e la Sezione 3, con un esercizio pratico: mettere in sicurezza il tuo account.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -2816,7 +2820,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.24 — Claude Connectors -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Claude Connectors</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2846,7 +2850,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.25 — Claude Code -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Claude Code</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2865,7 +2869,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
           <li>Il passaggio a sviluppatori professionisti avviene tramite un documento di consegna (stack usato, funzionalità pronte, punti da rifinire)</li>
         </ul>
       </div>
-      <div class="callout">Sapere quando NON usare Claude Code è importante quanto sapere come usarlo — per un singolo componente, un documento o un foglio di calcolo, gli strumenti visti in questa Ora 3 sono più adatti.</div>
+      <div class="callout">Sapere quando NON usare Claude Code è importante quanto sapere come usarlo — per un singolo componente, un documento o un foglio di calcolo, gli strumenti visti in questa Sezione 3 sono più adatti.</div>
     </div>
     <div class="slide-footer">
       <img class="footer-logo" alt="Hup.">
@@ -2876,7 +2880,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.26 — Stop using your own Claude at work -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
       <h2>Stop using your own Claude at work</h2>
     </div>
     <div class="slide-body layout-two-col">
@@ -2907,7 +2911,7 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.27 — Esercizio pratico: Metti in sicurezza il tuo account -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude · Esercizio</span>
+      <span class="slide-section-label">Sezione 3 · Claude · Esercizio</span>
       <h2>Esercizio pratico — Metti in sicurezza il tuo account</h2>
     </div>
     <div class="slide-body layout-list">
@@ -2929,14 +2933,14 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
   <!-- 2.28 — Riepilogo -->
   <section class="slide">
     <div class="slide-header">
-      <span class="slide-section-label">Ora 3 · Claude</span>
-      <h2>Riepilogo Ora 3</h2>
+      <span class="slide-section-label">Sezione 3 · Claude</span>
+      <h2>Riepilogo Sezione 3</h2>
     </div>
     <div class="slide-body layout-list">
       <ul>
         <li>claude101.com copre 4 livelli e 18 articoli, da primo utilizzo ad adozione aziendale avanzata</li>
         <li>Cowork porta Claude a lavorare direttamente sui tuoi file locali, con contesto persistente; i Project isolano memoria e istruzioni per ogni area di lavoro</li>
-        <li>Le Skill automatizzano processi ricorrenti: le abbiamo viste applicate in azienda nell'Ora 2</li>
+        <li>Le Skill automatizzano processi ricorrenti: le abbiamo viste applicate in azienda nella Sezione 2</li>
         <li>Abbiamo messo in pratica 4 esercizi dal vivo: costruzione di una skill (CV, project management o mega-prompt), setup Cowork, verifica anti-AI di un testo, messa in sicurezza dell'account</li>
       </ul>
     </div>
@@ -2944,45 +2948,6 @@ Goal: "Analizza vendite_2026.csv e riassumi i trend per reparto"
       <img class="footer-logo" alt="Hup.">
       <span class="footer-page"></span>
     </div>
-  </section>
-
-</section>
-
-<section data-section-title="Chiusura">
-
-  <!-- 5.1 — Riepilogo finale -->
-  <section class="slide">
-    <div class="slide-header">
-      <span class="slide-section-label">Chiusura</span>
-      <h2>Riepilogo della sessione</h2>
-    </div>
-    <div class="slide-body layout-two-col">
-      <div>
-        <h3>Concetti e Claude</h3>
-        <ul>
-          <li>Come funziona un LLM e quando usare prompting, RAG o fine-tuning</li>
-          <li>Agenti, tool calling e MCP</li>
-          <li>I 4 livelli della guida Claude 101</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Prompting e pratica</h3>
-        <ul>
-          <li>Anatomia di un prompt efficace e tecniche few-shot/CoT</li>
-          <li>Come MCP e le skill aziendali automatizzano processi ricorrenti</li>
-        </ul>
-      </div>
-    </div>
-    <div class="slide-footer">
-      <img class="footer-logo" alt="Hup.">
-      <span class="footer-page"></span>
-    </div>
-  </section>
-
-  <!-- 5.2 — Domande -->
-  <section class="slide-closing">
-    <h2>Domande?</h2>
-    <p>Grazie per l'attenzione.</p>
   </section>
 
 </section>
